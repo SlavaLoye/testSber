@@ -1,0 +1,45 @@
+PODS:
+  - Alamofire (5.1.0)
+  - ARSLineProgress (3.1.0)
+  - Locksmith (4.0.0)
+  - PanModal (1.2.7)
+  - PureLayout (3.1.5)
+  - SwiftyJSON (5.0.0)
+  - Swinject (2.7.1)
+  - SwinjectAutoregistration (2.7.0):
+    - Swinject (~> 2.7)
+
+DEPENDENCIES:
+  - Alamofire
+  - ARSLineProgress (~> 3.1)
+  - Locksmith
+  - PanModal
+  - PureLayout
+  - SwiftyJSON
+  - Swinject
+  - SwinjectAutoregistration
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ARSLineProgress
+    - Locksmith
+    - PanModal
+    - PureLayout
+    - SwiftyJSON
+    - Swinject
+    - SwinjectAutoregistration
+
+SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  ARSLineProgress: 60778657c69491796c3faf5b834c72924c405833
+  Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
+  PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  SwinjectAutoregistration: 330f5012642a8b5c89a8a4adb0c5e52df07382c0
+
+PODFILE CHECKSUM: c679935db047c1a8f1e7b14b991924b259ef6482
+
+COCOAPODS: 1.9.1
