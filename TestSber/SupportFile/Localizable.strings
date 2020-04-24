@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  TestSber
+
+  Created by Viacheslav Loie on 25.04.2020.
+  Copyright © 2020 SberTestViper. All rights reserved.
+*/
+
+// Labbel
+"title.title" = "Сбербанк";
+
+// Button
+"button.authorizationEnter" = "ВОЙТИ";

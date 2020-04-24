@@ -22,6 +22,8 @@ class StartContainer: Containerable {
 	
 	
 	func register() {
+		
+		// MARK: StartRouter
 		container.register(StartRouter.self) { (resolver) -> StartRouter in
 			let nextViewController = TabBarControllerFactory(container: self, mode: .main).tabBarController()
 			self.nextViewController = nextViewController
@@ -29,34 +31,34 @@ class StartContainer: Containerable {
 										  nextViewController: nextViewController)
 			return startRouter
 		}
+		
 		// MARK: StartViewController
 		container.register(StartViewController.self) { (resolver) -> StartViewController in
-			return StartViewController()
-		}.initCompleted { (resolver, viewController) in
-			viewController.presenter = resolver.resolve(StartPresenter.self)
-		}
+			let vc = StartViewController()
+			vc.presenter = resolver.resolve(StartViewOutConnection.self) 
+			return vc
+		}.implements(StartViewInConnection.self)
 		
 		
 		// MARK: - Presenter
 		container.register(StartPresenter.self) { (resolver) -> StartPresenter in
 			let presenter = StartPresenter(router: resolver.resolve(StartRouter.self)!,
-										   interactor: resolver.resolve(StartInteractor.self)!)
+										   interactor: resolver.resolve(StartPresenterOutConnection.self)!)
 			
 			return presenter
-			
-		}// ИЗБЕГАЕМ РЕКУРСИИ
+		}
 		
 		
 		// MARK: - Interactor
 		container.register(StartInteractor.self) { (r) -> StartInteractor in
 			let interactor = StartInteractor()
 			return interactor
-		}.initCompleted { (r, i) in
-			i.presenter = r.resolve(StartPresenter.self)
+		}.initCompleted { (resolver, interactor) in
+			interactor.presenter = resolver.resolve(StartPresenter.self)
 		}
 	}
-	// MARK: fetchRootViewController
 	
+	// MARK: fetchRootViewController
 	func fetchRootViewController() -> UIViewController? {
 		//    let vc = TabBarControllerFactory(container: self, mode: .main).tabBarController()
 		//    return vc

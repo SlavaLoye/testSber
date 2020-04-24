@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Фабрика TabBar
+
 class TabBarControllerFactory {
   enum Mode {
     case main

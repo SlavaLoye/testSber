@@ -9,21 +9,31 @@
 import UIKit
 
 class StartPresenter: NSObject, StartViewOutConnection {
-  
-  private let router: StartRouter
-  private let interactor: StartInteractor
-  
-  init(router: StartRouter,
-       interactor: StartInteractor) {
-    self.router = router
-    self.interactor = interactor
-  }
-  
-  func selectButtonClicked() {
-    interactor.selectButtonClicked()
-  }
-  
-  func openNextViewController() {
-    router.openNextViewController()
-  }
+	
+	// MARK: - router
+	private let router: StartRouter?
+	var startRouter: StartRouters?
+	
+	// MARK: - interactor
+	private let interactor: StartPresenterOutConnection?
+	
+	// MARK: - view
+	weak var view: StartViewInConnection?
+
+	// MARK: - init
+	init(router: StartRouter,
+		 interactor: StartPresenterOutConnection) {
+		self.router = router
+		self.interactor = interactor
+	}
+	
+	// MARK: - selectButtonClicked
+	func selectButtonClicked() {
+		interactor?.selectButtonClicked()
+	}
+	
+	// MARK: - openNextViewController
+	func openNextViewController() {
+		router?.openNextViewController()
+	}
 }
