@@ -16,11 +16,14 @@ class StartViewController: UIViewController {
 	  self.init()
 	  self.presenter = presenter
 	}
-	
+	open override func loadView() {
+        super.loadView()
 
+    }
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-		view.backgroundColor = .white
+		view.backgroundColor = .red
 
     }
 }

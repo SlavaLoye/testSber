@@ -20,8 +20,15 @@ class StartContainer: Containerable {
 	
 	// MARK: StartRouter
 	
+	
 	func register() {
-		
+		container.register(StartRouter.self) { (resolver) -> StartRouter in
+			let nextViewController = TabBarControllerFactory(container: self, mode: .main).tabBarController()
+			self.nextViewController = nextViewController
+			let startRouter = StartRouter(rootViewController: self.fetchRootViewController(),
+										  nextViewController: nextViewController)
+			return startRouter
+		}
 		// MARK: StartViewController
 		container.register(StartViewController.self) { (resolver) -> StartViewController in
 			return StartViewController()
@@ -37,8 +44,6 @@ class StartContainer: Containerable {
 			
 			return presenter
 			
-		}.implements(StartViewOutConnection.self)
-			.initCompleted { (resolver, presenter) in
 		}// ИЗБЕГАЕМ РЕКУРСИИ
 		
 		
@@ -50,6 +55,18 @@ class StartContainer: Containerable {
 			i.presenter = r.resolve(StartPresenter.self)
 		}
 	}
+	// MARK: fetchRootViewController
+	
+	func fetchRootViewController() -> UIViewController? {
+		//    let vc = TabBarControllerFactory(container: self, mode: .main).tabBarController()
+		//    return vc
+		return get(StartViewController.self)
+	}
+	
+	func fetchRouter() -> StartRouter? {
+		return get(StartRouter.self)
+	}
 }
+
 
 

@@ -10,7 +10,6 @@
 		4F52D7F56CDE7561543427DD /* Pods_TestSber_TestSberUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0F1CF1DECC727CD3490328 /* Pods_TestSber_TestSberUITests.framework */; };
 		976BB131FC984996353BE14E /* Pods_TestSber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB5F70C4A832517853B24D2 /* Pods_TestSber.framework */; };
 		A83C051224536E4000FF8702 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C051124536E4000FF8702 /* AppDelegate.swift */; };
-		A83C051424536E4000FF8702 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C051324536E4000FF8702 /* SceneDelegate.swift */; };
 		A83C051B24536E4300FF8702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A83C051A24536E4300FF8702 /* Assets.xcassets */; };
 		A83C051E24536E4300FF8702 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83C051C24536E4300FF8702 /* LaunchScreen.storyboard */; };
 		A83C052924536E4400FF8702 /* TestSberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C052824536E4400FF8702 /* TestSberTests.swift */; };
@@ -31,6 +30,7 @@
 		A83C05732453809800FF8702 /* StartRouterPullableServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C05722453809800FF8702 /* StartRouterPullableServiceType.swift */; };
 		A83C0576245380F600FF8702 /* PullableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C0575245380F600FF8702 /* PullableService.swift */; };
 		A83C05792453838400FF8702 /* Completions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C05782453838400FF8702 /* Completions.swift */; };
+		A83C057C24538A1A00FF8702 /* TabBarControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C057B24538A1A00FF8702 /* TabBarControllerFactory.swift */; };
 		C3C54684CA4A7FA2BA62940E /* Pods_TestSberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14137ACEDCC85A1B58A9B119 /* Pods_TestSberTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +60,6 @@
 		A4C171AF3BE4E59AE4680954 /* Pods-TestSber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSber.release.xcconfig"; path = "Target Support Files/Pods-TestSber/Pods-TestSber.release.xcconfig"; sourceTree = "<group>"; };
 		A83C050E24536E4000FF8702 /* TestSber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83C051124536E4000FF8702 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A83C051324536E4000FF8702 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A83C051A24536E4300FF8702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A83C051D24536E4300FF8702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A83C051F24536E4300FF8702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		A83C05722453809800FF8702 /* StartRouterPullableServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouterPullableServiceType.swift; sourceTree = "<group>"; };
 		A83C0575245380F600FF8702 /* PullableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullableService.swift; sourceTree = "<group>"; };
 		A83C05782453838400FF8702 /* Completions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completions.swift; sourceTree = "<group>"; };
+		A83C057B24538A1A00FF8702 /* TabBarControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerFactory.swift; sourceTree = "<group>"; };
 		C266EEDB76221B66CBA04C68 /* Pods-TestSber-TestSberUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSber-TestSberUITests.release.xcconfig"; path = "Target Support Files/Pods-TestSber-TestSberUITests/Pods-TestSber-TestSberUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C9CB4621ABA8A4C85F16DE37 /* Pods-TestSber-TestSberUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSber-TestSberUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestSber-TestSberUITests/Pods-TestSber-TestSberUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE31ABE8E7F1AA15E14C4716 /* Pods-TestSberTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSberTests.release.xcconfig"; path = "Target Support Files/Pods-TestSberTests/Pods-TestSberTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +184,7 @@
 		A83C0541245370E700FF8702 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A83C057A24538A0700FF8702 /* TabBar */,
 				A83C05772453834500FF8702 /* Typealiases */,
 				A83C056F24537FAB00FF8702 /* Routers */,
 				A83C0561245377DA00FF8702 /* ContainerController */,
@@ -198,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				A83C051124536E4000FF8702 /* AppDelegate.swift */,
-				A83C051324536E4000FF8702 /* SceneDelegate.swift */,
 				A83C051A24536E4300FF8702 /* Assets.xcassets */,
 				A83C051C24536E4300FF8702 /* LaunchScreen.storyboard */,
 				A83C051F24536E4300FF8702 /* Info.plist */,
@@ -390,6 +390,14 @@
 				A83C05782453838400FF8702 /* Completions.swift */,
 			);
 			path = Typealiases;
+			sourceTree = "<group>";
+		};
+		A83C057A24538A0700FF8702 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A83C057B24538A1A00FF8702 /* TabBarControllerFactory.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		BEE900EBE401523A774B52C2 /* Frameworks */ = {
@@ -640,6 +648,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83C057C24538A1A00FF8702 /* TabBarControllerFactory.swift in Sources */,
 				A83C0554245375EA00FF8702 /* StartViewController.swift in Sources */,
 				A83C055C2453769100FF8702 /* StartInteractor.swift in Sources */,
 				A83C0576245380F600FF8702 /* PullableService.swift in Sources */,
@@ -648,7 +657,6 @@
 				A83C051224536E4000FF8702 /* AppDelegate.swift in Sources */,
 				A83C055A2453767F00FF8702 /* StartViewOutConnection.swift in Sources */,
 				A83C05522453757500FF8702 /* StartRouter.swift in Sources */,
-				A83C051424536E4000FF8702 /* SceneDelegate.swift in Sources */,
 				A83C05792453838400FF8702 /* Completions.swift in Sources */,
 				A83C05602453779600FF8702 /* StartContainer.swift in Sources */,
 				A83C055E245376A900FF8702 /* StartPresenterOutConnection.swift in Sources */,
