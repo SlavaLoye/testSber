@@ -43,6 +43,10 @@ class StartRouters {
 					nc.modalPresentationStyle = .fullScreen
 					sourceViewController?.present(nc, animated: true, completion: nil)
 			}
+			case .newsViewController:
+			if let vc: UIViewController? = pullableService?.container?.get(NewsViewController.self) {
+			  sourceViewController?.navigationController?.pushViewController(vc!, animated: true)
+			}
 		}
 	}
 }

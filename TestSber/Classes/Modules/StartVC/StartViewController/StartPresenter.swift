@@ -21,14 +21,20 @@ class StartPresenter: NSObject, StartViewOutConnection {
 	weak var view: StartViewInConnection?
 
 	// MARK: - init
-	init(router: StartRouter,
+	init(router: StartRouter, startRouter: StartRouters,
 		 interactor: StartPresenterOutConnection) {
 		self.router = router
 		self.interactor = interactor
+		self.startRouter = startRouter
 	}
 	
+	func viewDidLoad() {
+		
+	}
+
 	// MARK: - selectButtonClicked
 	func selectButtonClicked() {
+		//startRouter?.route(to: .newsViewController, in: view)
 		interactor?.selectButtonClicked()
 	}
 	

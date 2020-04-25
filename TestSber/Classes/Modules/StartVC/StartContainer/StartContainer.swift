@@ -18,8 +18,6 @@ class StartContainer: Containerable {
 		self.container = container
 	}
 	
-	// MARK: StartRouter
-	
 	
 	func register() {
 		
@@ -30,21 +28,21 @@ class StartContainer: Containerable {
 			let startRouter = StartRouter(rootViewController: self.fetchRootViewController(),
 										  nextViewController: nextViewController)
 			return startRouter
-		}
+		}.inObjectScope(.container)
 		
-		// MARK: StartViewController
+		// MARK: - StartViewController
 		container.register(StartViewController.self) { (resolver) -> StartViewController in
-			let vc = StartViewController()
-			vc.presenter = resolver.resolve(StartViewOutConnection.self) 
-			return vc
-		}.implements(StartViewInConnection.self)
+			return StartViewController()
+		}.initCompleted { (resolver, viewController) in
+			viewController.presenter = resolver.resolve(StartPresenter.self)
+			
+		}
 		
 		
 		// MARK: - Presenter
 		container.register(StartPresenter.self) { (resolver) -> StartPresenter in
-			let presenter = StartPresenter(router: resolver.resolve(StartRouter.self)!,
-										   interactor: resolver.resolve(StartPresenterOutConnection.self)!)
-			
+			let presenter = StartPresenter(router: resolver.resolve(StartRouter.self)!, startRouter: resolver.resolve(StartRouters.self)!,
+				interactor: resolver.resolve(StartPresenterOutConnection.self)!)
 			return presenter
 		}
 		
@@ -55,14 +53,18 @@ class StartContainer: Containerable {
 			return interactor
 		}.initCompleted { (resolver, interactor) in
 			interactor.presenter = resolver.resolve(StartPresenter.self)
-		}
+		}.implements(StartPresenterOutConnection.self)
 	}
 	
 	// MARK: fetchRootViewController
 	func fetchRootViewController() -> UIViewController? {
 		//    let vc = TabBarControllerFactory(container: self, mode: .main).tabBarController()
 		//    return vc
-		return get(StartViewController.self)
+		if let vc = get(StartViewController.self) {
+			return vc
+		} else {
+			return nil
+		}
 	}
 	
 	func fetchRouter() -> StartRouter? {

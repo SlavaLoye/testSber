@@ -10,31 +10,34 @@ import UIKit
 import Swinject
 
 class MainContainer: Containerable {
-  let container: Container
+	
+	let container: Container
 	var controller: ContainerController?
-  private(set) var subContainers: [Containerable] = []
-  
-  func fetchSubcontainer<T: Containerable>() -> T? {
-    return subContainers.first { $0 is T } as? T
-  }
-  
-  required init(container: Container) {
-    self.container = container
-  }
-  
-  convenience init(container: Container, subContainers: [Containerable]) {
-    self.init(container: container)
-    self.subContainers = subContainers
-  }
-  
-  func register() {
-    for subContainer in subContainers {
-      subContainer.register()
-    }
-  }
-  
-  func get<T>(_ type: T.Type) -> T? {
-    return container.resolve(type)
-  }
+	private(set) var subContainers: [Containerable] = []
+	
+	func fetchSubcontainer<T: Containerable>() -> T? {
+		return subContainers.first { $0 is T } as? T
+	}
+	
+	required init(container: Container) {
+		self.container = container
+	}
+	
+	convenience init(container: Container, subContainers: [Containerable]) {
+		self.init(container: container)
+		self.subContainers = subContainers
+	}
+	
+	//MARK: - register
+	func register() {
+		for subContainer in subContainers {
+			subContainer.register()
+		}
+	}
+	
+	//MARK: - get
+	func get<T>(_ type: T.Type) -> T? {
+		return container.resolve(type)
+	}
 }
 

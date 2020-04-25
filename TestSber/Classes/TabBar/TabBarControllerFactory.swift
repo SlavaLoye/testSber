@@ -29,10 +29,10 @@ class TabBarControllerFactory {
   }
   
   private func mainTabBarController() -> UIViewController {
-    let userViewController: StartViewController = container.resolve()!
+    let startViewController: StartViewController = container.resolve()!
     let tabBarController = UITabBarController()
     tabBarController.tabBar.barStyle = .black
-    let viewControllers = [userViewController].map {
+    let viewControllers = [startViewController].map {
       UINavigationController.init(rootViewController: $0)
     }
     tabBarController.setViewControllers(viewControllers, animated: true)

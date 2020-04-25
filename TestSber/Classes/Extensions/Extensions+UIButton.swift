@@ -23,7 +23,7 @@ extension UIButton {
 	func roundedButtonYellow(cornerRadius: CGFloat)  {
 		self.layer.cornerRadius = cornerRadius
 		self.layer.masksToBounds = true
-		self.layer.borderWidth = 3
+		self.layer.borderWidth = 2
 		self.layer.borderColor = #colorLiteral(red: 0.09711175412, green: 0.626296401, blue: 0.1582792997, alpha: 1)
 	}
 }

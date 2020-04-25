@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol StartViewOutConnection: class {
+protocol StartViewOutConnection: class, Lifecycable {
 	func selectButtonClicked()
 }

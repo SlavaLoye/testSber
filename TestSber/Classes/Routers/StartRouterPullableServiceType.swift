@@ -9,8 +9,8 @@
 import UIKit
 
 enum StartRouterPullableServiceType: ViewControllerContainerable {
-  
-  case startViewController
-
+	
+	case startViewController
+	case newsViewController
 }
 
