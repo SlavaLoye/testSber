@@ -57,6 +57,8 @@
 		A8477DB42454EAF10074F7B0 /* UserViewOutConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DB32454EAF10074F7B0 /* UserViewOutConnection.swift */; };
 		A8477DB62454EB0B0074F7B0 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DB52454EB0B0074F7B0 /* UserInteractor.swift */; };
 		A8477DB82454EB290074F7B0 /* UserPresenterOutConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DB72454EB290074F7B0 /* UserPresenterOutConnection.swift */; };
+		A8477DBC2454EC1A0074F7B0 /* SaveContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DBB2454EC1A0074F7B0 /* SaveContainer.swift */; };
+		A8477DBE2454EC370074F7B0 /* UserContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DBD2454EC370074F7B0 /* UserContainer.swift */; };
 		A873967F2454A19B00C46FCD /* SberRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873967E2454A19B00C46FCD /* SberRouter.swift */; };
 		A87396812454A1AD00C46FCD /* SberRouterPullableServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87396802454A1AD00C46FCD /* SberRouterPullableServiceType.swift */; };
 		A87396842454AB5500C46FCD /* SaveNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87396832454AB5500C46FCD /* SaveNewsViewController.swift */; };
@@ -142,6 +144,8 @@
 		A8477DB32454EAF10074F7B0 /* UserViewOutConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewOutConnection.swift; sourceTree = "<group>"; };
 		A8477DB52454EB0B0074F7B0 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
 		A8477DB72454EB290074F7B0 /* UserPresenterOutConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenterOutConnection.swift; sourceTree = "<group>"; };
+		A8477DBB2454EC1A0074F7B0 /* SaveContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveContainer.swift; sourceTree = "<group>"; };
+		A8477DBD2454EC370074F7B0 /* UserContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContainer.swift; sourceTree = "<group>"; };
 		A873967E2454A19B00C46FCD /* SberRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SberRouter.swift; sourceTree = "<group>"; };
 		A87396802454A1AD00C46FCD /* SberRouterPullableServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SberRouterPullableServiceType.swift; sourceTree = "<group>"; };
 		A87396832454AB5500C46FCD /* SaveNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNewsViewController.swift; sourceTree = "<group>"; };
@@ -464,6 +468,22 @@
 			path = " DetailNewsVC";
 			sourceTree = "<group>";
 		};
+		A8477DB92454EBD00074F7B0 /* SaveContainer */ = {
+			isa = PBXGroup;
+			children = (
+				A8477DBB2454EC1A0074F7B0 /* SaveContainer.swift */,
+			);
+			path = SaveContainer;
+			sourceTree = "<group>";
+		};
+		A8477DBA2454EBE00074F7B0 /* UserContainer */ = {
+			isa = PBXGroup;
+			children = (
+				A8477DBD2454EC370074F7B0 /* UserContainer.swift */,
+			);
+			path = UserContainer;
+			sourceTree = "<group>";
+		};
 		A87396822454AB2600C46FCD /* SaveNewsVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +493,7 @@
 				A8477DA72454EA3C0074F7B0 /* SaveNewsPresenter.swift */,
 				A8477DA52454EA2E0074F7B0 /* SaveNewsViewInConnection.swift */,
 				A87396832454AB5500C46FCD /* SaveNewsViewController.swift */,
+				A8477DB92454EBD00074F7B0 /* SaveContainer */,
 			);
 			path = SaveNewsVC;
 			sourceTree = "<group>";
@@ -480,12 +501,13 @@
 		A87396852454AB7B00C46FCD /* UserVC */ = {
 			isa = PBXGroup;
 			children = (
-				A8477DB52454EB0B0074F7B0 /* UserInteractor.swift */,
 				A8477DB72454EB290074F7B0 /* UserPresenterOutConnection.swift */,
+				A8477DB52454EB0B0074F7B0 /* UserInteractor.swift */,
 				A8477DB32454EAF10074F7B0 /* UserViewOutConnection.swift */,
 				A8477DB12454EADC0074F7B0 /* UserPresenter.swift */,
 				A8477DAF2454EAC10074F7B0 /* UserViewInConnection.swift */,
 				A87396862454AB9A00C46FCD /* UserViewController.swift */,
+				A8477DBA2454EBE00074F7B0 /* UserContainer */,
 			);
 			path = UserVC;
 			sourceTree = "<group>";
@@ -739,6 +761,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8477DBC2454EC1A0074F7B0 /* SaveContainer.swift in Sources */,
 				A83C057F245392BF00FF8702 /* Extensions+UIButton.swift in Sources */,
 				A8477DB82454EB290074F7B0 /* UserPresenterOutConnection.swift in Sources */,
 				A8477DA62454EA2E0074F7B0 /* SaveNewsViewInConnection.swift in Sources */,
@@ -754,6 +777,7 @@
 				A83C0576245380F600FF8702 /* PullableService.swift in Sources */,
 				A8477D9A2454E84E0074F7B0 /* DetailNewsViewController.swift in Sources */,
 				A83C056E24537EA200FF8702 /* RouterContainer.swift in Sources */,
+				A8477DBE2454EC370074F7B0 /* UserContainer.swift in Sources */,
 				A83C051224536E4000FF8702 /* AppDelegate.swift in Sources */,
 				A83C055A2453767F00FF8702 /* StartViewOutConnection.swift in Sources */,
 				A8477DA42454E9EF0074F7B0 /* DetailNewsPresenterOutConnection.swift in Sources */,

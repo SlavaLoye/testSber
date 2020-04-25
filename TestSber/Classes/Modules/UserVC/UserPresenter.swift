@@ -6,4 +6,20 @@
 //  Copyright © 2020 SberTestViper. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class UserPresenter: NSObject, UserViewOutConnection {
+	
+	// MARK: - view
+	weak var view: UserViewInConnection?
+	
+	// MARK: - interactor
+	var interactor: UserPresenterOutConnection?
+	
+	// MARK: - viewDidLoad
+	func viewDidLoad() {
+		
+	}
+}
+
+

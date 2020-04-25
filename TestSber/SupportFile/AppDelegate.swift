@@ -35,5 +35,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		startRouter?.root(&window)
 	}
 	
+	private func startObservingCartCount() {
+//    let dataProviderService: CartDataProviderService? = mainContainer?.resolve()
+//    let startContainer: StartContainer? = mainContainer?.subContainers.first(where: { (container) -> Bool in
+//      return container is StartContainer
+//    }) as? StartContainer
+//
+//    dataProviderService?.countChanged = { count in
+//      let tabBarController = startContainer?.nextViewController as? UITabBarController
+//      if count == 0 {
+//        tabBarController?.tabBar.items?[2].badgeValue = nil
+//      } else {
+//        tabBarController?.tabBar.items?[2].badgeValue = "\(count)"
+//		}
+//      }
+   }
 }
 

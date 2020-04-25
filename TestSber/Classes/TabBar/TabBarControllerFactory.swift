@@ -8,8 +8,7 @@
 
 import UIKit
 
-// Фабрика TabBar
-
+// Fabric TabBar
 class TabBarControllerFactory {
   enum Mode {
     case main
@@ -28,18 +27,34 @@ class TabBarControllerFactory {
     return mainTabBarController()
   }
   
+  // Fabric TabBar
   private func mainTabBarController() -> UIViewController {
-    let startViewController: NewsViewController = container.resolve()!
+    let newsViewController: NewsViewController = container.resolve()!
+	let userViewController: UserViewController = container.resolve()!
+	let saveNewsViewController: SaveNewsViewController = container.resolve()!
 	let tabBarController = UITabBarController()
-	tabBarController.tabBar.backgroundColor = UIColor.green
+	tabBarController.tabBar.backgroundColor = UIColor.white
 	tabBarController.tabBar.isTranslucent = false
-	///
-	tabBarController.tabBar.layer.shadowColor = UIColor.black.cgColor
+	if #available(iOS 13, *) {
+        let appearance = UITabBarAppearance()
+        appearance.backgroundColor = .white
+        appearance.shadowImage = UIImage()
+        appearance.shadowColor = .white
+
+        appearance.stackedLayoutAppearance.normal.iconColor = .black
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+
+        appearance.stackedLayoutAppearance.selected.iconColor = #colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.1568627451, alpha: 1)
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.1568627451, alpha: 1)]
+
+        tabBarController.tabBar.standardAppearance = appearance
+
+    }
 	tabBarController.tabBar.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
 	tabBarController.tabBar.layer.shadowRadius = 5
 	tabBarController.tabBar.layer.shadowOpacity = 0.1
 	tabBarController.tabBar.layer.masksToBounds = false
-    let viewControllers = [startViewController].map {
+    let viewControllers = [newsViewController, saveNewsViewController, userViewController].map {
       UINavigationController.init(rootViewController: $0)
     }
     tabBarController.setViewControllers(viewControllers, animated: true)

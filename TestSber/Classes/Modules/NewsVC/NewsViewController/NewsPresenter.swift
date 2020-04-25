@@ -10,9 +10,13 @@ import UIKit
 
 class NewsPresenter: NSObject, NewsViewOutConnection {
 	
+	// MARK: - view
 	weak var view: NewsViewInConnection?
+	
+	// MARK: - interactor
 	var interactor: NewsPresenterOutConnection?
 	
+	// MARK: - viewDidLoad
 	func viewDidLoad() {
 		
 	}

@@ -9,7 +9,6 @@
 import UIKit
 import Swinject
 
-
 class NewsContainer: Containerable {
 	
 	let container: Container
@@ -45,42 +44,4 @@ class NewsContainer: Containerable {
 			return interactor
 		}.implements(NewsPresenterOutConnection.self)
 	}
-
 }
-//
-//import UIKit
-//import Swinject
-//
-//class HomeUserContainer: Containerable {
-//let container: Container
-//
-//var nextViewController: UIViewController!
-//required init(container: Container) {
-//  self.container = container
-//}
-//
-//func register() {
-//
-//  // MARK: HomeUserViewController
-//  container.register(HomeUserViewController.self) { (resolver) -> HomeUserViewController in
-//    let vc = HomeUserViewController()
-//    vc.presenter = resolver.resolve(HomeUserViewOutConnection.self)
-//    return vc
-//  }.implements(HomeUserViewInConnection.self)
-//
-//  // MARK: HomeUserPresenter
-//  container.register(HomeUserPresenter.self) { (resolver) -> HomeUserPresenter in
-//    let presenter = HomeUserPresenter()
-//    presenter.interactor = resolver.resolve(HomeUserPresenterOutConnection.self)
-//    return presenter
-//  }.initCompleted { (resolver, presenter) in
-//      presenter.view = self.resolve()!
-//  }.implements(HomeUserViewOutConnection.self)
-//
-//  // MARK: HomeUserInteractor
-//  container.register(HomeUserInteractor.self) { (resolver) -> HomeUserInteractor in
-//    let interactor = HomeUserInteractor()
-//    return interactor
-//  }.implements(HomeUserPresenterOutConnection.self)
-// }
-//}

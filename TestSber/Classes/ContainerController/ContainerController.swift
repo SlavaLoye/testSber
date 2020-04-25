@@ -16,7 +16,9 @@ class ContainerController {
 	let containerTypes: [Containerable.Type] = [
 		StartContainer.self,
 		RouterContainer.self,
-		NewsContainer.self
+		NewsContainer.self,
+		UserContainer.self,
+		SaveContainer.self
 	]
 	
 	// MARK: fetchSubcontainer

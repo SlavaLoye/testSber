@@ -33,6 +33,12 @@ class StartViewController: UIViewController, StartViewInConnection {
 		addButton()
 	}
 	
+	// MARK: viewWillAppear
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		openButton.pulsate()
+	}
+	
 	// MARK: addTarget
 	private func addTarget()  {
 		openButton.addTarget(self, action: #selector(openButtonAction), for: .touchUpInside)
@@ -43,7 +49,6 @@ class StartViewController: UIViewController, StartViewInConnection {
 		presenter?.selectButtonClicked()
 		print("selectButtonClicked")
 	}
-	
 	
 	// MARK: - addImages
 	private func addImages() {

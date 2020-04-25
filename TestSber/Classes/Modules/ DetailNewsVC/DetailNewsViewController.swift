@@ -9,10 +9,9 @@
 import UIKit
 
 class DetailNewsViewController: UIViewController {
-
+	
+	// MARK: - presenter
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
 }
