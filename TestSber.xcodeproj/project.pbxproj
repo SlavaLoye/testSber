@@ -59,6 +59,8 @@
 		A8477DB82454EB290074F7B0 /* UserPresenterOutConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DB72454EB290074F7B0 /* UserPresenterOutConnection.swift */; };
 		A8477DBC2454EC1A0074F7B0 /* SaveContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DBB2454EC1A0074F7B0 /* SaveContainer.swift */; };
 		A8477DBE2454EC370074F7B0 /* UserContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DBD2454EC370074F7B0 /* UserContainer.swift */; };
+		A8477DC12455010A0074F7B0 /* NotNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DC02455010A0074F7B0 /* NotNewsView.swift */; };
+		A8477DC42455020C0074F7B0 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DC32455020C0074F7B0 /* NibLoadable.swift */; };
 		A873967F2454A19B00C46FCD /* SberRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873967E2454A19B00C46FCD /* SberRouter.swift */; };
 		A87396812454A1AD00C46FCD /* SberRouterPullableServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87396802454A1AD00C46FCD /* SberRouterPullableServiceType.swift */; };
 		A87396842454AB5500C46FCD /* SaveNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87396832454AB5500C46FCD /* SaveNewsViewController.swift */; };
@@ -146,6 +148,8 @@
 		A8477DB72454EB290074F7B0 /* UserPresenterOutConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenterOutConnection.swift; sourceTree = "<group>"; };
 		A8477DBB2454EC1A0074F7B0 /* SaveContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveContainer.swift; sourceTree = "<group>"; };
 		A8477DBD2454EC370074F7B0 /* UserContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContainer.swift; sourceTree = "<group>"; };
+		A8477DC02455010A0074F7B0 /* NotNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotNewsView.swift; sourceTree = "<group>"; };
+		A8477DC32455020C0074F7B0 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		A873967E2454A19B00C46FCD /* SberRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SberRouter.swift; sourceTree = "<group>"; };
 		A87396802454A1AD00C46FCD /* SberRouterPullableServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SberRouterPullableServiceType.swift; sourceTree = "<group>"; };
 		A87396832454AB5500C46FCD /* SaveNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNewsViewController.swift; sourceTree = "<group>"; };
@@ -382,6 +386,7 @@
 		A83C05682453788400FF8702 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				A8477DC2245501F50074F7B0 /* NibLoadable */,
 				A83C05952453AB6B00FF8702 /* Lifecycable */,
 				A83C0574245380E400FF8702 /* PullableService */,
 				A83C05692453789700FF8702 /* Container */,
@@ -484,6 +489,22 @@
 			path = UserContainer;
 			sourceTree = "<group>";
 		};
+		A8477DBF245500C80074F7B0 /* NotNews */ = {
+			isa = PBXGroup;
+			children = (
+				A8477DC02455010A0074F7B0 /* NotNewsView.swift */,
+			);
+			path = NotNews;
+			sourceTree = "<group>";
+		};
+		A8477DC2245501F50074F7B0 /* NibLoadable */ = {
+			isa = PBXGroup;
+			children = (
+				A8477DC32455020C0074F7B0 /* NibLoadable.swift */,
+			);
+			path = NibLoadable;
+			sourceTree = "<group>";
+		};
 		A87396822454AB2600C46FCD /* SaveNewsVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -494,6 +515,7 @@
 				A8477DA52454EA2E0074F7B0 /* SaveNewsViewInConnection.swift */,
 				A87396832454AB5500C46FCD /* SaveNewsViewController.swift */,
 				A8477DB92454EBD00074F7B0 /* SaveContainer */,
+				A8477DBF245500C80074F7B0 /* NotNews */,
 			);
 			path = SaveNewsVC;
 			sourceTree = "<group>";
@@ -779,6 +801,7 @@
 				A83C056E24537EA200FF8702 /* RouterContainer.swift in Sources */,
 				A8477DBE2454EC370074F7B0 /* UserContainer.swift in Sources */,
 				A83C051224536E4000FF8702 /* AppDelegate.swift in Sources */,
+				A8477DC42455020C0074F7B0 /* NibLoadable.swift in Sources */,
 				A83C055A2453767F00FF8702 /* StartViewOutConnection.swift in Sources */,
 				A8477DA42454E9EF0074F7B0 /* DetailNewsPresenterOutConnection.swift in Sources */,
 				A83C05522453757500FF8702 /* StartRouter.swift in Sources */,
@@ -790,6 +813,7 @@
 				A8477D9E2454E9B50074F7B0 /* DetailNewsPresenter.swift in Sources */,
 				A87396872454AB9A00C46FCD /* UserViewController.swift in Sources */,
 				A83C05602453779600FF8702 /* StartContainer.swift in Sources */,
+				A8477DC12455010A0074F7B0 /* NotNewsView.swift in Sources */,
 				A83C055E245376A900FF8702 /* StartPresenterOutConnection.swift in Sources */,
 				A8477DB62454EB0B0074F7B0 /* UserInteractor.swift in Sources */,
 				A8477DAA2454EA4C0074F7B0 /* SaveNewsViewOutConnection.swift in Sources */,

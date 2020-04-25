@@ -9,6 +9,7 @@
 import Swinject
 
 protocol Containerable: class {
+	
   var container: Container { get }
   init(container: Container)
   func register()
@@ -16,6 +17,7 @@ protocol Containerable: class {
   var controller: ContainerController? { get set }
 }
 
+//MARK: -  Arguments
 extension Containerable {
   func get<T>(_ type: T.Type) -> T? {
     return container.resolve(type)
