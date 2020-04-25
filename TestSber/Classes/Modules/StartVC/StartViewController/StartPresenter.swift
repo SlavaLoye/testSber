@@ -12,7 +12,7 @@ class StartPresenter: NSObject, StartViewOutConnection {
 	
 	// MARK: - router
 	private let router: StartRouter?
-	var startRouter: StartRouters?
+	//var startRouter: StartRouters?
 	
 	// MARK: - interactor
 	private let interactor: StartPresenterOutConnection?
@@ -21,11 +21,9 @@ class StartPresenter: NSObject, StartViewOutConnection {
 	weak var view: StartViewInConnection?
 
 	// MARK: - init
-	init(router: StartRouter, startRouter: StartRouters,
-		 interactor: StartPresenterOutConnection) {
+	init(router: StartRouter, interactor: StartPresenterOutConnection) {
 		self.router = router
 		self.interactor = interactor
-		self.startRouter = startRouter
 	}
 	
 	func viewDidLoad() {

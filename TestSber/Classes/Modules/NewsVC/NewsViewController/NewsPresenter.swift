@@ -15,5 +15,6 @@ class NewsPresenter: NSObject, NewsViewOutConnection {
 	
 	func viewDidLoad() {
 		
-	}	
+	}
+	
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2020 SberTestViper. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol NewsViewOutConnection: class, Lifecycable {
 	

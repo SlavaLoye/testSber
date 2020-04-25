@@ -25,8 +25,8 @@ class RouterContainer: Containerable {
 	
 	//MARK: - register
 	func register() {
-		container.register(StartRouters.self) { (resolver) -> StartRouters in
-			return StartRouters(pullableService: PullableService(container: self))
+		container.register(SberRouter.self) { (resolver) -> SberRouter in
+			return SberRouter(pullableService: PullableService(container: self))
 		}
 	}
 }

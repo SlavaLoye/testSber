@@ -10,8 +10,13 @@ import UIKit
 
 class StartViewController: UIViewController, StartViewInConnection {
 	
-	// MARK: presenter
-	var presenter: StartPresenter?
+	var presenter: StartPresenter!
+	
+	convenience init(presenter: StartPresenter?) {
+	  self.init()
+	  self.presenter = presenter
+	}
+
 	
 	// MARK: private var
 	private var imageLogo: UIImageView = UIImageView()
@@ -22,7 +27,6 @@ class StartViewController: UIViewController, StartViewInConnection {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .white
-		presenter?.viewDidLoad()
 		addTarget()
 		addImages()
 		addLabel()

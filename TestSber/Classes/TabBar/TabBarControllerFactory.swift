@@ -29,9 +29,16 @@ class TabBarControllerFactory {
   }
   
   private func mainTabBarController() -> UIViewController {
-    let startViewController: StartViewController = container.resolve()!
-    let tabBarController = UITabBarController()
-    tabBarController.tabBar.barStyle = .black
+    let startViewController: NewsViewController = container.resolve()!
+	let tabBarController = UITabBarController()
+	tabBarController.tabBar.backgroundColor = UIColor.green
+	tabBarController.tabBar.isTranslucent = false
+	///
+	tabBarController.tabBar.layer.shadowColor = UIColor.black.cgColor
+	tabBarController.tabBar.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+	tabBarController.tabBar.layer.shadowRadius = 5
+	tabBarController.tabBar.layer.shadowOpacity = 0.1
+	tabBarController.tabBar.layer.masksToBounds = false
     let viewControllers = [startViewController].map {
       UINavigationController.init(rootViewController: $0)
     }

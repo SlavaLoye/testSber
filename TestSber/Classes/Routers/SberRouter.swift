@@ -1,15 +1,16 @@
 //
-//  StartRouter.swift
+//  SberRouter.swift
 //  TestSber
 //
-//  Created by Viacheslav Loie on 24.04.2020.
+//  Created by Viacheslav Loie on 25.04.2020.
 //  Copyright © 2020 SberTestViper. All rights reserved.
 //
+
 
 import UIKit
 import PanModal
 
-class StartRouters {
+class SberRouter {
 	class Resolver<T> {
 		private(set) var resolvingClosure: ItemClosure<T>?
 		
@@ -18,7 +19,7 @@ class StartRouters {
 		}
 	}
 	//MARK: typealias RouterType
-	typealias RouterType = StartRouterPullableServiceType
+	typealias RouterType = HomeUserPullableServiceType
 	private var pullableService: PullableService<UIViewController>?
 	private var resolver: Any? // static typing prohibits to use own Resolver<T> class here, we have to cast
 	init(pullableService: PullableService<UIViewController>) {
@@ -43,10 +44,15 @@ class StartRouters {
 					nc.modalPresentationStyle = .fullScreen
 					sourceViewController?.present(nc, animated: true, completion: nil)
 			}
+			
+			//MARK: HomeUserViewController
 			case .newsViewController:
-			if let vc: UIViewController? = pullableService?.container?.get(NewsViewController.self) {
-			  sourceViewController?.navigationController?.pushViewController(vc!, animated: true)
+				if let vc: UIViewController = pullableService?.container?.get(NewsViewController.self) {
+					let nc = UINavigationController(rootViewController: vc)
+					nc.modalPresentationStyle = .fullScreen
+					sourceViewController?.present(nc, animated: true, completion: nil)
 			}
 		}
 	}
 }
+

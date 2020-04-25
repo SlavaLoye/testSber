@@ -8,13 +8,10 @@
 
 import Foundation
 
-
 class StartInteractor: StartPresenterOutConnection {
 	
-  // MARK: - presenter
   weak var presenter: StartPresenter!
-  
-  // MARK: - selectButtonClicked
+	
   func selectButtonClicked() {
     presenter.openNextViewController()
   }
