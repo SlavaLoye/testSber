@@ -66,7 +66,7 @@ class StartViewController: UIViewController, StartViewInConnection {
 		titleLabel.textAlignment = .center
 		titleLabel.text = NSLocalizedString("title.title", comment: "Сбербанк")
 		titleLabel.font = UIFont.bold38
-		titleLabel.textColor = #colorLiteral(red: 0.09711175412, green: 0.626296401, blue: 0.1582792997, alpha: 1)
+		titleLabel.textColor = #colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.1568627451, alpha: 1)
 	}
 	
 	// MARK: - addButton

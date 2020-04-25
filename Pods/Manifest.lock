@@ -4,6 +4,11 @@ PODS:
   - Locksmith (4.0.0)
   - PanModal (1.2.7)
   - PureLayout (3.1.5)
+  - Realm (4.4.1):
+    - Realm/Headers (= 4.4.1)
+  - Realm/Headers (4.4.1)
+  - RealmSwift (4.4.1):
+    - Realm (= 4.4.1)
   - SwiftyJSON (5.0.0)
   - Swinject (2.7.1)
   - SwinjectAutoregistration (2.7.0):
@@ -15,6 +20,7 @@ DEPENDENCIES:
   - Locksmith
   - PanModal
   - PureLayout
+  - RealmSwift
   - SwiftyJSON
   - Swinject
   - SwinjectAutoregistration
@@ -26,6 +32,8 @@ SPEC REPOS:
     - Locksmith
     - PanModal
     - PureLayout
+    - Realm
+    - RealmSwift
     - SwiftyJSON
     - Swinject
     - SwinjectAutoregistration
@@ -36,10 +44,12 @@ SPEC CHECKSUMS:
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
+  Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
+  RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectAutoregistration: 330f5012642a8b5c89a8a4adb0c5e52df07382c0
 
-PODFILE CHECKSUM: c679935db047c1a8f1e7b14b991924b259ef6482
+PODFILE CHECKSUM: e470c862327c6f517a62a20d0865b5af98d71f0d
 
 COCOAPODS: 1.9.1

@@ -6,8 +6,6 @@ target 'TestSber' do
   use_frameworks!
 
   # Pods for TestSber
-
-  # Pods for Memorial
   pod 'Swinject'
   pod 'SwinjectAutoregistration'
   pod 'Alamofire'
@@ -16,6 +14,7 @@ target 'TestSber' do
   pod 'PanModal'
   pod 'ARSLineProgress', '~> 3.1'
   pod 'PureLayout'
+  pod 'RealmSwift'
 
   target 'TestSberTests' do
     inherit! :search_paths

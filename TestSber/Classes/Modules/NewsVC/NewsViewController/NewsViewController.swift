@@ -26,9 +26,9 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 	  // MARK: - init
 	  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-		tabBarItem = UITabBarItem(title: "", image: UIImage(named: "money"), tag: 0)
-		tabBarItem.image = UIImage(named: "money")?.withRenderingMode(.alwaysOriginal)
-		tabBarItem.selectedImage = UIImage(named: "money")?.withRenderingMode(.alwaysOriginal)
+		tabBarItem = UITabBarItem(title: "Главная", image: UIImage(named: "home-run"), tag: 0)
+		tabBarItem.image = UIImage(named: "home-run")?.withRenderingMode(.alwaysOriginal)
+		tabBarItem.selectedImage = UIImage(named: "home-run")?.withRenderingMode(.alwaysOriginal)
 	  }
 	  
 	  required init?(coder aDecoder: NSCoder) {
