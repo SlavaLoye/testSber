@@ -14,10 +14,14 @@ extension UIFont {
 		return UIFont.init(name: "SFCompactText-Semibold", size: 15) ?? UIFont.systemFont(ofSize: 15, weight: .semibold)
 	}
 	
+	
 	class var semibold22: UIFont {
 		return UIFont.init(name: "SFCompactText-Semibold", size: 22) ?? UIFont.systemFont(ofSize: 22, weight: .semibold)
 	}
 	
+	class var semibold20: UIFont {
+		return UIFont.init(name: "SFCompactText-Semibold", size: 20) ?? UIFont.systemFont(ofSize: 20, weight: .semibold)
+	}
 	class var bold9: UIFont {
 		return UIFont.init(name: "SFCompactText-Bold", size: 9) ?? UIFont.systemFont(ofSize: 9, weight: .bold)
 	}

@@ -43,8 +43,9 @@ class SaveNewsViewController: UIViewController, SaveNewsViewInConnection {
 
 // MARK: - setupNavBar()
 extension SaveNewsViewController {
-  func setupNavBar() {
-    navigationController?.setNavigationBarHidden(true, animated: true)
-  }
+	private func setupNavBar() {
+		navigationController?.setNavigationBarHidden(false, animated: true)
+		title = "Новости"
+		navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont.semibold20, NSAttributedString.Key.foregroundColor: UIColor.sberGreen]
+	}
 }
-

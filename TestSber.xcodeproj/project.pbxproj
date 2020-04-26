@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		4F52D7F56CDE7561543427DD /* Pods_TestSber_TestSberUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0F1CF1DECC727CD3490328 /* Pods_TestSber_TestSberUITests.framework */; };
 		976BB131FC984996353BE14E /* Pods_TestSber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB5F70C4A832517853B24D2 /* Pods_TestSber.framework */; };
+		A835E5442455AEC9009A163C /* Extensions+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835E5432455AEC9009A163C /* Extensions+UITableView.swift */; };
+		A835E5462455AF00009A163C /* Extension+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835E5452455AF00009A163C /* Extension+UICollectionView.swift */; };
+		A835E5482455AFF3009A163C /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835E5472455AFF3009A163C /* NewsCollectionViewCell.swift */; };
+		A835E54A2455C06B009A163C /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835E5492455C06B009A163C /* SelfConfiguringCell.swift */; };
+		A835E54D2455C773009A163C /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A835E54C2455C773009A163C /* Extension+UIColor.swift */; };
 		A83C051224536E4000FF8702 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C051124536E4000FF8702 /* AppDelegate.swift */; };
 		A83C051B24536E4300FF8702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A83C051A24536E4300FF8702 /* Assets.xcassets */; };
 		A83C051E24536E4300FF8702 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83C051C24536E4300FF8702 /* LaunchScreen.storyboard */; };
@@ -92,6 +97,11 @@
 		2CA8B0AB7DAEC51C219160FF /* Pods-TestSber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSber.debug.xcconfig"; path = "Target Support Files/Pods-TestSber/Pods-TestSber.debug.xcconfig"; sourceTree = "<group>"; };
 		5AB5F70C4A832517853B24D2 /* Pods_TestSber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestSber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C171AF3BE4E59AE4680954 /* Pods-TestSber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSber.release.xcconfig"; path = "Target Support Files/Pods-TestSber/Pods-TestSber.release.xcconfig"; sourceTree = "<group>"; };
+		A835E5432455AEC9009A163C /* Extensions+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UITableView.swift"; sourceTree = "<group>"; };
+		A835E5452455AF00009A163C /* Extension+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UICollectionView.swift"; sourceTree = "<group>"; };
+		A835E5472455AFF3009A163C /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A835E5492455C06B009A163C /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
+		A835E54C2455C773009A163C /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		A83C050E24536E4000FF8702 /* TestSber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83C051124536E4000FF8702 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A83C051A24536E4300FF8702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +210,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A835E5402455AC9C009A163C /* NewsCell */ = {
+			isa = PBXGroup;
+			children = (
+				A835E5472455AFF3009A163C /* NewsCollectionViewCell.swift */,
+			);
+			path = NewsCell;
+			sourceTree = "<group>";
+		};
+		A835E54B2455C080009A163C /* SelfConfingureCell */ = {
+			isa = PBXGroup;
+			children = (
+				A835E5492455C06B009A163C /* SelfConfiguringCell.swift */,
+			);
+			path = SelfConfingureCell;
+			sourceTree = "<group>";
+		};
 		A83C050524536E4000FF8702 = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +329,7 @@
 			children = (
 				A83C054A2453745600FF8702 /* NewsViewController */,
 				A83C054B2453747000FF8702 /* NewsContainer */,
+				A835E5402455AC9C009A163C /* NewsCell */,
 			);
 			path = NewsVC;
 			sourceTree = "<group>";
@@ -390,6 +417,7 @@
 				A83C05952453AB6B00FF8702 /* Lifecycable */,
 				A83C0574245380E400FF8702 /* PullableService */,
 				A83C05692453789700FF8702 /* Container */,
+				A835E54B2455C080009A163C /* SelfConfingureCell */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -448,6 +476,9 @@
 			children = (
 				A83C057E245392BF00FF8702 /* Extensions+UIButton.swift */,
 				A83C05832453973200FF8702 /* Etensions+UIFont.swift */,
+				A835E5432455AEC9009A163C /* Extensions+UITableView.swift */,
+				A835E5452455AF00009A163C /* Extension+UICollectionView.swift */,
+				A835E54C2455C773009A163C /* Extension+UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -797,6 +828,7 @@
 				A83C055C2453769100FF8702 /* StartInteractor.swift in Sources */,
 				A8477DA22454E9DC0074F7B0 /* DetailNewsInteractor.swift in Sources */,
 				A83C0576245380F600FF8702 /* PullableService.swift in Sources */,
+				A835E5482455AFF3009A163C /* NewsCollectionViewCell.swift in Sources */,
 				A8477D9A2454E84E0074F7B0 /* DetailNewsViewController.swift in Sources */,
 				A83C056E24537EA200FF8702 /* RouterContainer.swift in Sources */,
 				A8477DBE2454EC370074F7B0 /* UserContainer.swift in Sources */,
@@ -805,6 +837,7 @@
 				A83C055A2453767F00FF8702 /* StartViewOutConnection.swift in Sources */,
 				A8477DA42454E9EF0074F7B0 /* DetailNewsPresenterOutConnection.swift in Sources */,
 				A83C05522453757500FF8702 /* StartRouter.swift in Sources */,
+				A835E54D2455C773009A163C /* Extension+UIColor.swift in Sources */,
 				A83C05972453AB7A00FF8702 /* Lifecycable.swift in Sources */,
 				A83C05792453838400FF8702 /* Completions.swift in Sources */,
 				A8477DAC2454EA750074F7B0 /* SaveNewsInteractor.swift in Sources */,
@@ -821,6 +854,7 @@
 				A8477DB02454EAC10074F7B0 /* UserViewInConnection.swift in Sources */,
 				A8477D9C2454E9A80074F7B0 /* DetailNewsViewInConnection.swift in Sources */,
 				A83C056B245378AD00FF8702 /* Containerable.swift in Sources */,
+				A835E5442455AEC9009A163C /* Extensions+UITableView.swift in Sources */,
 				A83C05882453A7DD00FF8702 /* NewsViewController.swift in Sources */,
 				A83C05902453A89700FF8702 /* NewsInteractor.swift in Sources */,
 				A83C0586245398EE00FF8702 /* StartPresenterView.swift in Sources */,
@@ -829,10 +863,12 @@
 				A83C05942453A97C00FF8702 /* NewsContainer.swift in Sources */,
 				A83C05562453763300FF8702 /* StartViewInConnection.swift in Sources */,
 				A83C05632453780000FF8702 /* ContainerController.swift in Sources */,
+				A835E54A2455C06B009A163C /* SelfConfiguringCell.swift in Sources */,
 				A8477DAE2454EA890074F7B0 /* SaveNewsPresenterOutConnection.swift in Sources */,
 				A83C058E2453A86D00FF8702 /* NewsViewOutConnection.swift in Sources */,
 				A83C05672453786100FF8702 /* MainContainer.swift in Sources */,
 				A873967F2454A19B00C46FCD /* SberRouter.swift in Sources */,
+				A835E5462455AF00009A163C /* Extension+UICollectionView.swift in Sources */,
 				A83C05582453764300FF8702 /* StartPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,16 +10,20 @@ import UIKit
 
 extension UIButton {
 	
+	// MARK: - roundHeightWidthButton
 	func roundHeightWidthButton() {
 		self.layer.cornerRadius = self.bounds.height / 2
 		self.contentMode = .scaleAspectFill
 		self.clipsToBounds = true
 	}
 	
+	// MARK: - roundedButton _ CGFloat
 	func roundedButton(cornerRadius: CGFloat)  {
 		self.layer.cornerRadius = cornerRadius
 		self.layer.masksToBounds = true
 	}
+	
+	// MARK: - roundedButton _ CGFloat
 	func roundedButtonYellow(cornerRadius: CGFloat)  {
 		self.layer.cornerRadius = cornerRadius
 		self.layer.masksToBounds = true
@@ -29,6 +33,8 @@ extension UIButton {
 }
 
 extension UIButton {
+	
+	// MARK: - pulsate _ Animation
 	func pulsate() {
 		let pulse = CASpringAnimation(keyPath: "transform.scale")
 		pulse.duration = 0.4

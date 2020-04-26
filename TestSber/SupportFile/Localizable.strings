@@ -8,6 +8,8 @@
 
 // Labbel
 "title.title" = "Сбербанк";
+"title.descriptionTitle" = "Всегда рядом";
 
 // Button
 "button.authorizationEnter" = "ВОЙТИ";
+"button.newsUser" = "Почитай новости";

@@ -9,13 +9,11 @@
 import UIKit
 
 // MARK: - protocol NibLoadable
-
 protocol NibLoadable: class {
 	static var nib: UINib { get }
 }
 
 // MARK: - extension NibLoadable
-
 extension NibLoadable {
 	static var nib: UINib {
 		return UINib(nibName: name, bundle: Bundle.init(for: self))
@@ -27,7 +25,6 @@ extension NibLoadable {
 }
 
 // MARK: - extension NibLoadable where Self: UIView
-
 extension NibLoadable where Self: UIView {
 	static func loadFromNib() -> Self {
 		guard let view = nib.instantiate(withOwner: nil, options: nil).first as? Self else {

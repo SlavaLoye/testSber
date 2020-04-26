@@ -61,3 +61,18 @@ class TabBarControllerFactory {
     return tabBarController
   }
 }
+
+extension UITabBarController {
+	
+	func selectNews() {
+		selectedIndex = 0
+	}
+	
+	func selectSaveNews() {
+		selectedIndex = 1
+	}
+	
+	func selectUser() {
+		selectedIndex = 2
+	}
+}

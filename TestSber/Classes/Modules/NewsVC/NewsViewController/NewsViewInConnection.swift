@@ -9,5 +9,5 @@
 import UIKit
 
 protocol NewsViewInConnection: class {
-	
+	var collectionView: UICollectionView! { get }
 }

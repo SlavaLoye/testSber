@@ -9,7 +9,7 @@
 import Foundation
 
 protocol UserViewOutConnection: class, Lifecycable {
-	
+	func selectedVC()
 }
 
 
