@@ -67,6 +67,10 @@ extension UIFont {
 		return UIFont.init(name: "SFCompactText-Regular", size: 15) ?? UIFont.systemFont(ofSize: 15, weight: .regular)
 	}
 	
+	class var regular14: UIFont {
+		return UIFont.init(name: "SFCompactText-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .regular)
+	}
+	
 	class var regular12: UIFont {
 		return UIFont.init(name: "SFCompactText-Regular", size: 12) ?? UIFont.systemFont(ofSize: 12, weight: .regular)
 	}
@@ -86,10 +90,7 @@ extension UIFont {
 	class var light22: UIFont {
 		return UIFont.init(name: "SFCompactText-Light", size: 22) ?? UIFont.systemFont(ofSize: 22, weight: .light)
 	}
-	
-	class var regular14: UIFont {
-		return UIFont.systemFont(ofSize: 14.0, weight: .regular)
-	}
+
 	class var regular16: UIFont {
 		return UIFont.systemFont(ofSize: 16.0, weight: .regular)
 	}

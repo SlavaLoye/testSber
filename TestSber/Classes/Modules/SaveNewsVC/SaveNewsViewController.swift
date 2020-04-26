@@ -30,9 +30,9 @@ class SaveNewsViewController: UIViewController, SaveNewsViewInConnection {
 	// MARK: - init
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 	  super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-	  tabBarItem = UITabBarItem(title: "Новости", image: UIImage(named: "listbtn"), tag: 1)
-	  tabBarItem.image = UIImage(named: "listbtn")?.withRenderingMode(.alwaysOriginal)
-	  tabBarItem.selectedImage = UIImage(named: "listbtn")?.withRenderingMode(.alwaysOriginal)
+	  tabBarItem = UITabBarItem(title: "Новости", image: UIImage(systemName: "doc.text.magnifyingglass"), tag: 1)
+		tabBarItem.image = UIImage(systemName: "doc.text.magnifyingglass")?.withRenderingMode(.alwaysOriginal).withTintColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1))
+		tabBarItem.selectedImage = UIImage(systemName: "doc.text.magnifyingglass")?.withRenderingMode(.alwaysOriginal).withTintColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1))
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

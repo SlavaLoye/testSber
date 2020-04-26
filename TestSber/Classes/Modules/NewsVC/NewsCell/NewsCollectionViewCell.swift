@@ -6,41 +6,104 @@
 //  Copyright © 2020 SberTestViper. All rights reserved.
 //
 
+
 import UIKit
 
-class NewsCollectionViewCell: UICollectionViewCell, NibLoadable, SelfConfiguringCell {
+class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 	
+	// MARK: - reuseId
 	static var reuseId: String = "NewsCollectionViewCell"
-	let friendImageView: UIImageView = UIImageView()
-	let backView: UIView = UIView()
+	var widthConstraint: NSLayoutConstraint!
 	
-	override func awakeFromNib() {
-		super.awakeFromNib()
-		addBackView()
-	}
-	func addBackView() {
-		addSubview(backView)
-		backView.translatesAutoresizingMaskIntoConstraints = false
-		backView.backgroundColor = #colorLiteral(red: 0.09620393068, green: 0.5219721198, blue: 0.1340354979, alpha: 1)
-		//		backView.widthAnchor.constraint(equalToConstant: 260).isActive = true
-		//		backView.heightAnchor.constraint(equalToConstant: 170).isActive = true
-		//		backView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-		//		backView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-		backView.frame = self.bounds
-		
+	// MARK: - reuseId
+	let viewNews = UIView()
+	
+	// MARK: - titleLbel
+	let headerLabel = UILabel()
+	
+	// MARK: - titleLbel
+	let newsLabel = UILabel()
+	
+	// MARK: - timerLabel
+	let timerLabel = UILabel()
+	
+	// MARK: - init
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		setupConstraints()
+		addTitleLbel()
+		addHeaderLabel()
+		timerLabelLabel()
+		self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        let screenWidth = UIScreen.main.bounds.size.width
+		widthConstraint?.constant = screenWidth - (2 * 12)
+		headerLabel.text = "Новости"
+		timerLabel.text = "12.03.2020"
 	}
 	
+	// MARK: - setupConstraints
 	func setupConstraints() {
-		addSubview(friendImageView)
-		friendImageView.translatesAutoresizingMaskIntoConstraints = false
-		friendImageView.backgroundColor = .black
-		friendImageView.image = UIImage(named: "robertsportrait")
-		friendImageView.frame = self.bounds
+		addSubview(viewNews)
+		viewNews.layer.borderColor = #colorLiteral(red: 0.03126144037, green: 0.6027181745, blue: 0.05432835966, alpha: 1)
+		viewNews.layer.borderWidth = 1
+		viewNews.layer.cornerRadius = 10
+		viewNews.frame = self.bounds
 	}
 	
+	// MARK: - addTitleLbel
+	func addTitleLbel()  {
+		viewNews.addSubview(newsLabel)
+		newsLabel.translatesAutoresizingMaskIntoConstraints = false
+		newsLabel.textAlignment = .left
+		newsLabel.numberOfLines = 0
+		newsLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+		//titleLabel.backgroundColor = .red
+		newsLabel.font = UIFont.regular14
+		newsLabel.topAnchor.constraint(equalTo: topAnchor, constant: 40).isActive = true
+		newsLabel.widthAnchor.constraint(equalTo: widthAnchor, constant: -30).isActive = true
+		newsLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
+		newsLabel.bottomAnchor.constraint(lessThanOrEqualToSystemSpacingBelow: bottomAnchor, multiplier: -25).isActive = true
+		newsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+	}
+	
+	// MARK: - addHeaderLabel
+	func addHeaderLabel()  {
+		viewNews.addSubview(headerLabel)
+		//headerLabel.translatesAutoresizingMaskIntoConstraints = false
+		headerLabel.textAlignment = .left
+		headerLabel.numberOfLines = 1
+		headerLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+		headerLabel.font = UIFont.regular14
+		headerLabel.frame = CGRect(x: 16, y: 16, width: 100, height: 15)
+	}
+	
+	// MARK: - timerLabelLabel
+	func timerLabelLabel()  {
+		viewNews.addSubview(timerLabel)
+		//headerLabel.translatesAutoresizingMaskIntoConstraints = false
+		timerLabel.textAlignment = .right
+		timerLabel.numberOfLines = 0
+		timerLabel.textColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
+		timerLabel.font = UIFont.regular14
+		timerLabel.frame = CGRect(x: viewNews.bounds.width - 95, y: 16, width: 80, height: 15)
+	}
+	
+	
+	// MARK: - configureCell
+	func configureCell(title: String?)  {
+		if let title = title {
+			newsLabel.text = title
+		}
+	}
+	
+	// MARK: - configure
 	func configure(with intValue: Int) {
 		print("123")
 	}
 	
-    
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
 }

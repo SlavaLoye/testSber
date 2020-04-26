@@ -44,9 +44,9 @@ class UserViewController: UIViewController, UserViewInConnection {
 	// MARK: - init
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 	  super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-	  tabBarItem = UITabBarItem(title: "Аккаунт", image: UIImage(named: "User"), tag: 2)
-	  tabBarItem.image = UIImage(named: "User")?.withRenderingMode(.alwaysOriginal)
-	  tabBarItem.selectedImage = UIImage(named: "User")?.withRenderingMode(.alwaysOriginal)
+	  tabBarItem = UITabBarItem(title: "Аккаунт", image: UIImage(systemName: "person"), tag: 2)
+		tabBarItem.image = UIImage(systemName: "person")?.withRenderingMode(.alwaysOriginal).withTintColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1))
+		tabBarItem.selectedImage = UIImage(systemName: "person")?.withRenderingMode(.alwaysOriginal).withTintColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1))
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -82,9 +82,8 @@ extension UserViewController {
 	}
 }
 
+// MARK: Router (tabBarController)
 extension UserViewController {
-	
-	// MARK: Router (tabBarController)
 	func showHomeVC() {
 		self.tabBarController?.selectNews()
 	}

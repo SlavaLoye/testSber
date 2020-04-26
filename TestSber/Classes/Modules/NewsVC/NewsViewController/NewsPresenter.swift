@@ -10,6 +10,12 @@ import UIKit
 
 class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, UICollectionViewDataSource {
 	
+	let randomTexts = ["Aenean dapibus urna a ullamcorper malesuada. Ut tempor.",
+					   "Sed venenatis ligula massa, a vulputate ipsum fringilla eget. Ut justo erat, facilisis id rhoncus cursus, fringilla at.",
+					   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis nibh metus, elementum tempus libero ornare vitae. Etiam sed leo pretium, consectetur turpis non, dapibus purus. Suspendisse potenti. Ut ut eros nunc. Cras nulla justo, porttitor non sapien at, iaculis.",
+					   "Maecenas pellentesque sed magna in congue. Sed non lacus in mi posuere scelerisque. Aenean.",
+					   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget ex a velit tincidunt sodales. Donec elementum nisi at enim tempus, et rutrum erat semper. Phasellus ultricies est nec finibus."]
+	
 	// MARK: - view
 	weak var view: NewsViewInConnection?
 	
@@ -38,11 +44,16 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	
 	// MARK: - UICollectionViewDataSource
 	
-	//	func numberOfSections(in collectionView: UICollectionView) -> Int {
-	//		return models.count
-	//	}
+	func numberOfSections(in collectionView: UICollectionView) -> Int {
+		return models.count
+	}
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 30
+		
+		let modelCell = models[section]
+		switch modelCell {
+			case .news:
+				return  randomTexts.count
+		}
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -51,17 +62,18 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 		switch modelCell {
 			case .news:
 				if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell {
-					cell.backgroundColor =  #colorLiteral(red: 0.09620393068, green: 0.5219721198, blue: 0.1340354979, alpha: 1)
+					let title = randomTexts[indexPath.row] 
+					cell.configureCell(title: title)
 					return cell
 				}
 				return UICollectionViewCell()
-			}
 		}
 	}
-	
-	// MARK: - CellModel
-	extension NewsPresenter  {
-		fileprivate enum CellModel {
-			case news
-		}
+}
+
+// MARK: - CellModel
+extension NewsPresenter  {
+	fileprivate enum CellModel {
+		case news
+	}
 }
