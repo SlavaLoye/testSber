@@ -10,4 +10,5 @@ import UIKit
 
 protocol NewsViewInConnection where Self: UIViewController {
 	var collectionView: UICollectionView! { get }
+	func reloadData()
 }

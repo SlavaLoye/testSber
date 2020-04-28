@@ -79,6 +79,9 @@
 		A8A9ED25245744DD00D1374A /* XMLParserServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9ED24245744DD00D1374A /* XMLParserServiceImplementation.swift */; };
 		A8A9ED27245754C800D1374A /* XMLParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9ED26245754C800D1374A /* XMLParserService.swift */; };
 		A8AE087324589B5400BC852F /* Extensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE087224589B5400BC852F /* Extensions+String.swift */; };
+		A8AE08762458D1B100BC852F /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE08752458D1B100BC852F /* Loader.swift */; };
+		A8AE08782458D24100BC852F /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE08772458D24100BC852F /* Extensions+UIView.swift */; };
+		A8AE087B2458D2A400BC852F /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE087A2458D2A400BC852F /* Direction.swift */; };
 		C3C54684CA4A7FA2BA62940E /* Pods_TestSberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14137ACEDCC85A1B58A9B119 /* Pods_TestSberTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -182,6 +185,9 @@
 		A8A9ED24245744DD00D1374A /* XMLParserServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserServiceImplementation.swift; sourceTree = "<group>"; };
 		A8A9ED26245754C800D1374A /* XMLParserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserService.swift; sourceTree = "<group>"; };
 		A8AE087224589B5400BC852F /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
+		A8AE08752458D1B100BC852F /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		A8AE08772458D24100BC852F /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
+		A8AE087A2458D2A400BC852F /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		C266EEDB76221B66CBA04C68 /* Pods-TestSber-TestSberUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSber-TestSberUITests.release.xcconfig"; path = "Target Support Files/Pods-TestSber-TestSberUITests/Pods-TestSber-TestSberUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C9CB4621ABA8A4C85F16DE37 /* Pods-TestSber-TestSberUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSber-TestSberUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestSber-TestSberUITests/Pods-TestSber-TestSberUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE31ABE8E7F1AA15E14C4716 /* Pods-TestSberTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSberTests.release.xcconfig"; path = "Target Support Files/Pods-TestSberTests/Pods-TestSberTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -304,6 +310,8 @@
 		A83C0541245370E700FF8702 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A8AE08792458D28800BC852F /* Enum */,
+				A8AE08742458D19100BC852F /* UIElements */,
 				A83C0561245377DA00FF8702 /* ContainerController */,
 				A8A9ED1D2457412B00D1374A /* ConstantURL */,
 				A8A9ED1824573C3B00D1374A /* Services */,
@@ -510,6 +518,7 @@
 				A835E5452455AF00009A163C /* Extension+UICollectionView.swift */,
 				A835E54C2455C773009A163C /* Extension+UIColor.swift */,
 				A8AE087224589B5400BC852F /* Extensions+String.swift */,
+				A8AE08772458D24100BC852F /* Extensions+UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -662,6 +671,22 @@
 				A8A9ED24245744DD00D1374A /* XMLParserServiceImplementation.swift */,
 			);
 			path = XMLParser;
+			sourceTree = "<group>";
+		};
+		A8AE08742458D19100BC852F /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				A8AE08752458D1B100BC852F /* Loader.swift */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		A8AE08792458D28800BC852F /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				A8AE087A2458D2A400BC852F /* Direction.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		BEE900EBE401523A774B52C2 /* Frameworks */ = {
@@ -920,7 +945,9 @@
 				A8A9ED25245744DD00D1374A /* XMLParserServiceImplementation.swift in Sources */,
 				A8477DA62454EA2E0074F7B0 /* SaveNewsViewInConnection.swift in Sources */,
 				A83C05842453973200FF8702 /* Etensions+UIFont.swift in Sources */,
+				A8AE087B2458D2A400BC852F /* Direction.swift in Sources */,
 				A83C057C24538A1A00FF8702 /* TabBarControllerFactory.swift in Sources */,
+				A8AE08762458D1B100BC852F /* Loader.swift in Sources */,
 				A83C058C2453A85400FF8702 /* NewsPresenter.swift in Sources */,
 				A83C0554245375EA00FF8702 /* StartViewController.swift in Sources */,
 				A83D1C332458308B000551F8 /* NetworkServicesContainer.swift in Sources */,
@@ -960,6 +987,7 @@
 				A8477DB02454EAC10074F7B0 /* UserViewInConnection.swift in Sources */,
 				A8477D9C2454E9A80074F7B0 /* DetailNewsViewInConnection.swift in Sources */,
 				A83C056B245378AD00FF8702 /* Containerable.swift in Sources */,
+				A8AE08782458D24100BC852F /* Extensions+UIView.swift in Sources */,
 				A835E5442455AEC9009A163C /* Extensions+UITableView.swift in Sources */,
 				A83C05882453A7DD00FF8702 /* NewsViewController.swift in Sources */,
 				A83C05902453A89700FF8702 /* NewsInteractor.swift in Sources */,

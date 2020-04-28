@@ -10,9 +10,9 @@ import Foundation
 
 class XMLParserServiceImplementation: NSObject, XMLParserDelegate, XMLParserService {
 	
+	//MARK: - private
     private var rssItems: [RSSItem] = []
     private var currentElement = ""
-    
     private var currentTitle: String = "" {
         didSet {
 			currentTitle = currentTitle.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
@@ -29,9 +29,10 @@ class XMLParserServiceImplementation: NSObject, XMLParserDelegate, XMLParserServ
         }
     }
 	
-    private var parserCompletionHandler: (([RSSItem]) -> Void)?
+    private var parserCompletionHandler: ItemClosure<[RSSItem]>?
 	
-	func parseFeed(url: String, completionHandler:  (([RSSItem]) -> Void)?) {
+	//MARK: - parseFeed
+	func parseFeed(url: String, completionHandler:  @escaping ItemClosure<[RSSItem]>){
 		 self.parserCompletionHandler = completionHandler
 
 			   let request = URLRequest(url: URL(string: url)!)
@@ -41,7 +42,6 @@ class XMLParserServiceImplementation: NSObject, XMLParserDelegate, XMLParserServ
 					   if let error = error {
 						   print(error.localizedDescription)
 					   }
-					   
 					   return
 				   }
 				   
@@ -55,7 +55,6 @@ class XMLParserServiceImplementation: NSObject, XMLParserDelegate, XMLParserServ
 	}
     
     // MARK: - XML Parser Delegate
-    
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         currentElement = elementName
         if currentElement == "item" {

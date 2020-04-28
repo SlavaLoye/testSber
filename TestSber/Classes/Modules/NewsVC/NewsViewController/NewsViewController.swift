@@ -33,7 +33,11 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 		presenter?.viewWillAppear()
 		setupNavBar()
 		addRightBarButtonItem()
-		
+	}
+	
+	// MARK: - reloadData
+	func reloadData()  {
+		collectionView.reloadData()
 	}
 	
 	// MARK: - addRightBarButtonItem(Nav)
@@ -84,7 +88,7 @@ extension NewsViewController {
 extension NewsViewController {
 	private func setupCollectionView() {
 		if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-			flowLayout.estimatedItemSize = CGSize(width: 1,height: 1)
+			flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
 		}
 		collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
 		collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

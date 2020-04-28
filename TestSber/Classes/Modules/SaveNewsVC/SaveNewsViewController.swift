@@ -49,7 +49,7 @@ class SaveNewsViewController: UIViewController, SaveNewsViewInConnection {
 	// MARK: - init
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 	  super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-	  tabBarItem = UITabBarItem(title: "Новости", image: UIImage(systemName: "doc.text.magnifyingglass"), tag: 1)
+	  tabBarItem = UITabBarItem(title: "Сохраненные новости", image: UIImage(systemName: "doc.text.magnifyingglass"), tag: 1)
 		tabBarItem.image = UIImage(systemName: "doc.text.magnifyingglass")?.withRenderingMode(.alwaysOriginal).withTintColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1))
 		tabBarItem.selectedImage = UIImage(systemName: "doc.text.magnifyingglass")?.withRenderingMode(.alwaysOriginal).withTintColor(#colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.1568627451, alpha: 1))
 	}
@@ -99,7 +99,7 @@ extension SaveNewsViewController {
 extension SaveNewsViewController {
 	private func setupNavBar() {
 		navigationController?.setNavigationBarHidden(false, animated: true)
-		title = "Новости"
+		title = "Сохраненные новости"
 		navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont.semibold20, NSAttributedString.Key.foregroundColor: UIColor.sberGreen]
 	}
 }

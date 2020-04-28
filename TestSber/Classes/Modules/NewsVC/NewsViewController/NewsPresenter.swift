@@ -24,7 +24,6 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	// MARK: CellModel - realisation
 	private let models: [CellModel] = [.news]
 	
-	
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
 		interactor?.parseFeed(url: TemplateURL.finamRU.rawValue, completionHandler: { [weak self] ( rssItems) in
@@ -38,6 +37,7 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	// MARK: - viewDidLoad
 	func viewWillAppear() {
 		delegating()
+		view?.reloadData()
 	}
 	
 	// MARK: - delegating

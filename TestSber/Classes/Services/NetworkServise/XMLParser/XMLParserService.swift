@@ -9,5 +9,5 @@
 import Foundation
 
 protocol XMLParserService: class {
-	func parseFeed(url: String, completionHandler: (([RSSItem]) -> Void)?)
+	func parseFeed(url: String, completionHandler:  @escaping ItemClosure<[RSSItem]>)
 }
