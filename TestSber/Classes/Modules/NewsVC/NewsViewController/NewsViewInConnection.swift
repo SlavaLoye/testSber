@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol NewsViewInConnection: class {
+protocol NewsViewInConnection where Self: UIViewController {
 	var collectionView: UICollectionView! { get }
 }

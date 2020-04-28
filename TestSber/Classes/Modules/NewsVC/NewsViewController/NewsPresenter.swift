@@ -11,7 +11,7 @@ import UIKit
 class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, UICollectionViewDataSource {
 	
 	// MARK: - view
-	weak var view: NewsViewInConnection!
+	weak var view: NewsViewInConnection?
 	
 	// MARK: - interactor
 	var interactor: NewsPresenterOutConnection?
@@ -27,14 +27,17 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
-		delegating()
 		interactor?.parseFeed(url: TemplateURL.finamRU.rawValue, completionHandler: { [weak self] ( rssItems) in
 			self?.interactor?.rssItems = rssItems
+			OperationQueue.main.addOperation {
+				self?.view?.collectionView.reloadSections(IndexSet(integer: 0))
+            }
 		})
 	}
 	
 	// MARK: - viewDidLoad
 	func viewWillAppear() {
+		delegating()
 	}
 	
 	// MARK: - delegating
@@ -47,7 +50,7 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return models.count
 	}
-
+	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		let modelCell = models[section]
 		switch modelCell {

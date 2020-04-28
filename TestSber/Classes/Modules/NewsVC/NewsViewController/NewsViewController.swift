@@ -33,6 +33,7 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 		presenter?.viewWillAppear()
 		setupNavBar()
 		addRightBarButtonItem()
+		
 	}
 	
 	// MARK: - addRightBarButtonItem(Nav)
@@ -102,7 +103,7 @@ extension NewsViewController {
 											  heightDimension: .fractionalHeight(1.0))
 		let item = NSCollectionLayoutItem(layoutSize: itemSize)
 		let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-											   heightDimension: .fractionalWidth(0.25))
+											   heightDimension: .fractionalWidth(0.70))
 		let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
 		let spacing = CGFloat(10)
 		group.interItemSpacing = .fixed(spacing)

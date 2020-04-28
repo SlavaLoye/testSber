@@ -78,6 +78,7 @@
 		A8A9ED21245743D400D1374A /* RealmServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9ED20245743D400D1374A /* RealmServiceImplementation.swift */; };
 		A8A9ED25245744DD00D1374A /* XMLParserServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9ED24245744DD00D1374A /* XMLParserServiceImplementation.swift */; };
 		A8A9ED27245754C800D1374A /* XMLParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9ED26245754C800D1374A /* XMLParserService.swift */; };
+		A8AE087324589B5400BC852F /* Extensions+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE087224589B5400BC852F /* Extensions+String.swift */; };
 		C3C54684CA4A7FA2BA62940E /* Pods_TestSberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14137ACEDCC85A1B58A9B119 /* Pods_TestSberTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +181,7 @@
 		A8A9ED20245743D400D1374A /* RealmServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServiceImplementation.swift; sourceTree = "<group>"; };
 		A8A9ED24245744DD00D1374A /* XMLParserServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserServiceImplementation.swift; sourceTree = "<group>"; };
 		A8A9ED26245754C800D1374A /* XMLParserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserService.swift; sourceTree = "<group>"; };
+		A8AE087224589B5400BC852F /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
 		C266EEDB76221B66CBA04C68 /* Pods-TestSber-TestSberUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSber-TestSberUITests.release.xcconfig"; path = "Target Support Files/Pods-TestSber-TestSberUITests/Pods-TestSber-TestSberUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C9CB4621ABA8A4C85F16DE37 /* Pods-TestSber-TestSberUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSber-TestSberUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestSber-TestSberUITests/Pods-TestSber-TestSberUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE31ABE8E7F1AA15E14C4716 /* Pods-TestSberTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSberTests.release.xcconfig"; path = "Target Support Files/Pods-TestSberTests/Pods-TestSberTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 				A835E5432455AEC9009A163C /* Extensions+UITableView.swift */,
 				A835E5452455AF00009A163C /* Extension+UICollectionView.swift */,
 				A835E54C2455C773009A163C /* Extension+UIColor.swift */,
+				A8AE087224589B5400BC852F /* Extensions+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -949,6 +952,7 @@
 				A8477DC12455010A0074F7B0 /* NotNewsView.swift in Sources */,
 				A83C055E245376A900FF8702 /* StartPresenterOutConnection.swift in Sources */,
 				A8477DB62454EB0B0074F7B0 /* UserInteractor.swift in Sources */,
+				A8AE087324589B5400BC852F /* Extensions+String.swift in Sources */,
 				A8A9ED1C24573D5E00D1374A /* RealmService.swift in Sources */,
 				A8477DAA2454EA4C0074F7B0 /* SaveNewsViewOutConnection.swift in Sources */,
 				A8A9ED27245754C800D1374A /* XMLParserService.swift in Sources */,

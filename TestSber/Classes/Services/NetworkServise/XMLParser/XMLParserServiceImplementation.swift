@@ -15,7 +15,7 @@ class XMLParserServiceImplementation: NSObject, XMLParserDelegate, XMLParserServ
     
     private var currentTitle: String = "" {
         didSet {
-            currentTitle = currentTitle.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+			currentTitle = currentTitle.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         }
     }
     private var currentDescription: String = "" {
@@ -31,7 +31,7 @@ class XMLParserServiceImplementation: NSObject, XMLParserDelegate, XMLParserServ
 	
     private var parserCompletionHandler: (([RSSItem]) -> Void)?
 	
-	func parseFeed(url: String, completionHandler: (([RSSItem]) -> Void)?){
+	func parseFeed(url: String, completionHandler:  (([RSSItem]) -> Void)?) {
 		 self.parserCompletionHandler = completionHandler
 
 			   let request = URLRequest(url: URL(string: url)!)
@@ -82,7 +82,7 @@ class XMLParserServiceImplementation: NSObject, XMLParserDelegate, XMLParserServ
     }
 
     func parserDidEndDocument(_ parser: XMLParser) {
-        parserCompletionHandler?(rssItems)
+		parserCompletionHandler?(rssItems)
     }
     
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {

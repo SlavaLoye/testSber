@@ -9,6 +9,7 @@
 // Labbel
 "title.title" = "Сбербанк";
 "title.descriptionTitle" = "Всегда рядом";
+"title.readMoreTitle" = "Читать далее...";
 
 // Button
 "button.authorizationEnter" = "ВОЙТИ";
