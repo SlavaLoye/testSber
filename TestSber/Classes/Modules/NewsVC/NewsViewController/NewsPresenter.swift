@@ -10,10 +10,8 @@ import UIKit
 
 class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, UICollectionViewDataSource {
 	
-	//private var rssItems = [RSSItem]()
-	
 	// MARK: - view
-	weak var view: NewsViewInConnection?
+	weak var view: NewsViewInConnection!
 	
 	// MARK: - interactor
 	var interactor: NewsPresenterOutConnection?
@@ -30,9 +28,13 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
 		delegating()
-		interactor?.parseFeed(url: TemplateURL.finamRU.rawValue, completionHandler: { (rssItems) in
-			interactor?.rssItems = rssItems
+		interactor?.parseFeed(url: TemplateURL.finamRU.rawValue, completionHandler: { [weak self] ( rssItems) in
+			self?.interactor?.rssItems = rssItems
 		})
+	}
+	
+	// MARK: - viewDidLoad
+	func viewWillAppear() {
 	}
 	
 	// MARK: - delegating
@@ -42,27 +44,25 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	}
 	
 	// MARK: - UICollectionViewDataSource
-	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return models.count
 	}
+
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		
 		let modelCell = models[section]
 		switch modelCell {
 			case .news:
-				return  interactor?.rssItems.count ?? 0
+				return self.interactor?.rssItems.count ?? 0
 		}
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let modelCell = models[indexPath.section]
-		
-		switch modelCell {
+		let cellModel = models[indexPath.section]
+		switch cellModel {
 			case .news:
 				if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell {
-					let title = rssItems[indexPath.row]
-					cell.configureCell(title: title.pubDate)
+					let title = interactor?.rssItems[indexPath.row]
+					cell.configureCell(header: title?.title, timer: title?.pubDate, news: title?.description)
 					return cell
 				}
 				return UICollectionViewCell()

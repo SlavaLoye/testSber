@@ -9,8 +9,8 @@
 import Foundation
 
 class NewsInteractor: NewsPresenterOutConnection {
-	
-	private(set) var rssItems: [RSSItem] = []
+
+	var rssItems: [RSSItem] = []
 	private let xmlService: XMLParserService?
 	
 	init(xmlService: XMLParserService) {
@@ -24,6 +24,4 @@ class NewsInteractor: NewsPresenterOutConnection {
 			completionHandler(rssItems)
 		})
 	}
-	
-	
 }

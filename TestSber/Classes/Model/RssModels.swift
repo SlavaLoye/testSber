@@ -11,8 +11,7 @@ import RealmSwift
 import Realm
 
 final class RSSItem: Object {
-	
-    @objc dynamic var title: String = "1"
+    @objc dynamic var title: String = ""
     @objc dynamic var descriptions: String = ""
     @objc dynamic var pubDate: String = ""
 	@objc override class func primaryKey() -> String? { return "title" }

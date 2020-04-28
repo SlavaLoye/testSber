@@ -30,6 +30,7 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 	// MARK: - viewWillAppear
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		presenter?.viewWillAppear()
 		setupNavBar()
 		addRightBarButtonItem()
 	}
@@ -47,7 +48,7 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 	
 	// MARK: - backButtonClicked(Nav)
 	@objc private func updateButtonClicked() {
-		navigationController?.popViewController(animated: true)
+		
 	}
 	
 	// MARK: - backButtonClicked(Nav)

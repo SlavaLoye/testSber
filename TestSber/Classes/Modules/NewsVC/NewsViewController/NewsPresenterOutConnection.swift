@@ -9,6 +9,6 @@
 import Foundation
 
 protocol NewsPresenterOutConnection: class {
-	var rssItems: [RSSItem] { get }
+	var rssItems: [RSSItem] { get set}
 	func parseFeed(url: String, completionHandler: @escaping ItemClosure<[RSSItem]>)
 }

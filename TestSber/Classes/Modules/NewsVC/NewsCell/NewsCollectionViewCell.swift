@@ -18,10 +18,10 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 	// MARK: - reuseId
 	let viewNews = UIView()
 	
-	// MARK: - titleLbel
+	// MARK: - headerLabel
 	let headerLabel = UILabel()
 	
-	// MARK: - titleLbel
+	// MARK: - newsLabel
 	let newsLabel = UILabel()
 	
 	// MARK: - timerLabel
@@ -42,6 +42,23 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		widthConstraint?.constant = screenWidth - (2 * 12)
 		headerLabel.text = "Новости"
 		timerLabel.text = "12.03.2020"
+	}
+	
+	// MARK: - configureCell
+	func configureCell(header: String?, timer: String?, news: String?)  {
+		if let header = header {
+			headerLabel.text = header
+		} else {
+			print("Error")
+		}
+		if let timer = timer {
+			timerLabel.text = timer
+		} else {
+			print("Error")
+		}
+		if let news = news {
+			newsLabel.text = news
+		}
 	}
 	
 	// MARK: - setupConstraints
@@ -98,15 +115,7 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		readMoreLabel.font = UIFont.regular14
 		readMoreLabel.frame = CGRect(x: viewNews.bounds.width - 95, y: 16, width: 80, height: 15)
 	}
-	
-	
-	
-	// MARK: - configureCell
-	func configureCell(title: String?)  {
-		if let title = title {
-			newsLabel.text = title
-		}
-	}
+
 	
 	// MARK: - configure
 	func configure(with intValue: Int) {
