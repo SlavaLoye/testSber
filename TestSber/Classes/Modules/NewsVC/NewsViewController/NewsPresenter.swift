@@ -10,11 +10,7 @@ import UIKit
 
 class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, UICollectionViewDataSource {
 	
-	let randomTexts = ["Aenean dapibus urna a ullamcorper malesuada. Ut tempor.",
-					   "Sed venenatis ligula massa, a vulputate ipsum fringilla eget. Ut justo erat, facilisis id rhoncus cursus, fringilla at.",
-					   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis nibh metus, elementum tempus libero ornare vitae. Etiam sed leo pretium, consectetur turpis non, dapibus purus. Suspendisse potenti. Ut ut eros nunc. Cras nulla justo, porttitor non sapien at, iaculis.",
-					   "Maecenas pellentesque sed magna in congue. Sed non lacus in mi posuere scelerisque. Aenean.",
-					   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget ex a velit tincidunt sodales. Donec elementum nisi at enim tempus, et rutrum erat semper. Phasellus ultricies est nec finibus."]
+	//private var rssItems = [RSSItem]()
 	
 	// MARK: - view
 	weak var view: NewsViewInConnection?
@@ -34,6 +30,9 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
 		delegating()
+		interactor?.parseFeed(url: TemplateURL.finamRU.rawValue, completionHandler: { (rssItems) in
+			interactor?.rssItems = rssItems
+		})
 	}
 	
 	// MARK: - delegating
@@ -52,7 +51,7 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 		let modelCell = models[section]
 		switch modelCell {
 			case .news:
-				return  randomTexts.count
+				return  interactor?.rssItems.count ?? 0
 		}
 	}
 	
@@ -62,8 +61,8 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 		switch modelCell {
 			case .news:
 				if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell {
-					let title = randomTexts[indexPath.row] 
-					cell.configureCell(title: title)
+					let title = rssItems[indexPath.row]
+					cell.configureCell(title: title.pubDate)
 					return cell
 				}
 				return UICollectionViewCell()

@@ -27,13 +27,16 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 	// MARK: - timerLabel
 	let timerLabel = UILabel()
 	
+	// MARK: - readMoreLabel
+	let readMoreLabel = UILabel()
+	
 	// MARK: - init
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setupConstraints()
-		addTitleLbel()
+		addTitleLabel()
 		addHeaderLabel()
-		timerLabelLabel()
+		timerLabesl()
 		self.contentView.translatesAutoresizingMaskIntoConstraints = false
         let screenWidth = UIScreen.main.bounds.size.width
 		widthConstraint?.constant = screenWidth - (2 * 12)
@@ -51,13 +54,13 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 	}
 	
 	// MARK: - addTitleLbel
-	func addTitleLbel()  {
+	func addTitleLabel()  {
 		viewNews.addSubview(newsLabel)
 		newsLabel.translatesAutoresizingMaskIntoConstraints = false
 		newsLabel.textAlignment = .left
 		newsLabel.numberOfLines = 0
 		newsLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-		//titleLabel.backgroundColor = .red
+		//newsLabel.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
 		newsLabel.font = UIFont.regular14
 		newsLabel.topAnchor.constraint(equalTo: topAnchor, constant: 40).isActive = true
 		newsLabel.widthAnchor.constraint(equalTo: widthAnchor, constant: -30).isActive = true
@@ -69,7 +72,6 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 	// MARK: - addHeaderLabel
 	func addHeaderLabel()  {
 		viewNews.addSubview(headerLabel)
-		//headerLabel.translatesAutoresizingMaskIntoConstraints = false
 		headerLabel.textAlignment = .left
 		headerLabel.numberOfLines = 1
 		headerLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -78,15 +80,25 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 	}
 	
 	// MARK: - timerLabelLabel
-	func timerLabelLabel()  {
+	func timerLabesl()  {
 		viewNews.addSubview(timerLabel)
-		//headerLabel.translatesAutoresizingMaskIntoConstraints = false
 		timerLabel.textAlignment = .right
 		timerLabel.numberOfLines = 0
 		timerLabel.textColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
 		timerLabel.font = UIFont.regular14
 		timerLabel.frame = CGRect(x: viewNews.bounds.width - 95, y: 16, width: 80, height: 15)
 	}
+	// MARK: - timerLabelLabel
+	func readMoreLabels()  {
+		viewNews.addSubview(readMoreLabel)
+		//headerLabel.translatesAutoresizingMaskIntoConstraints = false
+		readMoreLabel.textAlignment = .right
+		readMoreLabel.numberOfLines = 0
+		readMoreLabel.textColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
+		readMoreLabel.font = UIFont.regular14
+		readMoreLabel.frame = CGRect(x: viewNews.bounds.width - 95, y: 16, width: 80, height: 15)
+	}
+	
 	
 	
 	// MARK: - configureCell

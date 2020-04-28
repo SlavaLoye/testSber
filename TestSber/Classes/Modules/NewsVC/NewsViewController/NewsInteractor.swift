@@ -10,4 +10,20 @@ import Foundation
 
 class NewsInteractor: NewsPresenterOutConnection {
 	
+	private(set) var rssItems: [RSSItem] = []
+	private let xmlService: XMLParserService?
+	
+	init(xmlService: XMLParserService) {
+		self.xmlService = xmlService
+	}
+
+
+	func parseFeed(url: String, completionHandler: @escaping ItemClosure<[RSSItem]>) {
+		xmlService?.parseFeed(url: url, completionHandler: { (rssItems) in
+			self.rssItems = rssItems
+			completionHandler(rssItems)
+		})
+	}
+	
+	
 }

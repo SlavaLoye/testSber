@@ -14,6 +14,7 @@ class ContainerController {
 	
 	// MARK: container
 	let containerTypes: [Containerable.Type] = [
+		NetworkServicesContainer.self,
 		StartContainer.self,
 		RouterContainer.self,
 		NewsContainer.self,

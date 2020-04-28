@@ -46,7 +46,7 @@ class UserViewController: UIViewController, UserViewInConnection {
 	  super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 	  tabBarItem = UITabBarItem(title: "Аккаунт", image: UIImage(systemName: "person"), tag: 2)
 		tabBarItem.image = UIImage(systemName: "person")?.withRenderingMode(.alwaysOriginal).withTintColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1))
-		tabBarItem.selectedImage = UIImage(systemName: "person")?.withRenderingMode(.alwaysOriginal).withTintColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1))
+		tabBarItem.selectedImage = UIImage(systemName: "person")?.withRenderingMode(.alwaysOriginal).withTintColor(#colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.1568627451, alpha: 1))
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -76,8 +76,8 @@ extension UserViewController {
 		openButton.roundedButtonYellow(cornerRadius: 10)
 		openButton.backgroundColor = .white
 		openButton.setTitleColor(UIColor.sberGreen, for: .normal)
-		openButton.setTitle(NSLocalizedString("button.newsUser", comment: "Почитай новости"), for: .normal)
-		openButton.titleLabel?.font = UIFont.semibold15
+		openButton.setTitle(NSLocalizedString("button.newsUser", comment: "Новости Сбербанка"), for: .normal)
+		openButton.titleLabel?.font = UIFont.bold24
 		
 	}
 }
