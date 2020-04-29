@@ -19,6 +19,9 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 	// MARK: - isCollections
 	var isCollections: Bool = false
 	
+	// MARK: - Loader
+	private lazy var loader = Loader(view: collectionView)
+	
 	// MARK: - viewDidLoad
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -38,6 +41,16 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 	// MARK: - reloadData
 	func reloadData()  {
 		collectionView.reloadData()
+	}
+	
+	// MARK: - hideLoader
+	func hideLoader() {
+		loader.hide()
+	}
+	
+	// MARK: - showLoader
+	func showLoader() {
+		loader.show()
 	}
 	
 	// MARK: - addRightBarButtonItem(Nav)
@@ -91,8 +104,8 @@ extension NewsViewController {
 			flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
 		}
 		collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
-		collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-		collectionView.backgroundColor = .white
+		collectionView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+		collectionView?.backgroundColor = .white
 		registerCells()
 		view.addSubview(collectionView)
 	}

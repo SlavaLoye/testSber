@@ -6,8 +6,9 @@
 //  Copyright © 2020 SberTestViper. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol DetailNewsViewInConnection: class {
-	
+protocol DetailNewsViewInConnection where Self: UIViewController {
+	var tableView: UITableView { get }
+	func dissMiss()
 }

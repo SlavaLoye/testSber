@@ -9,14 +9,18 @@
 import UIKit
 
 final class Loader {
+	
+	//MARK: - view
 	private let view: UIView
 	init(view: UIView) {
 		self.view = view
 	}
 	
-	private let loaderView = UIActivityIndicatorView(style: .gray)
+	//MARK: - private
+	private let loaderView = UIActivityIndicatorView(style: .large)
 	private let backView = UIView()
 	
+	//MARK: - show()
 	func show() {
 		guard !view.subviews.contains(loaderView) else {
 			return
@@ -24,10 +28,10 @@ final class Loader {
 		view.addSubview(backView)
 		backView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
 		backView.pinToSuperviewEdges()
-		
 		view.addSubview(loaderView)
 		loaderView.translatesAutoresizingMaskIntoConstraints = false
-		loaderView.tintColor = .red
+		loaderView.tintColor = .sberGreen
+		loaderView.color = .sberGreen
 		loaderView.startAnimating()
 		loaderView.heightAnchor.constraint(equalToConstant: 128).isActive = true
 		loaderView.widthAnchor.constraint(equalToConstant: 128).isActive = true
@@ -35,6 +39,7 @@ final class Loader {
 		loaderView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 	}
 	
+	//MARK: - hide()
 	func hide() {
 		guard view.subviews.contains(loaderView) else {
 			return

@@ -19,7 +19,8 @@ class ContainerController {
 		RouterContainer.self,
 		NewsContainer.self,
 		UserContainer.self,
-		SaveContainer.self
+		SaveContainer.self,
+		DetailNewsContainer.self
 	]
 	
 	// MARK: fetchSubcontainer

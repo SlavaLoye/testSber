@@ -1,19 +1,17 @@
 //
-//  NewsCollectionViewCell.swift
+//  SaveNewsCollectionViewCell.swift
 //  TestSber
 //
 //  Created by Viacheslav Loie on 26.04.2020.
 //  Copyright © 2020 SberTestViper. All rights reserved.
 //
 
-
 import UIKit
 
-class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
-
+class SaveNewsTableViewCell : UITableViewCell, SelfConfiguringCell {
 	
 	// MARK: - reuseId
-	static var reuseId: String = "NewsCollectionViewCell"
+	static var reuseId: String = "SaveNewsTableViewCell"
 	
 	var widthConstraint: NSLayoutConstraint!
 	
@@ -32,19 +30,15 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 	// MARK: - readMoreLabel
 	let readMoreLabel = UILabel()
 	
-	// MARK: - init
-	override init(frame: CGRect) {
-		super.init(frame: frame)
+	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+	super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setupViewNews()
 		addTitleLabel()
 		addHeaderLabel()
 		timerLabesl()
 		readMoreLabels()
-		self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        let screenWidth = UIScreen.main.bounds.size.width
-		widthConstraint?.constant = screenWidth - (2 * 12)
-		
 	}
+	
 	
 	// MARK: - configureCell
 	func configureCell(header: String?, timer: String?, news: String?)  {
@@ -114,4 +108,5 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+
 }

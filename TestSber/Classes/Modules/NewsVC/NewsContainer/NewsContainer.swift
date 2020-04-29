@@ -32,6 +32,7 @@ class NewsContainer: Containerable {
 		container.register(NewsPresenter.self) { (resolver) -> NewsPresenter in
 			let presenter = NewsPresenter()
 			presenter.interactor = resolver.resolve(NewsPresenterOutConnection.self)
+			presenter.sberRouter = self.resolve()!
 			return presenter
 		}.initCompleted { (resolver, presenter) in
 			presenter.view = self.resolve()!

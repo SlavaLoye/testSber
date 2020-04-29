@@ -9,7 +9,9 @@
 import UIKit
 
 enum HomeUserPullableServiceType: ViewControllerContainerable {
-  case startViewController
-  case newsViewController
+	case startViewController
+	case newsViewController
+	case detailNewsViewController
+	
 }
 

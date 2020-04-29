@@ -6,7 +6,6 @@
 //  Copyright © 2020 SberTestViper. All rights reserved.
 //
 
-
 import UIKit
 import PanModal
 
@@ -52,6 +51,13 @@ class SberRouter {
 					nc.modalPresentationStyle = .fullScreen
 					sourceViewController?.present(nc, animated: true, completion: nil)
 			}
+			
+			
+			//MARK: DetailNewsViewController
+			case .detailNewsViewController:
+			  if let vc: (UIViewController & PanModalPresentable) = pullableService?.container?.get(DetailNewsViewController.self) {
+				sourceViewController?.presentPanModal(vc)
+			  }
 		}
 	}
 }

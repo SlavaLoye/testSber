@@ -10,6 +10,7 @@
 "title.title" = "Сбербанк";
 "title.descriptionTitle" = "Всегда рядом";
 "title.readMoreTitle" = "Читать далее...";
+"title.newsTitle" = "Новости рынка";
 
 // Button
 "button.authorizationEnter" = "ВОЙТИ";

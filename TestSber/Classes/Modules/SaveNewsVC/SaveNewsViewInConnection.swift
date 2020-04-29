@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol SaveNewsViewInConnection: class {
-	
+protocol SaveNewsViewInConnection where Self: UIViewController  {
+	var tableView: UITableView { get }
 }

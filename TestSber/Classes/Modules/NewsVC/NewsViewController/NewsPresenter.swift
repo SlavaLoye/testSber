@@ -16,6 +16,9 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	// MARK: - interactor
 	var interactor: NewsPresenterOutConnection?
 	
+	// MARK: - SberRouter
+	var sberRouter: SberRouter?
+	
 	// MARK: - collectiomView
 	private var collectiomView: UICollectionView? {
 		return view?.collectionView
@@ -26,10 +29,12 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
+		view?.showLoader()
 		interactor?.parseFeed(url: TemplateURL.finamRU.rawValue, completionHandler: { [weak self] ( rssItems) in
 			self?.interactor?.rssItems = rssItems
 			OperationQueue.main.addOperation {
 				self?.view?.collectionView.reloadSections(IndexSet(integer: 0))
+				self?.view?.hideLoader()
             }
 		})
 	}
@@ -69,6 +74,15 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 					return cell
 				}
 				return UICollectionViewCell()
+		}
+	}
+	
+	// MARK: - UICollectionViewDelegate
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let modelsCell = models[indexPath.section]
+		switch modelsCell {
+			case .news:
+				sberRouter?.route(to: .detailNewsViewController, in: view)
 		}
 	}
 }
