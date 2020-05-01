@@ -19,6 +19,7 @@ class TimerTableViewCell: UITableViewCell, SelfConfiguringCell {
 	// MARK: - timerLabel
 	let timerLabel = UILabel()
 
+	// MARK: - init
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setupViewNews()
@@ -46,7 +47,7 @@ class TimerTableViewCell: UITableViewCell, SelfConfiguringCell {
 		timerLabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
 		timerLabel.font = UIFont.regular14
 		timerLabel.frame = CGRect(x: 30, y: 16, width: viewNews.bounds.width, height: 15)
-		timerLabel.text = "12/12/33 been implemented"
+		
 	}
 	
 	required init?(coder: NSCoder) {

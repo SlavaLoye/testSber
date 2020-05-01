@@ -9,7 +9,6 @@
 import UIKit
 
 class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDataSource, UITableViewDelegate {
-
 	
 	// MARK: - view
 	weak var view: DetailNewsViewInConnection?
@@ -32,6 +31,7 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 	
 	// MARK: - viewWillAppear
 	func viewWillAppear() {
+		delegating()
 		
 	}
 	
@@ -51,13 +51,13 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 		
 		switch modelCell {
 			case .title:
-			return 1
+				return 1
 			case .newsTitle:
-			return 1
+				return 1
 			case .timer:
-			return 1
+				return 1
 			case .descriptionNews:
-			return 1
+				return 1
 		}
 	}
 	
@@ -65,6 +65,7 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 		let modelCell = models[indexPath.section]
 		
 		switch modelCell {
+			
 			case .title:
 				if let titleCell = tableView.dequeueReusableCell(withIdentifier: "TitleTableViewCell", for: indexPath) as? TitleTableViewCell {
 					titleCell.selectionStyle = .none
@@ -76,21 +77,29 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 			}
 			
 			case .newsTitle:
-			if let titleCell = tableView.dequeueReusableCell(withIdentifier: "NewsTitleTableViewCell", for: indexPath) as? NewsTitleTableViewCell {
-						titleCell.selectionStyle = .none
-				titleCell.configureCell(header: "Название \n новости")
-						return titleCell
-				}
+				if let titleCell = tableView.dequeueReusableCell(withIdentifier: "NewsTitleTableViewCell", for: indexPath) as? NewsTitleTableViewCell {
+					if let titleNews = interactor?.rss {
+						titleCell.configureCell(header: titleNews.title)
+					}
+					titleCell.selectionStyle = .none
+					return titleCell
+			}
 			
 			case .timer:
-				if let timerCell = tableView.dequeueReusableCell(withIdentifier: "TimerTableViewCell", for: indexPath) as? TimerTableViewCell {
-					timerCell.selectionStyle = .none
-					return timerCell
+						if let timerCell = tableView.dequeueReusableCell(withIdentifier: "TimerTableViewCell", for: indexPath) as? TimerTableViewCell {
+							timerCell.selectionStyle = .none
+							if let timer = interactor?.rss {
+								timerCell.configureCell(timer: timer.pubDate)
+							}
+							return timerCell
 					}
 			
 			case .descriptionNews:
 				if let descriptionNewsCell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as? DescriptionTableViewCell {
 					descriptionNewsCell.selectionStyle = .none
+					if let news = interactor?.rss {
+						descriptionNewsCell.configureCell(news: news.description)
+					}
 					return descriptionNewsCell
 			}
 			
@@ -103,11 +112,11 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 		let modelCell = models[indexPath.section]
 		switch modelCell {
 			case .title:
-			return 44
+				return 44
 			case .newsTitle:
-			return 60
+				return UITableView.automaticDimension
 			case .timer:
-			return 44
+				return 44
 			case .descriptionNews:
 				return UITableView.automaticDimension
 		}

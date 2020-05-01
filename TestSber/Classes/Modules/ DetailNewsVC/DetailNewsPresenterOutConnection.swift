@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DetailNewsPresenterOutConnection {
-	
+	var rss: RSSItem? { get }
 }

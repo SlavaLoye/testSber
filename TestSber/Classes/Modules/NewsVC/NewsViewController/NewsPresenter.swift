@@ -10,6 +10,7 @@ import UIKit
 
 class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, UICollectionViewDataSource {
 	
+	
 	// MARK: - view
 	weak var view: NewsViewInConnection?
 	
@@ -19,6 +20,9 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	// MARK: - SberRouter
 	var sberRouter: SberRouter?
 	
+	// MARK: - isAllSelected
+	var isAllSelected: Bool = false
+	
 	// MARK: - collectiomView
 	private var collectiomView: UICollectionView? {
 		return view?.collectionView
@@ -26,24 +30,53 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	
 	// MARK: CellModel - realisation
 	private let models: [CellModel] = [.news]
+	private let fetchMedels: [FetchModel] = [.finam, .banki]
 	
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
+		delegating()
+		//view?.reloadData()
+	}
+	
+	// MARK: - viewWillAppear
+	func viewWillAppear() {
 		view?.showLoader()
+		view?.reloadData()
+	}
+	
+	func fetchBanK(model: FetchModel) {
+		switch model {
+			case .finam:
+				return finamFetch()
+			case .banki:
+				return bankiRUFetch()
+		}
+	}
+	
+	// MARK: - finamFetch
+	func finamFetch() {
+		isAllSelected = false
 		interactor?.parseFeed(url: TemplateURL.finamRU.rawValue, completionHandler: { [weak self] ( rssItems) in
 			self?.interactor?.rssItems = rssItems
 			OperationQueue.main.addOperation {
 				self?.view?.collectionView.reloadSections(IndexSet(integer: 0))
 				self?.view?.hideLoader()
-            }
+			}
 		})
 	}
 	
-	// MARK: - viewDidLoad
-	func viewWillAppear() {
-		delegating()
-		view?.reloadData()
+	// MARK: - bankiRUFetch
+	func bankiRUFetch() {
+		isAllSelected = true
+		interactor?.parseFeed(url: TemplateURL.bankiRU.rawValue, completionHandler: { [weak self] ( rssItems) in
+			self?.interactor?.rssItems = rssItems
+			OperationQueue.main.addOperation {
+				self?.view?.collectionView.reloadSections(IndexSet(integer: 0))
+				self?.view?.hideLoader()
+			}
+		})
 	}
+	
 	
 	// MARK: - delegating
 	private func delegating()  {
@@ -82,10 +115,22 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 		let modelsCell = models[indexPath.section]
 		switch modelsCell {
 			case .news:
-				sberRouter?.route(to: .detailNewsViewController, in: view)
+				let rss = interactor?.rssItems[indexPath.row]
+				sberRouter?.route(to: .detailNewsViewController(rss: rss), in: view)
 		}
 	}
 }
+
+
+// MARK: - CellModel
+extension NewsPresenter  {
+    enum FetchModel {
+		case finam
+		case banki
+	}
+	
+}
+
 
 // MARK: - CellModel
 extension NewsPresenter  {

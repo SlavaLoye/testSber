@@ -10,11 +10,12 @@ import UIKit
 
 class DescriptionTableViewCell: UITableViewCell, SelfConfiguringCell {
 	
+	// MARK: - reuseId
 	static var reuseId: String = "DescriptionTableViewCell"
 	
 	var widthConstraint: NSLayoutConstraint!
 	
-	// MARK: - reuseId
+	// MARK: - viewNews
 	let viewNews = UIView()
 	
 	// MARK: - reuseId
@@ -33,11 +34,11 @@ class DescriptionTableViewCell: UITableViewCell, SelfConfiguringCell {
 	
 	
 	// MARK: - configureCell
-	func configureCell(news: String?)  {
+	func configureCell(news: String)  {
 
-		if let news = news {
-			newsLabel.text = news.deleteHTMLTags(tags: [news])
-		}
+//		if let news = news {
+			newsLabel.text = news.removeHTMLAndStringTemplates
+	//	}
 	}
 	
 	// MARK: - setupConstraints
@@ -64,9 +65,7 @@ class DescriptionTableViewCell: UITableViewCell, SelfConfiguringCell {
 		newsLabel.textAlignment = .left
 		newsLabel.numberOfLines = 0
 		newsLabel.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-//		newsLabel.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-		newsLabel.font = UIFont.regular14
-		newsLabel.text = "Будучи современным языком высокого уровня, Swift в основном берёт на себя управление памятью в ваших приложениях, занимаясь выделением и освобождением памяти. Это происходит благодаря механизму, который называется Automatic Reference Counting, или сокращенно ARC. В этом руководстве вы разберётесь, как работает ARC и как правильно управлять памятью в Swift. Понимая этот механизм, вы сможете влиять на время жизни объектов, размещенных в куче (heap). Будучи современным языком высокого уровня, Swift в основном берёт на себя управление памятью в ваших приложениях, занимаясь выделением и освобождением памяти. Это происходит благодаря механизму, который называется Automatic Reference Counting, или сокращенно ARC. В этом руководстве вы разберётесь, как работает ARC и как правильно управлять памятью в Swift. Понимая этот механизм, вы сможете влиять на время жизни объектов, размещенных в куче (heap)."
+		newsLabel.font = UIFont.regular15
 		
 	}
 	

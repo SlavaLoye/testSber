@@ -30,7 +30,7 @@ extension String {
 	
 	public var removeHTMLAndStringTemplates: String {
 		
-		let a = self.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil)
+		let a = self.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil).replacingOccurrences(of: "RSSItem", with: "Сбербанк News:").replacingOccurrences(of: "pubDate", with: "Время новостей:").replacingOccurrences(of: "}", with: " ").replacingOccurrences(of: "{", with: " ").replacingOccurrences(of: "descriptions", with: "").replacingOccurrences(of: "title", with:  "").replacingOccurrences(of: "=", with:  "").replacingOccurrences(of: ";", with: "")
 		return a.replacingOccurrences(of: "&[^;]+;", with: "", options: String.CompareOptions.regularExpression, range: nil)
 		
 	}
@@ -52,10 +52,4 @@ extension String {
 		
 		return attributedString.string
 	}
-	
-	
 }
-
-
-// Солетско-Ханавейского и Трехбугорного лицензионных участков ООО "Арктик СПГ<span lang="EN-US"></span>1"&shy;&ndash;очередного крупнотоннажного СПГ-проекта "НОВАТЭКа".</p><p>Ресурсный потенциал Бухаринского участка по российской классификации оценивается на уровне 1<span lang="EN-GB"></span>190млрд куб. м газа и 74 млн т жидких углеводородов, что в совокупности составляет 8,4<span lang="EN-GB"></span>млрд баррелей нефтяного эквивалента.</p><p>Компания намерена приступить к полномасштабным сейсморазведочным работам и бурению первой поисковой скважины в ближайший полевой сезон 2020-2021 гг.</p>;
-//pubDate = Tue, 28 Apr 2020 11:30:19 +0300;

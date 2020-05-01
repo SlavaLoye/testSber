@@ -22,12 +22,15 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 	// MARK: - Loader
 	private lazy var loader = Loader(view: collectionView)
 	
+	 private var refreshControl: UIRefreshControl = UIRefreshControl()
+	
 	// MARK: - viewDidLoad
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupCollectionView()
 		presenter?.viewDidLoad()
 		view.backgroundColor = .white
+		refreshControll()
 	}
 	
 	// MARK: - viewWillAppear
@@ -38,9 +41,22 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 		addRightBarButtonItem()
 	}
 	
+	// MARK: fileprivate func refreshControll()
+	  fileprivate func refreshControll() {
+		refreshControl.addTarget(self, action: #selector(NewsViewController.reloadData), for: UIControl.Event.valueChanged)
+		  collectionView.addSubview(refreshControl)
+		  refreshControl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+		refreshControl.tintColor = UIColor.sberGreen
+		  reloadData()
+	  }
+
+	
 	// MARK: - reloadData
-	func reloadData()  {
-		collectionView.reloadData()
+	@objc func reloadData()  {
+		presenter?.finamFetch() // события
+		presenter?.bankiRUFetch() // дайджест
+		self.collectionView.reloadData()
+        self.refreshControl.endRefreshing()
 	}
 	
 	// MARK: - hideLoader
@@ -65,13 +81,23 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 	}
 	
 	// MARK: - backButtonClicked(Nav)
-	@objc private func updateButtonClicked() {
-		
+	@objc func updateButtonClicked() {
+		 reloadData()
 	}
 	
-	// MARK: - backButtonClicked(Nav)
-	@objc private func collectionButtonClickeds() {
-		
+	// MARK: - collectionButtonClickeds
+	@objc  func collectionButtonClickeds() {
+		if presenter?.isAllSelected ?? false  {
+			isCollections = true
+			presenter?.finamFetch()
+			collectionView.reloadData()
+			print("false")
+		} else {
+			presenter?.bankiRUFetch()
+			isCollections = false
+			print("true")
+		}
+		collectionView.reloadData()
 	}
 	
 	// MARK: - init

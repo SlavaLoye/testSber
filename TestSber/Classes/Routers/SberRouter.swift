@@ -54,8 +54,8 @@ class SberRouter {
 			
 			
 			//MARK: DetailNewsViewController
-			case .detailNewsViewController:
-			  if let vc: (UIViewController & PanModalPresentable) = pullableService?.container?.get(DetailNewsViewController.self) {
+			case .detailNewsViewController(let rss):
+			  if let vc: (UIViewController & PanModalPresentable) = pullableService?.container?.get(DetailNewsViewController.self, argument: rss) {
 				sourceViewController?.presentPanModal(vc)
 			  }
 		}

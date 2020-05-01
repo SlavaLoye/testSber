@@ -67,7 +67,6 @@ class TitleTableViewCell: UITableViewCell, SelfConfiguringCell {
 		titleLabel.textAlignment = .center
 		titleLabel.numberOfLines = 0
 		titleLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-		//titleLabel.backgroundColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
 		titleLabel.font = UIFont.semibold20
 		titleLabel.textColor = UIColor.sberGreen
 		titleLabel.frame = CGRect(x: 60, y: 0, width: viewNews.bounds.width - 120, height: 44)
@@ -76,7 +75,6 @@ class TitleTableViewCell: UITableViewCell, SelfConfiguringCell {
 	// MARK: - addHeaderLabel
 	func closesButton()  {
 		viewNews.addSubview(closeButton)
-		//closeButton.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
 		closeButton.setImage(UIImage(systemName: "multiply.circle"), for: .normal)
 		closeButton.tintColor = #colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.1568627451, alpha: 1)
 		closeButton.frame = CGRect(x: viewNews.bounds.width - 60, y: 0, width: 44, height: 44)

@@ -12,8 +12,6 @@ target 'TestSber' do
   pod 'Locksmith'
   pod 'SwiftyJSON'
   pod 'PanModal'
-  pod 'ARSLineProgress', '~> 3.1'
-  pod 'PureLayout'
   pod 'RealmSwift'
 
   target 'TestSberTests' do

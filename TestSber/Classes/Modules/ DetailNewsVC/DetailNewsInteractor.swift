@@ -10,4 +10,6 @@ import Foundation
 
 class DetailNewsInteractor: DetailNewsPresenterOutConnection {
 	
+	// MARK: - rss
+	var rss: RSSItem?
 }

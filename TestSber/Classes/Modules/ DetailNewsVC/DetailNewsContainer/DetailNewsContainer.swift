@@ -21,24 +21,25 @@ class DetailNewsContainer: Containerable {
 	func register() {
 		
 		//MARK: - SaveNewsViewController
-		container.register(DetailNewsViewController.self) { (resolver) -> DetailNewsViewController in
+		container.register(DetailNewsViewController.self) { (resolver, rss: RSSItem?) -> DetailNewsViewController in
 			let vc = DetailNewsViewController()
-			vc.presenter = resolver.resolve(DetailNewsViewOutConnection.self)
+			vc.presenter = resolver.resolve(DetailNewsViewOutConnection.self, argument: rss)
 			return vc
 		}.implements(DetailNewsViewInConnection.self)
 				
 		// MARK: - SaveNewsPresenter
-		container.register(DetailNewsPresenter.self) { (resolver) -> DetailNewsPresenter in
+		container.register(DetailNewsPresenter.self) { (resolver, rss: RSSItem?) -> DetailNewsPresenter in
 			let presenter = DetailNewsPresenter()
-			presenter.interactor = resolver.resolve(DetailNewsPresenterOutConnection.self)
+			presenter.interactor = resolver.resolve(DetailNewsPresenterOutConnection.self, argument: rss)
 			return presenter
 		}.initCompleted { (resolver, presenter) in
-			presenter.view = self.resolve()!
+			presenter.view = resolver.resolve(DetailNewsViewInConnection.self, argument: presenter.interactor?.rss)
 		}.implements(DetailNewsViewOutConnection.self)
 				
 		// MARK: - SaveNewsInteractor
-		container.register(DetailNewsInteractor.self) { (resolver) -> DetailNewsInteractor in
+		container.register(DetailNewsInteractor.self) { (resolver, rss: RSSItem?) -> DetailNewsInteractor in
 			let interactor = DetailNewsInteractor()
+			interactor.rss = rss
 			return interactor
 		}.implements(DetailNewsPresenterOutConnection.self)
 	}

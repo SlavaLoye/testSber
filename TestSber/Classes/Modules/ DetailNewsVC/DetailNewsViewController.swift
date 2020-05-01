@@ -23,11 +23,11 @@ class DetailNewsViewController: UIViewController, DetailNewsViewInConnection, Pa
 	// MARK: - presenter
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		presenter?.viewDidLoad()
 		setupTableView()
+		presenter?.viewDidLoad()
 		registerCells()
 		safeArea = view.layoutMarginsGuide
-//		tableView.estimatedRowHeight = 155.0
+		tableView.estimatedRowHeight = 155.0
 		tableView.rowHeight = UITableView.automaticDimension
 		tableView.separatorStyle = .none
 		view.backgroundColor = .white
@@ -41,7 +41,6 @@ class DetailNewsViewController: UIViewController, DetailNewsViewInConnection, Pa
 	}
 	
 	// MARK: - dissmis
-	
 	func dissMiss()  {
 		dismiss(animated: true, completion: nil)
 	}
@@ -99,16 +98,16 @@ extension DetailNewsViewController {
 // MARK: - decorate
 extension DetailNewsViewController {
 	func decorate() {
-		//closedButton.roundedButton(cornerRadius: 10)
+
 	}
 }
 
+// MARK: - registerCells
 extension DetailNewsViewController {
 	func registerCells()  {
 		tableView.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.reuseId)
 		tableView.register(TimerTableViewCell.self, forCellReuseIdentifier: TimerTableViewCell.reuseId)
 		tableView.register(DescriptionTableViewCell.self, forCellReuseIdentifier: DescriptionTableViewCell.reuseId)
 		tableView.register(NewsTitleTableViewCell.self, forCellReuseIdentifier: NewsTitleTableViewCell.reuseId)
-		
 	}
 }
