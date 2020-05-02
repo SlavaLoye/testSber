@@ -11,5 +11,5 @@ import UIKit
 protocol NewsViewOutConnection: class, Lifecycable {
 	func finamFetch()
 	func bankiRUFetch()
-	var isAllSelected: Bool { get }
+	var isAllSelected: Bool { get set}
 }

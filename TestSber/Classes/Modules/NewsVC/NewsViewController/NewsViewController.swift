@@ -22,7 +22,8 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 	// MARK: - Loader
 	private lazy var loader = Loader(view: collectionView)
 	
-	 private var refreshControl: UIRefreshControl = UIRefreshControl()
+	// MARK: - refreshControl
+	private var refreshControl: UIRefreshControl = UIRefreshControl()
 	
 	// MARK: - viewDidLoad
 	override func viewDidLoad() {
@@ -39,24 +40,30 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 		presenter?.viewWillAppear()
 		setupNavBar()
 		addRightBarButtonItem()
+		refreshControll()
 	}
 	
 	// MARK: fileprivate func refreshControll()
-	  fileprivate func refreshControll() {
+	fileprivate func refreshControll() {
 		refreshControl.addTarget(self, action: #selector(NewsViewController.reloadData), for: UIControl.Event.valueChanged)
-		  collectionView.addSubview(refreshControl)
-		  refreshControl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+		collectionView.addSubview(refreshControl)
+		refreshControl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 		refreshControl.tintColor = UIColor.sberGreen
-		  reloadData()
-	  }
-
+		reloadData()
+	}
 	
 	// MARK: - reloadData
 	@objc func reloadData()  {
-		presenter?.finamFetch() // события
-		presenter?.bankiRUFetch() // дайджест
+		if presenter?.isAllSelected == false {
+			presenter?.isAllSelected = false
+			presenter?.finamFetch() // finam
+		} else {
+			presenter?.isAllSelected = true
+			presenter?.bankiRUFetch() // banki
+		}
+		
 		self.collectionView.reloadData()
-        self.refreshControl.endRefreshing()
+		self.refreshControl.endRefreshing()
 	}
 	
 	// MARK: - hideLoader
@@ -68,6 +75,12 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 	func showLoader() {
 		loader.show()
 	}
+	
+	// MARK:  updateSearchBar()
+	func scrollToTop(animated: Bool) {
+		collectionView?.scrollToItem(at:  IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+	}
+	
 	
 	// MARK: - addRightBarButtonItem(Nav)
 	private func addRightBarButtonItem() {
@@ -82,22 +95,22 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 	
 	// MARK: - backButtonClicked(Nav)
 	@objc func updateButtonClicked() {
-		 reloadData()
+		reloadData()
+		scrollToTop(animated: true)
 	}
 	
 	// MARK: - collectionButtonClickeds
 	@objc  func collectionButtonClickeds() {
 		if presenter?.isAllSelected ?? false  {
-			isCollections = true
+			presenter?.isAllSelected = false
 			presenter?.finamFetch()
-			collectionView.reloadData()
-			print("false")
+			print("false - \(presenter?.isAllSelected ?? false)")
 		} else {
+			presenter?.isAllSelected = true
 			presenter?.bankiRUFetch()
-			isCollections = false
-			print("true")
+			print("true - \(presenter?.isAllSelected ?? true)")
 		}
-		collectionView.reloadData()
+		scrollToTop(animated: true)
 	}
 	
 	// MARK: - init

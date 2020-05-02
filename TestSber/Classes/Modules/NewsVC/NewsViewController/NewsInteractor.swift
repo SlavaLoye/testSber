@@ -14,18 +14,18 @@ class NewsInteractor: NewsPresenterOutConnection {
 	var rssItems: [RSSItem] = []
 	
 	//MARK: - private
-	private let xmlService: XMLParserService?
+	private let xmlDataService: RssDataProviderService?
 	
 	//MARK: - init
-	init(xmlService: XMLParserService) {
-		self.xmlService = xmlService
+	init(xmlDataService: RssDataProviderService?) {
+		self.xmlDataService = xmlDataService
 	}
 
 	//MARK: - parseFeed
-	func parseFeed(url: String, completionHandler: @escaping ItemClosure<[RSSItem]>) {
-		xmlService?.parseFeed(url: url, completionHandler: { (rssItems) in
+	func parseFeed(url: String, completion: @escaping ItemClosure<[RSSItem]>) {
+		xmlDataService?.parseFeed(url: url, completion: { (rssItems) in
 			self.rssItems = rssItems
-			completionHandler(rssItems)
+			completion(rssItems)
 		})
 	}
 }

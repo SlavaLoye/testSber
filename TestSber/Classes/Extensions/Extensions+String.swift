@@ -30,8 +30,8 @@ extension String {
 	
 	public var removeHTMLAndStringTemplates: String {
 		
-		let a = self.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil).replacingOccurrences(of: "RSSItem", with: "Сбербанк News:").replacingOccurrences(of: "pubDate", with: "Время новостей:").replacingOccurrences(of: "}", with: " ").replacingOccurrences(of: "{", with: " ").replacingOccurrences(of: "descriptions", with: "").replacingOccurrences(of: "title", with:  "").replacingOccurrences(of: "=", with:  "").replacingOccurrences(of: ";", with: "")
-		return a.replacingOccurrences(of: "&[^;]+;", with: "", options: String.CompareOptions.regularExpression, range: nil)
+		let a = self.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil).replacingOccurrences(of: "RSSItem", with: "Сбербанк News:").replacingOccurrences(of: "pubDate", with: "Время:").replacingOccurrences(of: "}", with: " ").replacingOccurrences(of: "{", with: " ").replacingOccurrences(of: "descriptions", with: " ").replacingOccurrences(of: "title", with:  " ").replacingOccurrences(of: "= ", with:  "").replacingOccurrences(of: ";", with: " ").replacingOccurrences(of: "&ndash", with: " и")
+		return a.replacingOccurrences(of: "&[^;]+;", with: " ", options: String.CompareOptions.regularExpression, range: nil)
 		
 	}
 	

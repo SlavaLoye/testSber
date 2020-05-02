@@ -10,7 +10,7 @@
 import UIKit
 
 class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
-
+	
 	
 	// MARK: - reuseId
 	static var reuseId: String = "NewsCollectionViewCell"
@@ -30,6 +30,12 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 	// MARK: - readMoreLabel
 	let readMoreLabel = UILabel()
 	
+	// MARK: - newsButton
+	let newsButton = UIButton()
+	
+	// MARK: - imageView
+	let imageView = UIImageView()
+	
 	// MARK: - init
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -38,10 +44,17 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		addHeaderLabel()
 		timerLabesl()
 		readMoreLabels()
+		imageViewNews()
 	}
 	
 	// MARK: - configureCell
-	func configureCell(header: String?, timer: String?, news: String?)  {
+	func configureCell(header: String?, timer: String?, news: String?, isImages: Bool)  {
+		
+		if isImages {
+			imageView.imageFromServerURL(urlString: TemplateURL.imgBanki.rawValue)
+		} else {
+			imageView.imageFromServerURL(urlString: TemplateURL.finamRU.rawValue)
+		}
 		if let header = header {
 			headerLabel.text = header.removeHTMLAndStringTemplates
 		}
@@ -56,19 +69,19 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 	// MARK: - setupConstraints
 	func setupViewNews() {
 		addSubview(viewNews)
+		//viewNews.layer.borderColor = #colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.1568627451, alpha: 1)
 		viewNews.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
 		viewNews.layer.borderWidth = 1
 		viewNews.layer.cornerRadius = 10
 		viewNews.frame = self.bounds
 	}
-		
+	
 	// MARK: - addHeaderLabel
 	func addHeaderLabel()  {
 		viewNews.addSubview(headerLabel)
 		headerLabel.textAlignment = .left
 		headerLabel.numberOfLines = 0
 		headerLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-		//headerLabel.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
 		headerLabel.font = UIFont.semibold22
 		headerLabel.frame = CGRect(x: 16, y: 16, width: viewNews.bounds.width - 30, height: 60)
 	}
@@ -79,7 +92,6 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		timerLabel.textAlignment = .left
 		timerLabel.numberOfLines = 0
 		timerLabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-		//timerLabel.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
 		timerLabel.font = UIFont.regular14
 		timerLabel.frame = CGRect(x: 16, y: 80, width: viewNews.bounds.width - 30, height: 15)
 	}
@@ -99,13 +111,21 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		viewNews.addSubview(readMoreLabel)
 		readMoreLabel.textAlignment = .right
 		readMoreLabel.numberOfLines = 0
-		readMoreLabel.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+		readMoreLabel.textColor = #colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.2666666806, alpha: 1)
 		readMoreLabel.font = UIFont.regular14
 		readMoreLabel.frame = CGRect(x: viewNews.bounds.width - 130, y: 245, width: 120, height: 15)
 		readMoreLabel.text =  NSLocalizedString("title.readMoreTitle", comment: "Читать далее...")
 	}
+		
+	// MARK: - imageViewNews
+	func imageViewNews() {
+		imageView.frame = CGRect(x: 16, y: 245, width: 60, height: 20)
+		viewNews.addSubview(imageView)
+	}
+	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
 }
+

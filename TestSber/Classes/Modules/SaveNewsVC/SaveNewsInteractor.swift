@@ -10,4 +10,12 @@ import Foundation
 
 class SaveNewsInteractor: SaveNewsPresenterOutConnection {
 	
+	var rssItems: [RSSItem] = []
+	
+	//Недавно просмотреныне новсти
+	var recentlyRssService: RecentlyViewedRSSService
+	
+	init(recentlyRssService: RecentlyViewedRSSService) {
+		self.recentlyRssService = recentlyRssService
+	}
 }

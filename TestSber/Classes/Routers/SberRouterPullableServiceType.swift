@@ -12,6 +12,6 @@ enum HomeUserPullableServiceType: ViewControllerContainerable {
 	case startViewController
 	case newsViewController
 	case detailNewsViewController(rss: RSSItem?)
-	
+	case saveNewsViewController
 }
 

@@ -63,7 +63,6 @@ class TabBarControllerFactory {
 }
 
 extension UITabBarController {
-	
 	func selectNews() {
 		selectedIndex = 0
 	}

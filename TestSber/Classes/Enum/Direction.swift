@@ -10,11 +10,9 @@
 import Foundation
 
 enum Direction {
-	
   case top
   case bottom
   case leading
   case trailing
-	
 }
 

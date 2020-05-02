@@ -40,7 +40,7 @@ class SaveContainer: Containerable {
 		
 		// MARK: - SaveNewsInteractor
 		container.register(SaveNewsInteractor.self) { (resolver) -> SaveNewsInteractor in
-			let interactor = SaveNewsInteractor()
+			let interactor = SaveNewsInteractor(recentlyRssService: self.resolve()!)
 			return interactor
 		}.implements(SaveNewsPresenterOutConnection.self)
 	}

@@ -76,6 +76,11 @@
 		A8477DBE2454EC370074F7B0 /* UserContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DBD2454EC370074F7B0 /* UserContainer.swift */; };
 		A8477DC12455010A0074F7B0 /* NotNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DC02455010A0074F7B0 /* NotNewsView.swift */; };
 		A8477DC42455020C0074F7B0 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8477DC32455020C0074F7B0 /* NibLoadable.swift */; };
+		A847F45A245D8D890072736C /* RecentlyViewedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A847F459245D8D890072736C /* RecentlyViewedDataProvider.swift */; };
+		A847F45C245D92480072736C /* RecentlyViewedRSSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A847F45B245D92480072736C /* RecentlyViewedRSSService.swift */; };
+		A847F45E245D92C70072736C /* RecentlyViewedRSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A847F45D245D92C70072736C /* RecentlyViewedRSSItem.swift */; };
+		A847F461245D946A0072736C /* RecentlyViewedDataProviderRSSItemContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A847F460245D946A0072736C /* RecentlyViewedDataProviderRSSItemContainer.swift */; };
+		A848BD8C245C160300DFF5D4 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A848BD8B245C160300DFF5D4 /* Extension+UIImageView.swift */; };
 		A873967F2454A19B00C46FCD /* SberRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873967E2454A19B00C46FCD /* SberRouter.swift */; };
 		A87396812454A1AD00C46FCD /* SberRouterPullableServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87396802454A1AD00C46FCD /* SberRouterPullableServiceType.swift */; };
 		A87396842454AB5500C46FCD /* SaveNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87396832454AB5500C46FCD /* SaveNewsViewController.swift */; };
@@ -194,6 +199,11 @@
 		A8477DBD2454EC370074F7B0 /* UserContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContainer.swift; sourceTree = "<group>"; };
 		A8477DC02455010A0074F7B0 /* NotNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotNewsView.swift; sourceTree = "<group>"; };
 		A8477DC32455020C0074F7B0 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		A847F459245D8D890072736C /* RecentlyViewedDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyViewedDataProvider.swift; sourceTree = "<group>"; };
+		A847F45B245D92480072736C /* RecentlyViewedRSSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyViewedRSSService.swift; sourceTree = "<group>"; };
+		A847F45D245D92C70072736C /* RecentlyViewedRSSItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyViewedRSSItem.swift; sourceTree = "<group>"; };
+		A847F460245D946A0072736C /* RecentlyViewedDataProviderRSSItemContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyViewedDataProviderRSSItemContainer.swift; sourceTree = "<group>"; };
+		A848BD8B245C160300DFF5D4 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		A873967E2454A19B00C46FCD /* SberRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SberRouter.swift; sourceTree = "<group>"; };
 		A87396802454A1AD00C46FCD /* SberRouterPullableServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SberRouterPullableServiceType.swift; sourceTree = "<group>"; };
 		A87396832454AB5500C46FCD /* SaveNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNewsViewController.swift; sourceTree = "<group>"; };
@@ -493,6 +503,7 @@
 		A83C05642453783F00FF8702 /* Containers */ = {
 			isa = PBXGroup;
 			children = (
+				A847F45F245D94390072736C /* RecentlyViewedDataProvider */,
 				A836D38F2459E93900A410F9 /* DataProvider */,
 				A83D1C3124583065000551F8 /* NetWorkService */,
 				A83C056C24537E7C00FF8702 /* Router */,
@@ -581,6 +592,7 @@
 				A8AE087224589B5400BC852F /* Extensions+String.swift */,
 				A8AE08772458D24100BC852F /* Extensions+UIView.swift */,
 				A8F0D9ED245B4E2C0031B806 /*  Extension-Double.swift */,
+				A848BD8B245C160300DFF5D4 /* Extension+UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -648,6 +660,23 @@
 			path = NibLoadable;
 			sourceTree = "<group>";
 		};
+		A847F458245D8D530072736C /* RecentlyViewedDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				A847F45B245D92480072736C /* RecentlyViewedRSSService.swift */,
+				A847F459245D8D890072736C /* RecentlyViewedDataProvider.swift */,
+			);
+			path = RecentlyViewedDataProvider;
+			sourceTree = "<group>";
+		};
+		A847F45F245D94390072736C /* RecentlyViewedDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				A847F460245D946A0072736C /* RecentlyViewedDataProviderRSSItemContainer.swift */,
+			);
+			path = RecentlyViewedDataProvider;
+			sourceTree = "<group>";
+		};
 		A87396822454AB2600C46FCD /* SaveNewsVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -683,6 +712,7 @@
 			children = (
 				A8A9ED162457326E00D1374A /* RssModels.swift */,
 				A8F0D9EB245B47A00031B806 /* NewsSave.swift */,
+				A847F45D245D92C70072736C /* RecentlyViewedRSSItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -699,6 +729,7 @@
 		A8A9ED1924573C5400D1374A /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				A847F458245D8D530072736C /* RecentlyViewedDataProvider */,
 				A8F0D9E6245B464F0031B806 /* NewsDataProvider */,
 				A836D38A2459CFFB00A410F9 /* RssDataProvider */,
 				A8A9ED1A24573C5E00D1374A /* Realm */,
@@ -1022,6 +1053,7 @@
 				A8477DB82454EB290074F7B0 /* UserPresenterOutConnection.swift in Sources */,
 				A8A9ED25245744DD00D1374A /* XMLParserServiceImplementation.swift in Sources */,
 				A8477DA62454EA2E0074F7B0 /* SaveNewsViewInConnection.swift in Sources */,
+				A847F45A245D8D890072736C /* RecentlyViewedDataProvider.swift in Sources */,
 				A83C05842453973200FF8702 /* Etensions+UIFont.swift in Sources */,
 				A8AE087B2458D2A400BC852F /* Direction.swift in Sources */,
 				A83C057C24538A1A00FF8702 /* TabBarControllerFactory.swift in Sources */,
@@ -1036,13 +1068,16 @@
 				A8477DA22454E9DC0074F7B0 /* DetailNewsInteractor.swift in Sources */,
 				A83C0576245380F600FF8702 /* PullableService.swift in Sources */,
 				A835E5482455AFF3009A163C /* NewsCollectionViewCell.swift in Sources */,
+				A848BD8C245C160300DFF5D4 /* Extension+UIImageView.swift in Sources */,
 				A8477D9A2454E84E0074F7B0 /* DetailNewsViewController.swift in Sources */,
 				A8F0D9EE245B4E2C0031B806 /*  Extension-Double.swift in Sources */,
 				A83C056E24537EA200FF8702 /* RouterContainer.swift in Sources */,
 				A8477DBE2454EC370074F7B0 /* UserContainer.swift in Sources */,
 				A83C051224536E4000FF8702 /* AppDelegate.swift in Sources */,
 				A8A9ED1F2457414800D1374A /* TemplateURL.swift in Sources */,
+				A847F461245D946A0072736C /* RecentlyViewedDataProviderRSSItemContainer.swift in Sources */,
 				A8477DC42455020C0074F7B0 /* NibLoadable.swift in Sources */,
+				A847F45E245D92C70072736C /* RecentlyViewedRSSItem.swift in Sources */,
 				A83C055A2453767F00FF8702 /* StartViewOutConnection.swift in Sources */,
 				A8F0D9E8245B46790031B806 /* NewsDataService.swift in Sources */,
 				A8477DA42454E9EF0074F7B0 /* DetailNewsPresenterOutConnection.swift in Sources */,
@@ -1069,6 +1104,7 @@
 				A8A9ED27245754C800D1374A /* XMLParserService.swift in Sources */,
 				A836D387245978C900A410F9 /* DetailNewsContainer.swift in Sources */,
 				A83C05922453A8B300FF8702 /* NewsPresenterOutConnection.swift in Sources */,
+				A847F45C245D92480072736C /* RecentlyViewedRSSService.swift in Sources */,
 				A836D3892459975200A410F9 /* NewsTitleTableViewCell.swift in Sources */,
 				A8477DB02454EAC10074F7B0 /* UserViewInConnection.swift in Sources */,
 				A8477D9C2454E9A80074F7B0 /* DetailNewsViewInConnection.swift in Sources */,

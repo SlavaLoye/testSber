@@ -12,8 +12,6 @@ class NewsTitleTableViewCell: UITableViewCell, SelfConfiguringCell {
 	
 	static var reuseId: String = "NewsTitleTableViewCell"
 	
-	var widthConstraint: NSLayoutConstraint!
-	
 	// MARK: - reuseId
 	let viewNews = UIView()
 	

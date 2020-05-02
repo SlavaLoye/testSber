@@ -17,8 +17,10 @@ class DataProvidersContainer: Containerable {
 	required init(container: Container) {
 		self.container = container
 	}
-
+	
+	
 	func register() {
+		//MARK: RssDataProviderService
 		container.register(RssDataProviderService.self) { (resolver) -> RssDataProviderService in
 			let service = RssDataProviderServiceImplementation(realmService: self.resolve()!, rssNetworkService: self.resolve()!)
 			return service

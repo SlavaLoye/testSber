@@ -9,5 +9,8 @@
 import Foundation
 
 protocol SaveNewsPresenterOutConnection {
+	var rssItems: [RSSItem] { get}
+	//Недавно просмотреныне новости
+	var recentlyRssService: RecentlyViewedRSSService { get }
 	
 }

@@ -18,3 +18,4 @@ protocol RealmService {
 	func delete(_ objects: [Object])
 }
 
+

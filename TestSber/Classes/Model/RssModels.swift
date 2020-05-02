@@ -9,13 +9,18 @@
 import Foundation
 import RealmSwift
 import Realm
+//https://academy.realm.io/posts/realm-list-new-superpowers-array-primitives/
 
 final class RSSItem: Object {
 	
     @objc dynamic var title: String = ""
     @objc dynamic var descriptions: String = ""
     @objc dynamic var pubDate: String = ""
-	@objc override class func primaryKey() -> String? { return "pubDate" }
+//
+//	override static func primaryKey() -> String? {
+//	  return "title"
+//	}
+	@objc override class func primaryKey() -> String? { return "title" }
 	
 	convenience init(title: String, descriptions: String, pubDate: String ) {
 		self.init()
@@ -33,7 +38,7 @@ final class RSSItem: Object {
 	var pubDateDouble: Double {
 		return pubDate.toDouble()
 	}
-	
+
 	required init (from decoder: Decoder) throws {
 	let container = try decoder.container(keyedBy: CodingKeys.self)
 	title = try container.decode(String.self, forKey: .title)

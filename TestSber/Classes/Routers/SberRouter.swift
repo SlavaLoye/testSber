@@ -52,12 +52,22 @@ class SberRouter {
 					sourceViewController?.present(nc, animated: true, completion: nil)
 			}
 			
-			
 			//MARK: DetailNewsViewController
 			case .detailNewsViewController(let rss):
 			  if let vc: (UIViewController & PanModalPresentable) = pullableService?.container?.get(DetailNewsViewController.self, argument: rss) {
 				sourceViewController?.presentPanModal(vc)
+				if let recentlyRssService: RecentlyViewedRSSService = pullableService?.container?.resolve(), let item = rss {
+					recentlyRssService.add(rss: item)
+				}
 			  }
+			
+			//MARK: SaveNewsViewController
+			case .saveNewsViewController:
+			if let vc: UIViewController = pullableService?.container?.get(SaveNewsViewController.self) {
+					let nc = UINavigationController(rootViewController: vc)
+					nc.modalPresentationStyle = .fullScreen
+					sourceViewController?.present(nc, animated: true, completion: nil)
+			}
 		}
 	}
 }

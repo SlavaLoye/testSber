@@ -9,8 +9,7 @@
 import UIKit
 
 class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, UICollectionViewDataSource {
-	
-	
+		
 	// MARK: - view
 	weak var view: NewsViewInConnection?
 	
@@ -35,12 +34,10 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
 		delegating()
-		//view?.reloadData()
 	}
 	
 	// MARK: - viewWillAppear
 	func viewWillAppear() {
-		view?.showLoader()
 		view?.reloadData()
 	}
 	
@@ -56,7 +53,8 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	// MARK: - finamFetch
 	func finamFetch() {
 		isAllSelected = false
-		interactor?.parseFeed(url: TemplateURL.finamRU.rawValue, completionHandler: { [weak self] ( rssItems) in
+		view?.showLoader()
+		interactor?.parseFeed(url: TemplateURL.finamRU.rawValue, completion: { [weak self] ( rssItems) in
 			self?.interactor?.rssItems = rssItems
 			OperationQueue.main.addOperation {
 				self?.view?.collectionView.reloadSections(IndexSet(integer: 0))
@@ -68,7 +66,8 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	// MARK: - bankiRUFetch
 	func bankiRUFetch() {
 		isAllSelected = true
-		interactor?.parseFeed(url: TemplateURL.bankiRU.rawValue, completionHandler: { [weak self] ( rssItems) in
+		view?.showLoader()
+		interactor?.parseFeed(url: TemplateURL.bankiRU.rawValue, completion: { [weak self] ( rssItems) in
 			self?.interactor?.rssItems = rssItems
 			OperationQueue.main.addOperation {
 				self?.view?.collectionView.reloadSections(IndexSet(integer: 0))
@@ -76,7 +75,6 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 			}
 		})
 	}
-	
 	
 	// MARK: - delegating
 	private func delegating()  {
@@ -103,7 +101,7 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 			case .news:
 				if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell {
 					let title = interactor?.rssItems[indexPath.row]
-					cell.configureCell(header: title?.title, timer: title?.pubDate, news: title?.description)
+					cell.configureCell(header: title?.title, timer: title?.pubDate, news: title?.description, isImages: true)
 					return cell
 				}
 				return UICollectionViewCell()

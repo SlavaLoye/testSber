@@ -21,8 +21,9 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 		return view?.tableView
 	}
 	
+	
 	// MARK: - models
-	private let models: [CellModel] = [ .title, .newsTitle, .timer, .descriptionNews]
+	private let models: [CellModel] = [.title, .newsTitle, .timer, .descriptionNews]
 	
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
@@ -31,8 +32,6 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 	
 	// MARK: - viewWillAppear
 	func viewWillAppear() {
-		delegating()
-		
 	}
 	
 	// MARK: - delegating
@@ -89,7 +88,7 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 						if let timerCell = tableView.dequeueReusableCell(withIdentifier: "TimerTableViewCell", for: indexPath) as? TimerTableViewCell {
 							timerCell.selectionStyle = .none
 							if let timer = interactor?.rss {
-								timerCell.configureCell(timer: timer.pubDate)
+								timerCell.configureCell(timer: timer.pubDate, isImages: true)
 							}
 							return timerCell
 					}

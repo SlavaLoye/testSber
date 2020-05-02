@@ -13,7 +13,7 @@ class XMLParserServiceImplementation: NSObject, XMLParserDelegate, XMLParserServ
 	//MARK: - private
 	private var rssItems: [RSSItem] = []
 	private var currentElement = ""
-	private var parserCompletionHandler: ItemClosure<[RSSItem]>?
+	private var parserCompletionHandler: ItemClosure<[RSSItem]>!
 	
 	//MARK: - currentTitle & currentDescription & currentPubDate
 	private var currentTitle: String = "" {
@@ -82,7 +82,7 @@ class XMLParserServiceImplementation: NSObject, XMLParserDelegate, XMLParserServ
 	}
 	
 	func parserDidEndDocument(_ parser: XMLParser) {
-		parserCompletionHandler?(rssItems)
+		parserCompletionHandler(rssItems)
 	}
 	
 	func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {

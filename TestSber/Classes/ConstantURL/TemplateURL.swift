@@ -12,5 +12,7 @@ import Foundation
 enum TemplateURL: String {
 	case finamRU = "https://www.finam.ru/net/analysis/conews/rsspoint"
 	case bankiRU = "https://www.banki.ru/xml/news.rss"
+	case imgBanki = "https://www.banki.ru/com/banki_logo.gif"
+	case imgFinam = "https://www.finam.ru/i/N/logo-rss.gif"
   }
 
