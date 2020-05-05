@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		registerDependencies()
 		rootViewController()
+		startRSSNews()
 		return true
 	}
 	
@@ -37,8 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		startRouter?.root(&window)
 	}
 	
+	// загружаем Cached
 	func startRSSNews() {
-		startObservingCartCount()
 		loadCachedRecentlyViewedProducts()
 	}
 	
@@ -48,22 +49,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let rcecentlyViewedRSSProvider: RecentlyViewedRSSService? = mainContainer?.resolve()
 		rcecentlyViewedRSSProvider?.loadCachedList()
 	  }
-	
-	
-	private func startObservingCartCount() {
-//    let dataProviderService: CartDataProviderService? = mainContainer?.resolve()
-//    let startContainer: StartContainer? = mainContainer?.subContainers.first(where: { (container) -> Bool in
-//      return container is StartContainer
-//    }) as? StartContainer
-//
-//    dataProviderService?.countChanged = { count in
-//      let tabBarController = startContainer?.nextViewController as? UITabBarController
-//      if count == 0 {
-//        tabBarController?.tabBar.items?[2].badgeValue = nil
-//      } else {
-//        tabBarController?.tabBar.items?[2].badgeValue = "\(count)"
-//		}
-//      }
-   }
 }
 

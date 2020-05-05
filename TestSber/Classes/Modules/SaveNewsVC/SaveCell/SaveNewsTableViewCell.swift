@@ -20,6 +20,9 @@ class SaveNewsTableViewCell : UITableViewCell, SelfConfiguringCell {
 	// MARK: - reuseId
 	let viewNews = UIView()
 	
+	// MARK: - reuseId
+	let lineView = UIView()
+	
 	// MARK: - headerLabel
 	let headerLabel = UILabel()
 	
@@ -43,6 +46,7 @@ class SaveNewsTableViewCell : UITableViewCell, SelfConfiguringCell {
 		timerLabesl()
 		readMoreLabels()
 		imageViewNews()
+		lineViewNews()
 	}
 	
 	
@@ -70,13 +74,17 @@ class SaveNewsTableViewCell : UITableViewCell, SelfConfiguringCell {
 		viewNews.addSubview(imageViews)
 	}
 	
-	// MARK: - setupConstraints
+	// MARK: - setupViewNews
 	func setupViewNews() {
 		addSubview(viewNews)
-		viewNews.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-		viewNews.layer.borderWidth = 1
-		viewNews.layer.cornerRadius = 10
 		viewNews.frame = CGRect(x: 10, y: 0, width: UIScreen.main.bounds.width - 20, height: 300)
+	}
+	
+	// MARK: - setupViewNews
+	func lineViewNews() {
+		viewNews.addSubview(lineView)
+		viewNews.backgroundColor = UIColor.sberGreen
+		viewNews.frame = CGRect(x: 10, y: 0, width: UIScreen.main.bounds.width - 20, height: 2)
 	}
 	
 	// MARK: - addTitleLbel
@@ -109,7 +117,7 @@ class SaveNewsTableViewCell : UITableViewCell, SelfConfiguringCell {
 		timerLabel.frame = CGRect(x: 16, y: 80, width: viewNews.bounds.width - 30, height: 15)
 		
 	}
-	// MARK: - timerLabelLabel
+	// MARK: - readMoreLabels
 	func readMoreLabels()  {
 		viewNews.addSubview(readMoreLabel)
 		readMoreLabel.textAlignment = .right
@@ -117,11 +125,9 @@ class SaveNewsTableViewCell : UITableViewCell, SelfConfiguringCell {
 		readMoreLabel.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
 		readMoreLabel.font = UIFont.regular14
 		readMoreLabel.frame = CGRect(x: viewNews.bounds.width - 130, y: 245, width: 120, height: 15)
-		readMoreLabel.text = NSLocalizedString("title.readMoreTitle", comment: "Читать далее...")
+		readMoreLabel.text = NSLocalizedString("title.readMore", comment: "Подробнее...")
 	}
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-	
-
 }

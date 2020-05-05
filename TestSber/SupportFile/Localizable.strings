@@ -7,11 +7,12 @@
 */
 
 // Labbel
-"title.title" = "Сбербанк";
-"title.descriptionTitle" = "Всегда рядом";
-"title.readMoreTitle" = "Читать далее...";
-"title.newsTitle" = "Новости рынка";
+"title.title"             	 = "Сбербанк";
+"title.descriptionTitle"  	 = "Всегда рядом";
+"title.readMoreTitle"     	 = "Читать далее...";
+"title.newsTitle"         	 = "Новости рынка";
+"title.readMore"           	 = "Подробнее...";
 
 // Button
-"button.authorizationEnter" = "ВОЙТИ";
-"button.newsUser" = "Новости Сбербанка";
+"button.authorizationEnter"  = "ВОЙТИ";
+"button.newsUser"            = "Новости Сбербанка";

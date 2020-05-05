@@ -27,7 +27,7 @@ class SaveNewsViewController: UIViewController, SaveNewsViewInConnection {
 		registerCells()
 		safeArea = view.layoutMarginsGuide
 		tableView.estimatedRowHeight = 155.0
-		tableView.rowHeight = UITableView.automaticDimension
+//		tableView.rowHeight = UITableView.automaticDimension
 		tableView.separatorStyle = .none
 	}
 	

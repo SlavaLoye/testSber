@@ -107,6 +107,8 @@ class SaveNewsPresenter: NSObject, SaveNewsViewOutConnection, UITableViewDelegat
 		return 300
 	}
 	
+	
+	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let rss = rssItem[indexPath.row]
 		sberRouter?.route(to: .detailNewsViewController(rss: rss), in: view)
