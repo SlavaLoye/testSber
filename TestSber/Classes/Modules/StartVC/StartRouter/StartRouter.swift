@@ -30,6 +30,7 @@ class StartRouter {
 		window = UIWindow(frame: UIScreen.main.bounds)
 		window?.makeKeyAndVisible()
 		window?.rootViewController = rootViewController
+		(UIApplication.shared.delegate as? AppDelegate)?.startRSSNews()
 	}
 	
 	// MARK: - openNextViewController

@@ -32,6 +32,7 @@ class SaveContainer: Containerable {
 		container.register(SaveNewsPresenter.self) { (resolver) -> SaveNewsPresenter in
 			let presenter = SaveNewsPresenter()
 			presenter.interactor = resolver.resolve(SaveNewsPresenterOutConnection.self)
+			presenter.sberRouter = self.resolve()!
 			return presenter
 		}.initCompleted { (resolver, presenter) in
 			presenter.view = self.resolve()!
@@ -40,7 +41,7 @@ class SaveContainer: Containerable {
 		
 		// MARK: - SaveNewsInteractor
 		container.register(SaveNewsInteractor.self) { (resolver) -> SaveNewsInteractor in
-			let interactor = SaveNewsInteractor(recentlyRssService: self.resolve()!)
+			let interactor = SaveNewsInteractor(recentlyRssService: self.resolve()!, xmlDataService: self.resolve()!)
 			return interactor
 		}.implements(SaveNewsPresenterOutConnection.self)
 	}

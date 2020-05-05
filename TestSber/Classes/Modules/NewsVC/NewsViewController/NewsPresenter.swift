@@ -29,7 +29,6 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	
 	// MARK: CellModel - realisation
 	private let models: [CellModel] = [.news]
-	private let fetchMedels: [FetchModel] = [.finam, .banki]
 	
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
@@ -38,16 +37,7 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	
 	// MARK: - viewWillAppear
 	func viewWillAppear() {
-		view?.reloadData()
-	}
-	
-	func fetchBanK(model: FetchModel) {
-		switch model {
-			case .finam:
-				return finamFetch()
-			case .banki:
-				return bankiRUFetch()
-		}
+
 	}
 	
 	// MARK: - finamFetch
@@ -72,6 +62,7 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 			OperationQueue.main.addOperation {
 				self?.view?.collectionView.reloadSections(IndexSet(integer: 0))
 				self?.view?.hideLoader()
+
 			}
 		})
 	}
@@ -118,17 +109,6 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 		}
 	}
 }
-
-
-// MARK: - CellModel
-extension NewsPresenter  {
-    enum FetchModel {
-		case finam
-		case banki
-	}
-	
-}
-
 
 // MARK: - CellModel
 extension NewsPresenter  {

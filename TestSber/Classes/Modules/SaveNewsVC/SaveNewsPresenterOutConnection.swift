@@ -9,8 +9,9 @@
 import Foundation
 
 protocol SaveNewsPresenterOutConnection {
-	var rssItems: [RSSItem] { get}
+	var rssItems: [RSSItem] { get set}
 	//Недавно просмотреныне новости
 	var recentlyRssService: RecentlyViewedRSSService { get }
+	func parseFeed(url: String, completion: @escaping ItemClosure<[RSSItem]>)
 	
 }

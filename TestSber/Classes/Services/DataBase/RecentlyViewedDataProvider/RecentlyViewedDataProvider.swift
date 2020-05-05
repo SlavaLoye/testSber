@@ -11,17 +11,17 @@ import Realm
 
 class RecentlyViewedDataProviderImplemintation: RecentlyViewedRSSService {
 
-	private let realmService: RealmService?
+	private let realmService: RealmService
 	
 	// MARK: RecentlyViewedRSSItem
 	private(set) var rssItems: RSSViewsItem = RSSViewsItem()
 
-	init(realmService: RealmService?) {
+	init(realmService: RealmService) {
 		self.realmService = realmService
 	}
 
 	private func resave() {
-		realmService?.save(rssItems)
+		realmService.save(rssItems)
 	}
 
 
@@ -29,13 +29,13 @@ class RecentlyViewedDataProviderImplemintation: RecentlyViewedRSSService {
 		if self.rssItems.rssList.first(where: { (savedRSSItem) -> Bool in
 			return savedRSSItem.title == rss.title
 		}) == nil {
-			realmService?.save(rss)
-			realmService?.write {
+			realmService.save(rss)
+			realmService.write {
 				self.rssItems.rssList.append(rss)
 			}
 			
 			while self.rssItems.rssList.count > 10 {
-				realmService?.write {
+				realmService.write {
 					self.rssItems.rssList.removeFirst()
 				}
 			}
@@ -45,7 +45,7 @@ class RecentlyViewedDataProviderImplemintation: RecentlyViewedRSSService {
 	}
 	
 	func loadCachedList() {
-		guard let rssItems = realmService?.retrieveObjects(of: RSSViewsItem.self).first else {
+		guard let rssItems = realmService.retrieveObjects(of: RSSViewsItem.self).first else {
 			return
 		}
 		

@@ -32,7 +32,7 @@ class RealmServiceImplementation: RealmService {
       realm.delete(object)
     }
   }
-	// удаление [Object]
+	// сохранение [Object]
 	func save(_ objects: [Object]) {
 		let realm = try! Realm()
 		write {

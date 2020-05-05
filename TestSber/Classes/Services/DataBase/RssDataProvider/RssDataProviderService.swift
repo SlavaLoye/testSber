@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol RssDataProviderService: class {
+protocol RssDataProviderService {
 	func parseFeed(url: String, completion:  @escaping ItemClosure<[RSSItem]>)
 }
+

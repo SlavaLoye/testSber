@@ -13,13 +13,10 @@ import Realm
 
 final class RSSItem: Object {
 	
-    @objc dynamic var title: String = ""
+    @objc dynamic var title: String = UUID.init().uuidString
     @objc dynamic var descriptions: String = ""
     @objc dynamic var pubDate: String = ""
-//
-//	override static func primaryKey() -> String? {
-//	  return "title"
-//	}
+	
 	@objc override class func primaryKey() -> String? { return "title" }
 	
 	convenience init(title: String, descriptions: String, pubDate: String ) {

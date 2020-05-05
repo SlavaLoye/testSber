@@ -20,17 +20,10 @@ class SaveNewsViewController: UIViewController, SaveNewsViewInConnection {
 	var safeArea: UILayoutGuide!
 	
 	// MARK: - viewDidLoad
-	override func loadView() {
-	  super.loadView()
-	  setupTableView()
-	}
-	
-	// MARK: - viewDidLoad
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupTableView()
 		presenter?.viewDidLoad()
-
 		registerCells()
 		safeArea = view.layoutMarginsGuide
 		tableView.estimatedRowHeight = 155.0

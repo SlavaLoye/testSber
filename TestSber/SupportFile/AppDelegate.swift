@@ -8,6 +8,8 @@
 
 import UIKit
 import Swinject
+import Realm
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,6 +36,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let startRouter = mainContainer?.get(StartRouter.self)
 		startRouter?.root(&window)
 	}
+	
+	func startRSSNews() {
+		startObservingCartCount()
+		loadCachedRecentlyViewedProducts()
+	}
+	
+	// MARK: loadCachedRecentlyViewedProducts
+	  
+	  private func loadCachedRecentlyViewedProducts() {
+		let rcecentlyViewedRSSProvider: RecentlyViewedRSSService? = mainContainer?.resolve()
+		rcecentlyViewedRSSProvider?.loadCachedList()
+	  }
+	
 	
 	private func startObservingCartCount() {
 //    let dataProviderService: CartDataProviderService? = mainContainer?.resolve()

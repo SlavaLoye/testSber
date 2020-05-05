@@ -11,19 +11,19 @@ import Foundation
 class RssDataProviderServiceImplementation: RssDataProviderService {
 	
 	// MARK: - realmService
-	private let realmService: RealmService?
+	private let realmService: RealmService
 	
 	// MARK: - rssNetworkService
 	private let rssNetworkService: XMLParserService
 	
-	init(realmService: RealmService?, rssNetworkService: XMLParserService) {
+	init(realmService: RealmService, rssNetworkService: XMLParserService) {
 		self.realmService = realmService
 		self.rssNetworkService = rssNetworkService
 	}
 	
 	// MARK: - parseFeed
 	func parseFeed(url: String, completion: @escaping ItemClosure<[RSSItem]>) {
-		let cachedRSS = self.realmService?.retrieveObjects(of: RSSItem.self) ?? []
+		let cachedRSS = self.realmService.retrieveObjects(of: RSSItem.self)
 		if !cachedRSS.isEmpty {
 			DispatchQueue.main.async {
 				completion(cachedRSS)
@@ -31,8 +31,8 @@ class RssDataProviderServiceImplementation: RssDataProviderService {
 		}
 		
 		rssNetworkService.parseFeed(url: url) {  (rss) in
-			self.realmService?.save(rss)
 			DispatchQueue.main.async {
+				self.realmService.save(rss)
 				if !rss.isEmpty {
 					completion(rss)
 				}

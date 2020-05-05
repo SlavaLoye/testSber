@@ -32,6 +32,7 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 	
 	// MARK: - viewWillAppear
 	func viewWillAppear() {
+		
 	}
 	
 	// MARK: - delegating
@@ -85,13 +86,13 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 			}
 			
 			case .timer:
-						if let timerCell = tableView.dequeueReusableCell(withIdentifier: "TimerTableViewCell", for: indexPath) as? TimerTableViewCell {
-							timerCell.selectionStyle = .none
-							if let timer = interactor?.rss {
-								timerCell.configureCell(timer: timer.pubDate, isImages: true)
-							}
-							return timerCell
+				if let timerCell = tableView.dequeueReusableCell(withIdentifier: "TimerTableViewCell", for: indexPath) as? TimerTableViewCell {
+					timerCell.selectionStyle = .none
+					if let timer = interactor?.rss {
+						timerCell.configureCell(timer: timer.pubDate, isImages: true)
 					}
+					return timerCell
+			}
 			
 			case .descriptionNews:
 				if let descriptionNewsCell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as? DescriptionTableViewCell {
