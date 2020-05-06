@@ -52,18 +52,28 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 		reloadData()
 	}
 	
+	func updateUrl()  {
+		if presenter?.isAllSelected == true {
+			presenter?.finamFetch() // finam
+			print("finamFetch \(presenter?.finamFetch())")
+		} else {
+			presenter?.bankiRUFetch() // banki
+			print("bankiRUFetch \(presenter?.bankiRUFetch())")
+		}
+	}
+	
 	// MARK: - reloadData
 	@objc func reloadData()  {
-		if presenter?.isAllSelected == false {
-			presenter?.isAllSelected = false
-			presenter?.finamFetch() // finam
-		} else {
-			presenter?.isAllSelected = true
-			presenter?.bankiRUFetch() // banki
-		}
-		
+		updateUrl()
 		self.collectionView.reloadData()
 		self.refreshControl.endRefreshing()
+	}
+	
+	// MARK: - collectionButtonClickeds
+	@objc  func collectionButtonClickeds() {
+		updateUrl()
+		self.collectionView.reloadData()
+		scrollToTop(animated: true)
 	}
 	
 	// MARK: - hideLoader
@@ -99,19 +109,7 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 		scrollToTop(animated: true)
 	}
 	
-	// MARK: - collectionButtonClickeds
-	@objc  func collectionButtonClickeds() {
-		if presenter?.isAllSelected ?? false  {
-			presenter?.isAllSelected = false
-			presenter?.finamFetch()
-			print("false - \(presenter?.isAllSelected ?? false)")
-		} else {
-			presenter?.isAllSelected = true
-			presenter?.bankiRUFetch()
-			print("true - \(presenter?.isAllSelected ?? true)")
-		}
-		scrollToTop(animated: true)
-	}
+	
 	
 	// MARK: - init
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -159,9 +157,9 @@ extension NewsViewController {
 											  heightDimension: .fractionalHeight(1.0))
 		let item = NSCollectionLayoutItem(layoutSize: itemSize)
 		let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-											   heightDimension: .fractionalWidth(0.70))
+											   heightDimension: .fractionalWidth(0.75))
 		let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
-		let spacing = CGFloat(10)
+		let spacing = CGFloat(15)
 		group.interItemSpacing = .fixed(spacing)
 		let section = NSCollectionLayoutSection(group: group)
 		section.interGroupSpacing = spacing

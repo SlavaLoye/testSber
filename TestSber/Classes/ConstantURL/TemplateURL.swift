@@ -13,10 +13,10 @@ enum TemplateURL: String {
 	
 	// URL
 	case finamRU = "https://www.finam.ru/net/analysis/conews/rsspoint"
-	case bankiRU = "https://www.banki.ru/xml/news.rss"
+	case bankiRU = "https://developer.apple.com/news/rss/news.rss"
 	// Images
 	case imgBanki = "https://www.banki.ru/com/banki_logo.gif"
 	case imgFinam = "https://www.finam.ru/i/N/logo-rss.gif"
 	
   }
-
+//https://developer.apple.com/news/rss/news.rss

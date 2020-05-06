@@ -82,7 +82,7 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		headerLabel.numberOfLines = 0
 		headerLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 		headerLabel.font = UIFont.semibold22
-		headerLabel.frame = CGRect(x: 16, y: 16, width: viewNews.bounds.width - 30, height: 60)
+		headerLabel.frame = CGRect(x: 16, y: 16, width: viewNews.bounds.width - 30, height: viewNews.bounds.width / 6)
 	}
 	
 	// MARK: - timerLabelLabel
@@ -92,7 +92,7 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		timerLabel.numberOfLines = 0
 		timerLabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
 		timerLabel.font = UIFont.regular14
-		timerLabel.frame = CGRect(x: 16, y: 80, width: viewNews.bounds.width - 30, height: 15)
+		timerLabel.frame = CGRect(x: 16, y: (viewNews.bounds.height / 2) * 0.4, width: viewNews.bounds.width - 30, height: viewNews.bounds.width / 6)
 	}
 	
 	// MARK: - addTitleLbel
@@ -112,14 +112,14 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		readMoreLabel.numberOfLines = 0
 		readMoreLabel.textColor = #colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.2666666806, alpha: 1)
 		readMoreLabel.font = UIFont.regular14
-		readMoreLabel.frame = CGRect(x: viewNews.bounds.width - 130, y: 245, width: 120, height: 15)
+		readMoreLabel.frame = CGRect(x: viewNews.bounds.width - 130, y: viewNews.bounds.height - 25, width: 120, height: 15)
 		readMoreLabel.text =  NSLocalizedString("title.readMoreTitle", comment: "Читать далее...")
 	}
 		
 	// MARK: - imageViewNews
 	func imageViewNews() {
-		imageView.frame = CGRect(x: 16, y: 245, width: 60, height: 20)
 		viewNews.addSubview(imageView)
+		imageView.frame = CGRect(x: 16, y: viewNews.bounds.height - 25, width: 60, height: 20)
 	}
 	
 	required init?(coder: NSCoder) {

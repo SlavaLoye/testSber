@@ -30,26 +30,17 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	
 	// MARK: CellModel - realisation
 	private let models: [CellModel] = [.news]
-	private let fetchMedels: [FetchModel] = [.finam, .banki]
 	
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
 		delegating()
+		bankiRUFetch()
+		finamFetch()
 	}
 	
 	// MARK: - viewWillAppear
 	func viewWillAppear() {
 		view?.reloadData()
-	}
-	
-	// MARK: - viewWillAppear
-	func fetchBanK(model: FetchModel) {
-		switch model {
-			case .finam:
-				return finamFetch()
-			case .banki:
-				return bankiRUFetch()
-		}
 	}
 	
 	// MARK: - finamFetch
@@ -114,15 +105,6 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 				let rss = interactor?.rssItems[indexPath.row]
 				sberRouter?.route(to: .detailNewsViewController(rss: rss), in: view)
 		}
-	}
-}
-
-
-// MARK: - CellModel
-extension NewsPresenter  {
-	enum FetchModel {
-		case finam
-		case banki
 	}
 }
 
