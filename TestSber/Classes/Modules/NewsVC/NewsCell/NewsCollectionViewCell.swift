@@ -45,6 +45,7 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		timerLabesl()
 		readMoreLabels()
 		imageViewNews()
+		addButtonLike()
 	}
 	
 	// MARK: - configureCell
@@ -64,6 +65,14 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		if let news = news {
 			newsLabel.text = news.removeHTMLAndStringTemplates
 		}
+		
+		if !isActive {
+			let image = UIImage(systemName: "heart")?.withTintColor(.sberGreen, renderingMode: .alwaysOriginal)
+			newsButton.setImage(image, for: .normal)
+		} else {
+			let image = UIImage(systemName: "heart.fill")?.withTintColor(.sberGreen, renderingMode: .alwaysOriginal)
+			newsButton.setImage(image, for: .normal)
+		}
 	}
 	
 	// MARK: - setupConstraints
@@ -82,8 +91,16 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		headerLabel.numberOfLines = 0
 		headerLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 		headerLabel.font = UIFont.semibold22
-		headerLabel.frame = CGRect(x: 16, y: 16, width: viewNews.bounds.width - 30, height: viewNews.bounds.width / 6)
+		headerLabel.frame = CGRect(x: 16, y: 16, width: viewNews.bounds.width - 80, height: viewNews.bounds.width / 6)
 	}
+	
+	// MARK: - addButtonLike
+	func addButtonLike()  {
+		viewNews.addSubview(newsButton)
+		newsButton.frame = CGRect(x: viewNews.bounds.width - 55, y: 16, width: 40, height: 40)
+	}
+	//heart
+	//UIImage(systemName: "heart.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal)
 	
 	// MARK: - timerLabelLabel
 	func timerLabesl()  {
@@ -115,7 +132,7 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		readMoreLabel.frame = CGRect(x: viewNews.bounds.width - 130, y: viewNews.bounds.height - 25, width: 120, height: 15)
 		readMoreLabel.text =  NSLocalizedString("title.readMoreTitle", comment: "Читать далее...")
 	}
-		
+	
 	// MARK: - imageViewNews
 	func imageViewNews() {
 		viewNews.addSubview(imageView)

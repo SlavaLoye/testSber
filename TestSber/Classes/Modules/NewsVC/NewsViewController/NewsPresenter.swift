@@ -90,7 +90,7 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 			case .news:
 				if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell {
 					let title = interactor?.rssItems[indexPath.row]
-					cell.configureCell(header: title?.title, timer: title?.pubDate, news: title?.description, isImages: true, isActive: true)
+					cell.configureCell(header: title?.title, timer: title?.pubDate, news: title?.description, isImages: true, isActive: title?.title == interactor?.recentlyRssService.rssItems.title)
 					return cell
 				}
 				return UICollectionViewCell()
