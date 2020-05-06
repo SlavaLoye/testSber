@@ -10,24 +10,17 @@ import Foundation
 
 class SaveNewsInteractor: SaveNewsPresenterOutConnection {
 	
-	var rssItems: [RSSItem] = []
-	
+	var rssItems: [RSSItem] {
+    return Array(recentlyRssService.rssItems.rssList)
+  }
 	//Недавно просмотреныне новсти
 	var recentlyRssService: RecentlyViewedRSSService
-	
+  
 	//MARK: - private
 	private let xmlDataService: RssDataProviderService
 	
 	init(recentlyRssService: RecentlyViewedRSSService, xmlDataService: RssDataProviderService) {
 		self.recentlyRssService = recentlyRssService
 		self.xmlDataService = xmlDataService
-	}
-	
-	//MARK: - parseFeed
-	func parseFeed(url: String, completion: @escaping ItemClosure<[RSSItem]>) {
-		xmlDataService.parseFeed(url: url, completion: { (rssItems) in
-			self.rssItems = rssItems
-			completion(rssItems)
-		})
 	}
 }

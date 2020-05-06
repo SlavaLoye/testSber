@@ -11,4 +11,5 @@ import Foundation
 protocol NewsPresenterOutConnection: class {
 	var rssItems: [RSSItem] { get set}
 	func parseFeed(url: String, completion: @escaping ItemClosure<[RSSItem]>)
+	var recentlyRssService: RecentlyViewedRSSService { get }
 }

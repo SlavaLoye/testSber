@@ -36,7 +36,6 @@ class SaveNewsViewController: UIViewController, SaveNewsViewInConnection {
 		super.viewWillAppear(animated)
 		presenter?.viewWillAppear()
 		setupNavBar()
-		addRightBarButtonItem()
 	}
 	
 	// MARK: - setupTableView
@@ -50,15 +49,7 @@ class SaveNewsViewController: UIViewController, SaveNewsViewInConnection {
 		view.backgroundColor = .white
 	}
 	
-	
-	// MARK: - addRightBarButtonItem(Nav)
-	private func addRightBarButtonItem() {
-		let barButtonItem = UIBarButtonItem(image: UIImage(named: "CartBig"),
-											style: .plain, target: self, action: #selector(backButtonClicked))
-		barButtonItem.tintColor = #colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.1568627451, alpha: 1)
-		navigationItem.rightBarButtonItem = barButtonItem
-	}
-	
+
 	// MARK: - backButtonClicked(Nav)
 	@objc private func backButtonClicked() {
 		navigationController?.popViewController(animated: true)

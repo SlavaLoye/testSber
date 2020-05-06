@@ -49,7 +49,6 @@ class SaveNewsTableViewCell : UITableViewCell, SelfConfiguringCell {
 		lineViewNews()
 	}
 	
-	
 	// MARK: - configureCell
 	func configureCell(header: String?, timer: String?, news: String?, isImages: Bool)  {
 		if isImages {
@@ -83,8 +82,8 @@ class SaveNewsTableViewCell : UITableViewCell, SelfConfiguringCell {
 	// MARK: - setupViewNews
 	func lineViewNews() {
 		viewNews.addSubview(lineView)
-		viewNews.backgroundColor = UIColor.sberGreen
-		viewNews.frame = CGRect(x: 10, y: 0, width: UIScreen.main.bounds.width - 20, height: 2)
+		lineView.backgroundColor = UIColor.sberGreen
+		lineView.frame = CGRect(x: 10, y: 280, width: viewNews.bounds.width - 10, height: 1)
 	}
 	
 	// MARK: - addTitleLbel

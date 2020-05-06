@@ -40,12 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	// загружаем Cached
 	func startRSSNews() {
-		loadCachedRecentlyViewedProducts()
+		loadCachedRecentlyViewedRSS()
 	}
 	
 	// MARK: loadCachedRecentlyViewedProducts
 	  
-	  private func loadCachedRecentlyViewedProducts() {
+	  private func loadCachedRecentlyViewedRSS() {
 		let rcecentlyViewedRSSProvider: RecentlyViewedRSSService? = mainContainer?.resolve()
 		rcecentlyViewedRSSProvider?.loadCachedList()
 	  }

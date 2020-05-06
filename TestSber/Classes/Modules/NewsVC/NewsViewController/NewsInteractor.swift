@@ -13,12 +13,15 @@ class NewsInteractor: NewsPresenterOutConnection {
 	//MARK: - rssItems
 	var rssItems: [RSSItem] = []
 	
+	var recentlyRssService: RecentlyViewedRSSService
+	
 	//MARK: - private
 	private let xmlDataService: RssDataProviderService?
 	
 	//MARK: - init
-	init(xmlDataService: RssDataProviderService?) {
+	init(xmlDataService: RssDataProviderService?, recentlyRssService: RecentlyViewedRSSService) {
 		self.xmlDataService = xmlDataService
+		self.recentlyRssService = recentlyRssService
 	}
 
 	//MARK: - parseFeed

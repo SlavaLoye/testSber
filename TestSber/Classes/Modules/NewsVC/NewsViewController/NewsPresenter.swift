@@ -6,10 +6,11 @@
 //  Copyright © 2020 SberTestViper. All rights reserved.
 //
 
+
 import UIKit
 
 class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, UICollectionViewDataSource {
-		
+	
 	// MARK: - view
 	weak var view: NewsViewInConnection?
 	
@@ -29,6 +30,7 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	
 	// MARK: CellModel - realisation
 	private let models: [CellModel] = [.news]
+	private let fetchMedels: [FetchModel] = [.finam, .banki]
 	
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
@@ -37,7 +39,17 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	
 	// MARK: - viewWillAppear
 	func viewWillAppear() {
-
+		view?.reloadData()
+	}
+	
+	// MARK: - viewWillAppear
+	func fetchBanK(model: FetchModel) {
+		switch model {
+			case .finam:
+				return finamFetch()
+			case .banki:
+				return bankiRUFetch()
+		}
 	}
 	
 	// MARK: - finamFetch
@@ -46,10 +58,8 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 		view?.showLoader()
 		interactor?.parseFeed(url: TemplateURL.finamRU.rawValue, completion: { [weak self] ( rssItems) in
 			self?.interactor?.rssItems = rssItems
-			OperationQueue.main.addOperation {
-				self?.view?.collectionView.reloadSections(IndexSet(integer: 0))
-				self?.view?.hideLoader()
-			}
+			self?.view?.hideLoader()
+			self?.view?.collectionView.reloadData()
 		})
 	}
 	
@@ -59,11 +69,8 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 		view?.showLoader()
 		interactor?.parseFeed(url: TemplateURL.bankiRU.rawValue, completion: { [weak self] ( rssItems) in
 			self?.interactor?.rssItems = rssItems
-			OperationQueue.main.addOperation {
-				self?.view?.collectionView.reloadSections(IndexSet(integer: 0))
-				self?.view?.hideLoader()
-
-			}
+			self?.view?.hideLoader()
+			self?.view?.collectionView.reloadData()
 		})
 	}
 	
@@ -92,7 +99,7 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 			case .news:
 				if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell {
 					let title = interactor?.rssItems[indexPath.row]
-					cell.configureCell(header: title?.title, timer: title?.pubDate, news: title?.description, isImages: true)
+					cell.configureCell(header: title?.title, timer: title?.pubDate, news: title?.description, isImages: true, isActive: true)
 					return cell
 				}
 				return UICollectionViewCell()
@@ -109,6 +116,16 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 		}
 	}
 }
+
+
+// MARK: - CellModel
+extension NewsPresenter  {
+	enum FetchModel {
+		case finam
+		case banki
+	}
+}
+
 
 // MARK: - CellModel
 extension NewsPresenter  {

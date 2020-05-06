@@ -41,7 +41,7 @@ class NewsContainer: Containerable {
 		
 		// MARK: - CitiesInteractor
 		container.register(NewsInteractor.self) { (resolver) -> NewsInteractor in
-			let interactor = NewsInteractor(xmlDataService: self.resolve()!)
+			let interactor = NewsInteractor(xmlDataService: self.resolve()!, recentlyRssService: self.resolve()!)
 			return interactor
 		}.implements(NewsPresenterOutConnection.self)
 	}

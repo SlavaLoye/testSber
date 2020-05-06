@@ -23,7 +23,8 @@ class ContainerController {
 		DetailNewsContainer.self,
 		DataProvidersContainer.self,
 		NetworkServicesContainer.self,
-		RecentlyViewedDataProviderRSSItemContainer.self
+		RecentlyViewedDataProviderRSSItemContainer.self,
+		NewsSaveContainer.self
 	]
 	
 	// MARK: fetchSubcontainer

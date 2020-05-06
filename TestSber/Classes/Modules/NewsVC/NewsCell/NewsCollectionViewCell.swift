@@ -48,7 +48,7 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 	}
 	
 	// MARK: - configureCell
-	func configureCell(header: String?, timer: String?, news: String?, isImages: Bool)  {
+	func configureCell(header: String?, timer: String?, news: String?, isImages: Bool, isActive: Bool)  {
 		
 		if isImages {
 			imageView.imageFromServerURL(urlString: TemplateURL.imgBanki.rawValue)
@@ -69,7 +69,6 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 	// MARK: - setupConstraints
 	func setupViewNews() {
 		addSubview(viewNews)
-		//viewNews.layer.borderColor = #colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.1568627451, alpha: 1)
 		viewNews.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
 		viewNews.layer.borderWidth = 1
 		viewNews.layer.cornerRadius = 10

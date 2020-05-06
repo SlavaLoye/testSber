@@ -35,26 +35,17 @@ class SaveNewsPresenter: NSObject, SaveNewsViewOutConnection, UITableViewDelegat
 	
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
-		interactor?.rssItems = []
 		delegating()
-		finamFetch()
-	}
-	
-	// MARK: - viewWillAppear
-	func viewWillAppear() {
+//		interactor?.rssItems = []
 		notification()
 		tableView?.reloadData()
 	}
 	
-	// MARK: - finamFetch
-	func finamFetch() {
-		//		view?.showLoader()
-		interactor?.parseFeed(url: TemplateURL.finamRU.rawValue, completion: { [weak self] ( rssItems) in
-			self?.interactor?.rssItems = rssItems
-			OperationQueue.main.addOperation {
-				self?.view?.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
-			}
-		})
+	// MARK: - viewWillAppear
+	func viewWillAppear() {
+		delegating()
+		notification()
+		tableView?.reloadData()
 	}
 	
 	// MARK: - notification
@@ -70,7 +61,6 @@ class SaveNewsPresenter: NSObject, SaveNewsViewOutConnection, UITableViewDelegat
 	}
 	
 	@objc func buttonActionRefresh(_ sender: Any?) {
-		finamFetch()
 		tableView?.reloadData()
 	}
 	
@@ -82,19 +72,18 @@ class SaveNewsPresenter: NSObject, SaveNewsViewOutConnection, UITableViewDelegat
 	
 	// MARK: - UITableViewDataSource
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-			if interactor?.rssItems.count ?? 0 >= pageItemsCount {
-				return interactor?.rssItems.count ?? 0 + 1
-			}
-		return  interactor?.rssItems.count ?? 0
+				if rssItem.count >= pageItemsCount {
+					return rssItem.count + 1
+				}
+				return rssItem.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let rss = interactor?.recentlyRssService.rssItems.rssList, rss.isEmpty == false {
 			if let cell = tableView.dequeueReusableCell(withIdentifier: "SaveNewsTableViewCell", for: indexPath) as? SaveNewsTableViewCell {
 				cell.selectionStyle = .none
-				let item = interactor?.rssItems[indexPath.row]
-				cell.configureCell(header: item?.title, timer: item?.pubDate, news: item?.descriptions, isImages: true)
-				//cell.rssItems = Array(rssItem.reversed())
+				let item = rssItem[indexPath.row]
+				cell.configureCell(header: item.title, timer: item.pubDate, news: item.descriptions, isImages: true)
 				return cell
 			}
 		}
@@ -106,8 +95,6 @@ class SaveNewsPresenter: NSObject, SaveNewsViewOutConnection, UITableViewDelegat
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 300
 	}
-	
-	
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let rss = rssItem[indexPath.row]

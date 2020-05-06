@@ -31,6 +31,7 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 		setupCollectionView()
 		presenter?.viewDidLoad()
 		view.backgroundColor = .white
+		refreshControll()
 	}
 	
 	// MARK: - viewWillAppear
@@ -176,4 +177,6 @@ extension NewsViewController {
 		collectionView?.register(NewsCollectionViewCell.self, forCellWithReuseIdentifier: NewsCollectionViewCell.reuseId)
 	}
 }
+
+
 
