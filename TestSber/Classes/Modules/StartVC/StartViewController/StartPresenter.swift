@@ -32,7 +32,6 @@ class StartPresenter: NSObject, StartViewOutConnection {
 
 	// MARK: - selectButtonClicked
 	func selectButtonClicked() {
-		//startRouter?.route(to: .newsViewController, in: view)
 		interactor?.selectButtonClicked()
 	}
 	

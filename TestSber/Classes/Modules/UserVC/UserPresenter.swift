@@ -14,7 +14,6 @@ class UserPresenter: NSObject, UserViewOutConnection {
 	weak var view: UserViewInConnection?
 	
 	// MARK: router
-	
 	var router: SberRouter?
 	
 	// MARK: - interactor
@@ -25,6 +24,7 @@ class UserPresenter: NSObject, UserViewOutConnection {
 		
 	}
 	
+	// MARK: - selectedVC
 	func selectedVC() {
 		router?.route(to: .newsViewController, in: view as? UIViewController)
 	}

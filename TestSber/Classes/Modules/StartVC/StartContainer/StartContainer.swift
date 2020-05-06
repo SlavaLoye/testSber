@@ -19,6 +19,7 @@ class StartContainer: Containerable {
 		self.container = container
 	}
 	
+	// MARK: -  register
 	func register() {
 		container.register(StartRouter.self) { (resolver) -> StartRouter in
 			let nextViewController = TabBarControllerFactory(container: self, mode: .main).tabBarController()

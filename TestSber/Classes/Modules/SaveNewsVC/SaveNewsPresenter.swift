@@ -36,7 +36,6 @@ class SaveNewsPresenter: NSObject, SaveNewsViewOutConnection, UITableViewDelegat
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
 		delegating()
-//		interactor?.rssItems = []
 		notification()
 		tableView?.reloadData()
 	}
@@ -60,6 +59,7 @@ class SaveNewsPresenter: NSObject, SaveNewsViewOutConnection, UITableViewDelegat
 		}
 	}
 	
+	// MARK: - buttonActionRefresh
 	@objc func buttonActionRefresh(_ sender: Any?) {
 		tableView?.reloadData()
 	}

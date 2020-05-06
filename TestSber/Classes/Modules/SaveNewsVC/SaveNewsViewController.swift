@@ -27,7 +27,6 @@ class SaveNewsViewController: UIViewController, SaveNewsViewInConnection {
 		registerCells()
 		safeArea = view.layoutMarginsGuide
 		tableView.estimatedRowHeight = 155.0
-//		tableView.rowHeight = UITableView.automaticDimension
 		tableView.separatorStyle = .none
 	}
 	
@@ -49,12 +48,10 @@ class SaveNewsViewController: UIViewController, SaveNewsViewInConnection {
 		view.backgroundColor = .white
 	}
 	
-
 	// MARK: - backButtonClicked(Nav)
 	@objc private func backButtonClicked() {
 		navigationController?.popViewController(animated: true)
 	}
-	
 	
 	// MARK: - init
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
