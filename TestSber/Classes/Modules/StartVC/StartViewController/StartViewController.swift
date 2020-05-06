@@ -38,7 +38,7 @@ class StartViewController: UIViewController, StartViewInConnection {
 	// MARK: viewWillAppear
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		openButton.pulsate()
+		openButton.startPulsate()
 	}
 	
 	// MARK: addTarget
@@ -72,7 +72,7 @@ class StartViewController: UIViewController, StartViewInConnection {
 		titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
 		titleLabel.textAlignment = .center
 		titleLabel.text = NSLocalizedString("title.title", comment: "Сбербанк")
-		titleLabel.font = UIFont.bold38
+		titleLabel.font = UIFont.systemFont(ofSize: 38)
 		titleLabel.textColor = #colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.1568627451, alpha: 1)
 	}
 	
@@ -85,7 +85,7 @@ class StartViewController: UIViewController, StartViewInConnection {
 		descriptionleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
 		descriptionleLabel.textAlignment = .center
 		descriptionleLabel.text = NSLocalizedString("title.descriptionTitle", comment: "Всегда рядом")
-		descriptionleLabel.font = UIFont.medium15
+		descriptionleLabel.font = UIFont.systemFont(ofSize: 15)
 		descriptionleLabel.textColor = #colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.1568627451, alpha: 1)
 	}
 	
@@ -101,7 +101,7 @@ class StartViewController: UIViewController, StartViewInConnection {
 		openButton.backgroundColor = .white
 		openButton.setTitleColor(UIColor.sberGreen, for: .normal)
 		openButton.setTitle(NSLocalizedString("button.authorizationEnter", comment: "ВОЙТИ"), for: .normal)
-		openButton.titleLabel?.font = UIFont.semibold15
+		openButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
 		
 	}
 }

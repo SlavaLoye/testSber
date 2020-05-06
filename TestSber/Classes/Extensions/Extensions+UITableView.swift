@@ -8,7 +8,6 @@
 
 import UIKit
 
-// MARK: - reloadDataWithoutAnimation
 extension UITableView {
   func reloadDataWithoutAnimation() {
     let tableView = self

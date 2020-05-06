@@ -67,7 +67,7 @@ class TitleTableViewCell: UITableViewCell, SelfConfiguringCell {
 		titleLabel.textAlignment = .center
 		titleLabel.numberOfLines = 0
 		titleLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-		titleLabel.font = UIFont.semibold20
+		titleLabel.font = UIFont.systemFont(ofSize: 20)
 		titleLabel.textColor = UIColor.sberGreen
 		titleLabel.frame = CGRect(x: 60, y: 0, width: viewNews.bounds.width - 120, height: 44)
 	}

@@ -29,7 +29,7 @@ class UserViewController: UIViewController, UserViewInConnection {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		setupNavBar()
-		openButton.pulsate()
+		openButton.startPulsate()
 	}
 	
 	// MARK: - viewDidLoad
@@ -59,7 +59,7 @@ extension UserViewController {
 	private func setupNavBar() {
 		navigationController?.setNavigationBarHidden(false, animated: true)
 		title = "Аккаунт"
-		navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont.semibold20, NSAttributedString.Key.foregroundColor: UIColor.sberGreen]
+		navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.sberGreen]
 	}
 }
 
@@ -77,8 +77,7 @@ extension UserViewController {
 		openButton.backgroundColor = .white
 		openButton.setTitleColor(UIColor.sberGreen, for: .normal)
 		openButton.setTitle(NSLocalizedString("button.newsUser", comment: "Новости Сбербанка"), for: .normal)
-		openButton.titleLabel?.font = UIFont.bold24
-		
+		openButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
 	}
 }
 

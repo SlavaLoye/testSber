@@ -126,10 +126,7 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 // MARK: - CellModel
 extension DetailNewsPresenter {
 	fileprivate enum CellModel {
-		case title
-		case newsTitle
-		case timer
-		case descriptionNews
+		case title, newsTitle, timer, descriptionNews
 	}
 }
 

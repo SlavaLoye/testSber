@@ -45,7 +45,6 @@
 		A83C057C24538A1A00FF8702 /* TabBarControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C057B24538A1A00FF8702 /* TabBarControllerFactory.swift */; };
 		A83C057F245392BF00FF8702 /* Extensions+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C057E245392BF00FF8702 /* Extensions+UIButton.swift */; };
 		A83C05822453964500FF8702 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A83C05812453964500FF8702 /* Localizable.strings */; };
-		A83C05842453973200FF8702 /* Etensions+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C05832453973200FF8702 /* Etensions+UIFont.swift */; };
 		A83C05882453A7DD00FF8702 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C05872453A7DD00FF8702 /* NewsViewController.swift */; };
 		A83C058A2453A84400FF8702 /* NewsViewInConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C05892453A84400FF8702 /* NewsViewInConnection.swift */; };
 		A83C058C2453A85400FF8702 /* NewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83C058B2453A85400FF8702 /* NewsPresenter.swift */; };
@@ -171,7 +170,6 @@
 		A83C057B24538A1A00FF8702 /* TabBarControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerFactory.swift; sourceTree = "<group>"; };
 		A83C057E245392BF00FF8702 /* Extensions+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIButton.swift"; sourceTree = "<group>"; };
 		A83C05812453964500FF8702 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		A83C05832453973200FF8702 /* Etensions+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Etensions+UIFont.swift"; sourceTree = "<group>"; };
 		A83C05872453A7DD00FF8702 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		A83C05892453A84400FF8702 /* NewsViewInConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewInConnection.swift; sourceTree = "<group>"; };
 		A83C058B2453A85400FF8702 /* NewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPresenter.swift; sourceTree = "<group>"; };
@@ -593,7 +591,6 @@
 			children = (
 				A847F462245E17D70072736C /* Extension */,
 				A83C057E245392BF00FF8702 /* Extensions+UIButton.swift */,
-				A83C05832453973200FF8702 /* Etensions+UIFont.swift */,
 				A835E5432455AEC9009A163C /* Extensions+UITableView.swift */,
 				A835E5452455AF00009A163C /* Extension+UICollectionView.swift */,
 				A835E54C2455C773009A163C /* Extension+UIColor.swift */,
@@ -1089,7 +1086,6 @@
 				A8477DA62454EA2E0074F7B0 /* SaveNewsViewInConnection.swift in Sources */,
 				A847F45A245D8D890072736C /* RecentlyViewedDataProvider.swift in Sources */,
 				A84898F52462D29E003ADE9E /* NewsModel.swift in Sources */,
-				A83C05842453973200FF8702 /* Etensions+UIFont.swift in Sources */,
 				A8AE087B2458D2A400BC852F /* Direction.swift in Sources */,
 				A83C057C24538A1A00FF8702 /* TabBarControllerFactory.swift in Sources */,
 				A8AE08762458D1B100BC852F /* Loader.swift in Sources */,

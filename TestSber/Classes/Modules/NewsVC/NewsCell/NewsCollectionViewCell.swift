@@ -66,7 +66,7 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 			newsLabel.text = news.removeHTMLAndStringTemplates
 		}
 		
-		if !isActive {
+		if isActive {
 			let image = UIImage(systemName: "heart")?.withTintColor(.sberGreen, renderingMode: .alwaysOriginal)
 			newsButton.setImage(image, for: .normal)
 		} else {
@@ -90,7 +90,7 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		headerLabel.textAlignment = .left
 		headerLabel.numberOfLines = 0
 		headerLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-		headerLabel.font = UIFont.semibold22
+		headerLabel.font = UIFont.systemFont(ofSize: 22)
 		headerLabel.frame = CGRect(x: 16, y: 16, width: viewNews.bounds.width - 80, height: viewNews.bounds.width / 6)
 	}
 	
@@ -108,7 +108,7 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		timerLabel.textAlignment = .left
 		timerLabel.numberOfLines = 0
 		timerLabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-		timerLabel.font = UIFont.regular14
+		timerLabel.font = UIFont.systemFont(ofSize: 14)
 		timerLabel.frame = CGRect(x: 16, y: (viewNews.bounds.height / 2) * 0.4, width: viewNews.bounds.width - 30, height: viewNews.bounds.width / 6)
 	}
 	
@@ -118,7 +118,7 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		newsLabel.textAlignment = .left
 		newsLabel.numberOfLines = 8
 		newsLabel.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-		newsLabel.font = UIFont.regular15
+		newsLabel.font = UIFont.systemFont(ofSize: 15)
 		newsLabel.frame = CGRect(x: 16, y: 100, width: viewNews.bounds.width - 30, height: viewNews.bounds.height / 2)
 	}
 	
@@ -128,7 +128,7 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		readMoreLabel.textAlignment = .right
 		readMoreLabel.numberOfLines = 0
 		readMoreLabel.textColor = #colorLiteral(red: 0.09803921569, green: 0.6274509804, blue: 0.2666666806, alpha: 1)
-		readMoreLabel.font = UIFont.regular14
+		readMoreLabel.font = UIFont.systemFont(ofSize: 14)
 		readMoreLabel.frame = CGRect(x: viewNews.bounds.width - 130, y: viewNews.bounds.height - 25, width: 120, height: 15)
 		readMoreLabel.text =  NSLocalizedString("title.readMoreTitle", comment: "Читать далее...")
 	}

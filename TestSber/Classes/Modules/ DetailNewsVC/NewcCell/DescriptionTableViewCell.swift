@@ -65,7 +65,7 @@ class DescriptionTableViewCell: UITableViewCell, SelfConfiguringCell {
 		newsLabel.textAlignment = .left
 		newsLabel.numberOfLines = 0
 		newsLabel.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-		newsLabel.font = UIFont.regular15
+		newsLabel.font = UIFont.systemFont(ofSize: 15)
 		
 	}
 	

@@ -62,10 +62,10 @@ extension DetailNewsViewController {
 	private func setupNavBar() {
 		navigationController?.setNavigationBarHidden(false, animated: true)
 		title = "Новости партнеров"
-		navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont.semibold20, NSAttributedString.Key.foregroundColor: UIColor.sberGreen]
+		navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.sberGreen]
 	}
 }
-
+//UIFont.semibold20
 
 // MARK: - PanModal
 extension DetailNewsViewController {

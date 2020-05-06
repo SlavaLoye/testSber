@@ -30,12 +30,9 @@ extension UIButton {
 		self.layer.borderWidth = 2
 		self.layer.borderColor = #colorLiteral(red: 0.09711175412, green: 0.626296401, blue: 0.1582792997, alpha: 1)
 	}
-}
-
-extension UIButton {
 	
-	// MARK: - pulsate _ Animation
-	func pulsate() {
+	// MARK: - startPulsate _ Animation
+	func startPulsate() {
 		let pulse = CASpringAnimation(keyPath: "transform.scale")
 		pulse.duration = 0.4
 		pulse.fromValue = 0.98

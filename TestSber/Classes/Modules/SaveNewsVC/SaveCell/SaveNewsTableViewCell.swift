@@ -92,7 +92,7 @@ class SaveNewsTableViewCell : UITableViewCell, SelfConfiguringCell {
 		newsLabel.textAlignment = .left
 		newsLabel.numberOfLines = 0
 		newsLabel.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-		newsLabel.font = UIFont.regular14
+		newsLabel.font = UIFont.systemFont(ofSize:14)
 		newsLabel.frame = CGRect(x: 16, y: 100, width: viewNews.bounds.width - 30, height: 140)
 	}
 	
@@ -102,7 +102,7 @@ class SaveNewsTableViewCell : UITableViewCell, SelfConfiguringCell {
 		headerLabel.textAlignment = .left
 		headerLabel.numberOfLines = 0
 		headerLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-		headerLabel.font = UIFont.semibold22
+		headerLabel.font = UIFont.systemFont(ofSize: 22)
 		headerLabel.frame = CGRect(x: 16, y: 16, width: viewNews.bounds.width - 30, height: 54)
 	}
 	
@@ -112,7 +112,7 @@ class SaveNewsTableViewCell : UITableViewCell, SelfConfiguringCell {
 		timerLabel.textAlignment = .left
 		timerLabel.numberOfLines = 0
 		timerLabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-		timerLabel.font = UIFont.regular14
+		timerLabel.font = UIFont.systemFont(ofSize: 14)
 		timerLabel.frame = CGRect(x: 16, y: 80, width: viewNews.bounds.width - 30, height: 15)
 		
 	}
@@ -122,7 +122,7 @@ class SaveNewsTableViewCell : UITableViewCell, SelfConfiguringCell {
 		readMoreLabel.textAlignment = .right
 		readMoreLabel.numberOfLines = 0
 		readMoreLabel.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-		readMoreLabel.font = UIFont.regular14
+		readMoreLabel.font = UIFont.systemFont(ofSize: 14)
 		readMoreLabel.frame = CGRect(x: viewNews.bounds.width - 130, y: 245, width: 120, height: 15)
 		readMoreLabel.text = NSLocalizedString("title.readMore", comment: "Подробнее...")
 	}

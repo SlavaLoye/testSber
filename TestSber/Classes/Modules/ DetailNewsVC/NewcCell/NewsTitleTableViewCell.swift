@@ -57,7 +57,7 @@ class NewsTitleTableViewCell: UITableViewCell, SelfConfiguringCell {
 		titleLabel.numberOfLines = 0
 		titleLabel.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
 		titleLabel.textAlignment = .left
-		titleLabel.font = UIFont.semibold20
+		titleLabel.font = UIFont.systemFont(ofSize: 20)
 	}
 	
 	required init?(coder: NSCoder) {

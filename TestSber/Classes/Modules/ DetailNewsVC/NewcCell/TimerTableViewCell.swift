@@ -55,7 +55,7 @@ class TimerTableViewCell: UITableViewCell, SelfConfiguringCell {
 		timerLabel.textAlignment = .left
 		timerLabel.numberOfLines = 0
 		timerLabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-		timerLabel.font = UIFont.regular14
+		timerLabel.font = UIFont.systemFont(ofSize: 14)
 		timerLabel.frame = CGRect(x: 30, y: 16, width: viewNews.bounds.width - 60, height: 15)
 		
 	}
