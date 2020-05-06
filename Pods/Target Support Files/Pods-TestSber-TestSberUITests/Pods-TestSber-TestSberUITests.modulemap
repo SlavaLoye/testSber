@@ -1,6 +1,0 @@
-framework module Pods_TestSber_TestSberUITests {
-  umbrella header "Pods-TestSber-TestSberUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
