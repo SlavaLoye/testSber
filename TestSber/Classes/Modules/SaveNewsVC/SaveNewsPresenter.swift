@@ -16,10 +16,6 @@ class SaveNewsPresenter: NSObject, SaveNewsViewOutConnection, UITableViewDelegat
 	// MARK: - interactor
 	var interactor: SaveNewsPresenterOutConnection?
 	
-	private var rssItem: [RSSItem] {
-		return interactor?.rssItems ?? []
-	}
-	
 	// MARK: - SberRouter
 	var sberRouter: SberRouter?
 	
@@ -71,18 +67,18 @@ class SaveNewsPresenter: NSObject, SaveNewsViewOutConnection, UITableViewDelegat
 	
 	// MARK: - UITableViewDataSource
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-				if rssItem.count >= pageItemsCount {
-					return rssItem.count + 1
+		if interactor?.rssItems.count ?? 0 >= pageItemsCount {
+			return interactor?.rssItems.count ?? 0 + 1
 				}
-				return rssItem.count
+		return interactor?.rssItems.count ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let rss = interactor?.recentlyRssService.rssItems.rssList, rss.isEmpty == false {
 			if let cell = tableView.dequeueReusableCell(withIdentifier: "SaveNewsTableViewCell", for: indexPath) as? SaveNewsTableViewCell {
 				cell.selectionStyle = .none
-				let item = rssItem[indexPath.row]
-				cell.configureCell(header: item.title, timer: item.pubDate, news: item.descriptions, isImages: true)
+				let item = interactor?.rssItems[indexPath.row]
+				cell.configureCell(header: item?.title, timer: item?.pubDate, news: item?.descriptions, isImages: true)
 				return cell
 			}
 		}
@@ -96,7 +92,7 @@ class SaveNewsPresenter: NSObject, SaveNewsViewOutConnection, UITableViewDelegat
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let rss = rssItem[indexPath.row]
+		let rss = interactor?.rssItems[indexPath.row]
 		sberRouter?.route(to: .detailNewsViewController(rss: rss), in: view)
 	}
 }

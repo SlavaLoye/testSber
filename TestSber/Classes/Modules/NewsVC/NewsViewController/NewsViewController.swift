@@ -55,10 +55,8 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 	func updateUrl()  {
 		if presenter?.isAllSelected == true {
 			presenter?.finamFetch() // finam
-			print("finamFetch \(presenter?.finamFetch())")
 		} else {
 			presenter?.bankiRUFetch() // banki
-			print("bankiRUFetch \(presenter?.bankiRUFetch())")
 		}
 	}
 	

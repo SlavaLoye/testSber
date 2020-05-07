@@ -33,13 +33,11 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 	// MARK: - viewDidLoad
 	func viewDidLoad() {
 		delegating()
-		bankiRUFetch()
-		finamFetch()
 	}
 	
 	// MARK: - viewWillAppear
 	func viewWillAppear() {
-		view?.reloadData()
+		//view?.reloadData()
 	}
 	
 	// MARK: - finamFetch
@@ -88,9 +86,11 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 		switch cellModel {
 			case .news:
 				if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell {
-					let title = interactor?.rssItems[indexPath.row]
-					cell.configureCell(header: title?.title, timer: title?.pubDate, news: title?.description, isImages: true, isActive:interactor?.recentlyRssService.rssItems.title == title?.title)
-					return cell
+					if let titles = interactor?.rssItems[indexPath.row] {
+						let likeRss = (interactor?.recentlyRssService.rssItems.rssList.contains(titles) ?? false)
+						cell.configureCell(header: titles.title, timer: titles.pubDate, news: titles.description, isImages: true, isActive: likeRss)
+						return cell
+					}
 				}
 				return UICollectionViewCell()
 		}
@@ -106,7 +106,6 @@ class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, 
 		}
 	}
 }
-
 
 // MARK: - CellModel
 extension NewsPresenter  {

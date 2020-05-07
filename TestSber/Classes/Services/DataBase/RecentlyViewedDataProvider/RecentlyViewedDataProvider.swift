@@ -10,21 +10,21 @@ import RealmSwift
 import Realm
 
 class RecentlyViewedDataProviderImplemintation: RecentlyViewedRSSService {
-
+	
 	private let realmService: RealmService
 	
 	// MARK: RecentlyViewedRSSItem
 	private(set) var rssItems: RSSViewsItem = RSSViewsItem()
-
+	
 	init(realmService: RealmService) {
 		self.realmService = realmService
 	}
-
+	
 	private func resave() {
 		realmService.save(rssItems)
 	}
-
-
+	
+	// MARK: add()
 	func add(rss: RSSItem) {
 		if self.rssItems.rssList.first(where: { (savedRSSItem) -> Bool in
 			return savedRSSItem.title == rss.title
@@ -41,9 +41,9 @@ class RecentlyViewedDataProviderImplemintation: RecentlyViewedRSSService {
 			}
 			resave()
 		}
-
 	}
 	
+	// MARK: loadCachedList()
 	func loadCachedList() {
 		guard let rssItems = realmService.retrieveObjects(of: RSSViewsItem.self).first else {
 			return
@@ -52,6 +52,7 @@ class RecentlyViewedDataProviderImplemintation: RecentlyViewedRSSService {
 		self.rssItems = rssItems
 	}
 	
+	// MARK: clear()
 	func clear() {
 		rssItems.rssList = List()
 		resave()

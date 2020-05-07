@@ -66,7 +66,7 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 			newsLabel.text = news.removeHTMLAndStringTemplates
 		}
 		
-		if isActive {
+		if !isActive {
 			let image = UIImage(systemName: "heart")?.withTintColor(.sberGreen, renderingMode: .alwaysOriginal)
 			newsButton.setImage(image, for: .normal)
 		} else {
@@ -99,8 +99,6 @@ class NewsCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
 		viewNews.addSubview(newsButton)
 		newsButton.frame = CGRect(x: viewNews.bounds.width - 55, y: 16, width: 40, height: 40)
 	}
-	//heart
-	//UIImage(systemName: "heart.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal)
 	
 	// MARK: - timerLabelLabel
 	func timerLabesl()  {

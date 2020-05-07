@@ -9,11 +9,12 @@
 import Foundation
 
 class NewsInteractor: NewsPresenterOutConnection {
-	
+
 	//MARK: - rssItems
 	var rssItems: [RSSItem] = []
 	
 	var recentlyRssService: RecentlyViewedRSSService
+
 	
 	//MARK: - private
 	private let xmlDataService: RssDataProviderService?
