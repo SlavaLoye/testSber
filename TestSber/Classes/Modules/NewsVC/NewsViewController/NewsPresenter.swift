@@ -6,7 +6,6 @@
 //  Copyright © 2020 SberTestViper. All rights reserved.
 //
 
-
 import UIKit
 
 class NewsPresenter: NSObject, NewsViewOutConnection, UICollectionViewDelegate, UICollectionViewDataSource {

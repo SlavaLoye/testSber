@@ -6,7 +6,6 @@
 //  Copyright © 2020 SberTestViper. All rights reserved.
 //
 
-
 import UIKit
 import Swinject
 
@@ -28,7 +27,6 @@ class UserContainer: Containerable {
 			return vc
 		}.implements(UserViewInConnection.self)
 		
-		
 		// MARK: - SaveNewsPresenter
 		container.register(UserPresenter.self) { (resolver) -> UserPresenter in
 			let presenter = UserPresenter()
@@ -37,8 +35,7 @@ class UserContainer: Containerable {
 		}.initCompleted { (resolver, presenter) in
 			presenter.view = self.resolve()!
 		}.implements(UserViewOutConnection.self)
-		
-		
+				
 		// MARK: - SaveNewsInteractor
 		container.register(UserInteractor.self) { (resolver) -> UserInteractor in
 			let interactor = UserInteractor()

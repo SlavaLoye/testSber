@@ -20,8 +20,7 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 	private var tableView: UITableView? {
 		return view?.tableView
 	}
-	
-	
+		
 	// MARK: - models
 	private let models: [CellModel] = [.title, .newsTitle, .timer, .descriptionNews]
 	
@@ -31,9 +30,7 @@ class DetailNewsPresenter: NSObject, DetailNewsViewOutConnection, UITableViewDat
 	}
 	
 	// MARK: - viewWillAppear
-	func viewWillAppear() {
-		
-	}
+	func viewWillAppear() {}
 	
 	// MARK: - delegating
 	func delegating()  {
