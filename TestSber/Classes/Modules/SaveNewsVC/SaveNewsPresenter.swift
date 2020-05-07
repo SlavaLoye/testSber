@@ -10,7 +10,6 @@ import UIKit
 
 class SaveNewsPresenter: NSObject, SaveNewsViewOutConnection, UITableViewDelegate, UITableViewDataSource {
 	
-	
 	// MARK: - view
 	weak var view: SaveNewsViewInConnection?
 	

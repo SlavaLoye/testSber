@@ -11,13 +11,13 @@ import UIKit
 import Swinject
 
 class DataProvidersContainer: Containerable {
+	
 	var controller: ContainerController?
 	let container: Container
 	
 	required init(container: Container) {
 		self.container = container
 	}
-
 	
 	func register() {
 		//MARK: RssDataProviderService
@@ -26,12 +26,11 @@ class DataProvidersContainer: Containerable {
 			return service
 		}.inObjectScope(.container)
 		
-		func register() {
-			container.register(RecentlyViewedRSSService.self) { (resolver) -> RecentlyViewedRSSService in
-				let service = RecentlyViewedDataProviderImplemintation(realmService: self.resolve()!)
-				return service
-			}.inObjectScope(.container)
-		}
+		//MARK: RecentlyViewedRSSService
+		container.register(RecentlyViewedRSSService.self) { (resolver) -> RecentlyViewedRSSService in
+			let service = RecentlyViewedDataProviderImplemintation(realmService: self.resolve()!)
+			return service
+		}.inObjectScope(.container)
 	}
 }
 

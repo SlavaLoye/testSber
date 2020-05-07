@@ -50,7 +50,6 @@ class NewsTitleTableViewCell: UITableViewCell, SelfConfiguringCell {
 		viewNews.addSubview(titleLabel)
 		titleLabel.translatesAutoresizingMaskIntoConstraints = false
 		titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30).isActive = true
-//		titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: viewNews.frame.height / 0.2).isActive = true
 		titleLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 60).isActive = true
 		titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
 		titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true

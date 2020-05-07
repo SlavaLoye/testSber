@@ -47,7 +47,8 @@ class NotNewsView: UIView, NibLoadable {
 	
 	// MARK: - decorate
 	func decorate()  {
-		searchButton.roundedButtonYellow(cornerRadius: 25)
+		searchButton.roundedButtonSberColor(cornerRadius: 25)
+		searchButton.layer.borderColor = #colorLiteral(red: 0.09711175412, green: 0.626296401, blue: 0.1582792997, alpha: 1)
 	}
 	
 	// MARK: - addView

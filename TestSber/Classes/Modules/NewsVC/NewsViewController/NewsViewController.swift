@@ -90,8 +90,7 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 	func scrollToTop(animated: Bool) {
 		collectionView?.scrollToItem(at:  IndexPath.init(row: 0, section: 0), at: .top, animated: true)
 	}
-	
-	
+
 	// MARK: - addRightBarButtonItem(Nav)
 	private func addRightBarButtonItem() {
 		let barButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.counterclockwise"),
@@ -108,8 +107,6 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 		reloadData()
 		scrollToTop(animated: true)
 	}
-	
-	
 	
 	// MARK: - init
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -129,7 +126,7 @@ class NewsViewController: UIViewController, NewsViewInConnection {
 extension NewsViewController {
 	private func setupNavBar() {
 		navigationController?.setNavigationBarHidden(false, animated: true)
-		title = "Главная"
+		title = NSLocalizedString("title.navBarHome", comment: "Главная")
 		navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.sberGreen]
 	}
 }

@@ -10,7 +10,8 @@ import UIKit
 
 class StartViewController: UIViewController, StartViewInConnection {
 	
-	var presenter: StartPresenter!
+	// MARK: presenter
+	var presenter: StartPresenter?
 	
 	convenience init(presenter: StartPresenter?) {
 	  self.init()
@@ -97,8 +98,9 @@ class StartViewController: UIViewController, StartViewInConnection {
 		openButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
 		openButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
 		openButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-		openButton.roundedButtonYellow(cornerRadius: 10)
+		openButton.roundedButtonSberColor(cornerRadius: 10)
 		openButton.backgroundColor = .white
+		openButton.layer.borderColor = #colorLiteral(red: 0.09711175412, green: 0.626296401, blue: 0.1582792997, alpha: 1)
 		openButton.setTitleColor(UIColor.sberGreen, for: .normal)
 		openButton.setTitle(NSLocalizedString("button.authorizationEnter", comment: "ВОЙТИ"), for: .normal)
 		openButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)

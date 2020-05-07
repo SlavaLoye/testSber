@@ -10,6 +10,7 @@ import Foundation
 import Swinject
 
 class RecentlyViewedDataProviderRSSItemContainer: Containerable {
+	
 	var controller: ContainerController?
 	var container: Container
 	

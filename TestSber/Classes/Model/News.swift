@@ -24,7 +24,6 @@ class News: Object {
 		return rssNews.count
 	}
 	
-	
 	@objc override class func primaryKey() -> String? { return "title" }
 
 }

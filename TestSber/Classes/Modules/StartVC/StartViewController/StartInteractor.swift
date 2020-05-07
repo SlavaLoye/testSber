@@ -10,9 +10,9 @@ import Foundation
 
 class StartInteractor: StartPresenterOutConnection {
 	
-  weak var presenter: StartPresenter!
+  weak var presenter: StartPresenter?
 	
   func selectButtonClicked() {
-    presenter.openNextViewController()
+    presenter?.openNextViewController()
   }
 }

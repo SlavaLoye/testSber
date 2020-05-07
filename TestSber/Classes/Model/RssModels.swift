@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 import Realm
-//https://academy.realm.io/posts/realm-list-new-superpowers-array-primitives/
 
 final class RSSItem: Object {
 	

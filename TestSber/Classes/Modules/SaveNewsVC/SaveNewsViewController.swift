@@ -71,7 +71,7 @@ class SaveNewsViewController: UIViewController, SaveNewsViewInConnection {
 extension SaveNewsViewController {
 	private func setupNavBar() {
 		navigationController?.setNavigationBarHidden(false, animated: true)
-		title = "Сохраненные новости"
+		title = NSLocalizedString("title.navBarSaveNews", comment: "Сохраненные новости")
 		navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.sberGreen]
 	}
 }

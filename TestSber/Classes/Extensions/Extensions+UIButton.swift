@@ -24,11 +24,10 @@ extension UIButton {
 	}
 	
 	// MARK: - roundedButton _ CGFloat
-	func roundedButtonYellow(cornerRadius: CGFloat)  {
+	func roundedButtonSberColor(cornerRadius: CGFloat)  {
 		self.layer.cornerRadius = cornerRadius
 		self.layer.masksToBounds = true
 		self.layer.borderWidth = 2
-		self.layer.borderColor = #colorLiteral(red: 0.09711175412, green: 0.626296401, blue: 0.1582792997, alpha: 1)
 	}
 	
 	// MARK: - startPulsate _ Animation

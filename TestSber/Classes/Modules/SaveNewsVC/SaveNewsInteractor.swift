@@ -13,10 +13,10 @@ class SaveNewsInteractor: SaveNewsPresenterOutConnection {
 	var rssItems: [RSSItem] {
     return Array(recentlyRssService.rssItems.rssList)
   }
-	//Недавно просмотреныне новсти
+	//MARK: Недавно просмотренные новсти recentlyRssService
 	var recentlyRssService: RecentlyViewedRSSService
   
-	//MARK: - private
+	//MARK: - xmlDataService
 	private let xmlDataService: RssDataProviderService
 	
 	init(recentlyRssService: RecentlyViewedRSSService, xmlDataService: RssDataProviderService) {

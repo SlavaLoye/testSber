@@ -15,7 +15,6 @@ class StartRouter {
 	private let rootViewController: UIViewController?
 	private let nextViewController: UIViewController?
 	
-	
 	// MARK: - init
 	init(rootViewController: UIViewController?,
 		 nextViewController: UIViewController?) {
