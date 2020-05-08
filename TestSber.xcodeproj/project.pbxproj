@@ -142,7 +142,7 @@
 		A836D38B2459D09D00A410F9 /* RssDataProviderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssDataProviderService.swift; sourceTree = "<group>"; };
 		A836D38D2459D0C900A410F9 /* RssDataProviderServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssDataProviderServiceImplementation.swift; sourceTree = "<group>"; };
 		A836D3902459E95700A410F9 /* DataProvidersContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvidersContainer.swift; sourceTree = "<group>"; };
-		A83C050E24536E4000FF8702 /* TestSber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSber.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A83C050E24536E4000FF8702 /* Sberbank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sberbank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83C051124536E4000FF8702 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A83C051A24536E4300FF8702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A83C051D24536E4300FF8702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -347,7 +347,7 @@
 		A83C050F24536E4000FF8702 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A83C050E24536E4000FF8702 /* TestSber.app */,
+				A83C050E24536E4000FF8702 /* Sberbank.app */,
 				A83C052424536E4400FF8702 /* TestSberTests.xctest */,
 				A83C052F24536E4400FF8702 /* TestSberUITests.xctest */,
 			);
@@ -855,7 +855,7 @@
 			);
 			name = TestSber;
 			productName = TestSber;
-			productReference = A83C050E24536E4000FF8702 /* TestSber.app */;
+			productReference = A83C050E24536E4000FF8702 /* Sberbank.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A83C052324536E4400FF8702 /* TestSberTests */ = {
@@ -905,7 +905,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
-				ORGANIZATIONNAME = SberTestViper;
+				ORGANIZATIONNAME = Sberbank;
 				TargetAttributes = {
 					A83C050D24536E4000FF8702 = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -1339,7 +1339,7 @@
 				);
 				MARKETING_VERSION = 1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestSber;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Sberbank;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1360,7 +1360,7 @@
 				);
 				MARKETING_VERSION = 1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestSber;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Sberbank;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
